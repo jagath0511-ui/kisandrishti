@@ -3,6 +3,8 @@ import { z } from 'zod';
 import { callGeminiDiagnosis, DiagnosisOutputSchema } from '../../../lib/gemini';
 import { getAllowedKeys, getTreatment, resolveConfidence } from '../../../lib/treatments';
 import { checkRateLimit } from '../../../lib/rateLimit';
+// Increase Vercel function timeout to 30 seconds for Gemini multimodal inference
+export const maxDuration = 30;
 
 // Input validation schema
 const RequestBodySchema = z.object({
