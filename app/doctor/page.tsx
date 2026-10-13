@@ -40,7 +40,10 @@ import {
   formatFriendlyDate,
   getDaysUntilHarvest,
   SprayRecord,
+  syncSprayRecordToCloud,
+  fetchAndMergeCloudSprays,
 } from '../../lib/harvestDate';
+import { useAuth } from '../../context/AuthContext';
 import { parseDosePerLitre, calculateTankMix } from '../../lib/mixCalculator';
 
 interface ChemicalItem {
@@ -201,6 +204,7 @@ function ChemicalMixCalculator({ dosePerLitre }: { dosePerLitre?: string | null 
 
 export default function DoctorPage() {
   const { t, locale } = useI18n();
+  const { user } = useAuth();
 
   // State
   const [selectedCrop, setSelectedCrop] = useState<string>('');
@@ -220,10 +224,16 @@ export default function DoctorPage() {
     safeDate: string;
   } | null>(null);
 
-  // Load spray records on mount
+  // Load and merge spray records on mount or when user auth changes
   useEffect(() => {
-    setSprayRecords(getSprayRecords());
-  }, []);
+    if (user?.uid) {
+      fetchAndMergeCloudSprays(user.uid).then((merged) => {
+        setSprayRecords(merged);
+      });
+    } else {
+      setSprayRecords(getSprayRecords());
+    }
+  }, [user]);
 
   // Hidden file input refs
   const cameraInputRef = useRef<HTMLInputElement>(null);
@@ -326,6 +336,11 @@ export default function DoctorPage() {
       sprayDate: today,
       intervalDays,
     });
+
+    // Sync to Cloud Firestore if user is authenticated
+    if (user?.uid) {
+      syncSprayRecordToCloud(saved, user.uid);
+    }
 
     setSprayRecords(getSprayRecords());
     setLastLoggedSpray({

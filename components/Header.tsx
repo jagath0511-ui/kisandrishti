@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { AlertCircle, Globe, Sprout } from 'lucide-react';
 import { LANGUAGES, SupportedLocale, useI18n } from '../lib/i18n';
+import { AuthButton } from './AuthButton';
 
 export function Header() {
   const { locale, setLocale, t } = useI18n();
@@ -54,6 +55,9 @@ export function Header() {
               </select>
             </div>
           </div>
+
+          {/* User Profile / Login */}
+          <AuthButton />
 
           {/* Red Emergency Button (Section 8: Never color alone -> Color + Word + Icon) */}
           <Link

@@ -147,3 +147,47 @@ export function deleteSprayRecord(id: string): void {
     // Ignore
   }
 }
+
+/**
+ * Syncs a spray record to Cloud Firestore via backend REST API
+ */
+export async function syncSprayRecordToCloud(
+  spray: SprayRecord,
+  uid: string
+): Promise<boolean> {
+  try {
+    const res = await fetch('/api/user/sprays', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ uid, spray }),
+    });
+    return res.ok;
+  } catch {
+    return false;
+  }
+}
+
+/**
+ * Fetches spray records from Cloud Firestore and merges into localStorage
+ */
+export async function fetchAndMergeCloudSprays(uid: string): Promise<SprayRecord[]> {
+  try {
+    const res = await fetch(`/api/user/sprays?uid=${encodeURIComponent(uid)}`);
+    if (!res.ok) return getSprayRecords();
+
+    const data = await res.json();
+    const cloudSprays: SprayRecord[] = data.sprays || [];
+    const localSprays = getSprayRecords();
+
+    // Merge by ID avoiding duplicates
+    const idMap = new Map<string, SprayRecord>();
+    for (const s of cloudSprays) idMap.set(s.id, s);
+    for (const s of localSprays) idMap.set(s.id, s);
+
+    const merged = Array.from(idMap.values()).sort((a, b) => b.timestamp - a.timestamp);
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(merged));
+    return merged;
+  } catch {
+    return getSprayRecords();
+  }
+}
