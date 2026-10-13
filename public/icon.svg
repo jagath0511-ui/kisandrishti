@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <rect width="512" height="512" rx="128" fill="#047857"/>
+  <circle cx="256" cy="256" r="210" fill="#065f46" stroke="#10b981" stroke-width="12"/>
+  <!-- Leaf and Sprout motif -->
+  <path d="M256 380 V 220" stroke="#a7f3d0" stroke-width="24" stroke-linecap="round"/>
+  <path d="M256 260 C 200 230, 150 250, 140 310 C 180 320, 230 300, 256 260 Z" fill="#34d399" stroke="#a7f3d0" stroke-width="8"/>
+  <path d="M256 220 C 312 180, 362 200, 372 260 C 332 270, 282 250, 256 220 Z" fill="#10b981" stroke="#a7f3d0" stroke-width="8"/>
+  <!-- Inspection / Lens Circle -->
+  <circle cx="256" cy="200" r="70" fill="none" stroke="#fef08a" stroke-width="18"/>
+  <line x1="305" y1="249" x2="350" y2="294" stroke="#fef08a" stroke-width="18" stroke-linecap="round"/>
+</svg>

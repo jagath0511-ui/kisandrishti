@@ -1,0 +1,151 @@
+{
+  "_comment": "CRITICAL: Must be reviewed by a doctor or pharmacist before launch.",
+  "reviewed": false,
+  "incidents": {
+    "skin": {
+      "id": "skin",
+      "title": {
+        "en": "On my skin",
+        "te": "చర్మంపై పడింది",
+        "hi": "त्वचा पर गिरा"
+      },
+      "subtitle": {
+        "en": "Chemical splashed on skin or clothes",
+        "te": "రసాయనం చర్మం లేదా బట్టలపై పడింది",
+        "hi": "रसायन त्वचा या कपड़ों पर पड़ गया"
+      },
+      "steps": [
+        {
+          "en": "Move away from the sprayed area.",
+          "te": "మందు పిచికారీ చేసిన ప్రాంతం నుండి వెంటనే దూరంగా వెళ్లండి.",
+          "hi": "छिड़काव वाले क्षेत्र से तुरंत दूर हट जाएं।"
+        },
+        {
+          "en": "Take off contaminated clothes and shoes.",
+          "te": "రసాయనం అంటిన బట్టలు మరియు చెప్పులను వెంటనే విప్పేయండి.",
+          "hi": "दूषित कपड़े और जूते तुरंत उतार दें।"
+        },
+        {
+          "en": "Wash the skin with plenty of clean water and soap for at least 15 minutes.",
+          "te": "కనీసం 15 నిమిషాల పాటు చర్మాన్ని శుభ్రమైన నీరు మరియు సబ్బుతో బాగా కడగండి.",
+          "hi": "कम से कम 15 मिनट तक त्वचा को भरपूर साफ पानी और साबुन से धोएं।"
+        },
+        {
+          "en": "Get medical help and take the pesticide container or label with you.",
+          "te": "వైద్య సహాయం పొందండి మరియు పురుగుమందు డబ్బా లేదా లేబుల్‌ను వెంట తీసుకెళ్లండి.",
+          "hi": "चिकित्सकीय मदद लें और कीटनाशक का डिब्बा या लेबल साथ ले जाएं।"
+        }
+      ]
+    },
+    "eyes": {
+      "id": "eyes",
+      "title": {
+        "en": "In my eyes",
+        "te": "కళ్లలో పడింది",
+        "hi": "आंखों में गिरा"
+      },
+      "subtitle": {
+        "en": "Chemical entered the eyes",
+        "te": "రసాయనం కళ్లలోకి వెళ్లింది",
+        "hi": "रसायन आंखों में चला गया"
+      },
+      "steps": [
+        {
+          "en": "Rinse the eyes gently with clean running water for at least 15 minutes, keeping the eyelids open.",
+          "te": "కనురెప్పలను తెరిచి ఉంచి, కనీసం 15 నిమిషాల పాటు శుభ్రమైన ప్రవహించే నీటితో కళ్లను నెమ్మదిగా కడగండి.",
+          "hi": "पलकों को खुला रखकर कम से कम 15 मिनट तक साफ बहते पानी से आंखों को धीरे-धीरे धोएं।"
+        },
+        {
+          "en": "Remove contact lenses if it is easy to do.",
+          "te": "కాంటాక్ట్ లెన్సులు ఉంటే సులభంగా తీయగలిగితే తీసివేయండి.",
+          "hi": "यदि आसानी से संभव हो तो कॉन्टैक्ट लेंस हटा दें।"
+        },
+        {
+          "en": "Do not rub the eyes.",
+          "te": "కళ్లను ఎట్టిపరిస్థితుల్లోనూ రుద్దవద్దు.",
+          "hi": "आंखों को बिल्कुल न रगड़ें।"
+        },
+        {
+          "en": "Get medical help immediately.",
+          "te": "వెంటనే అత్యవసర వైద్య సహాయం పొందండి.",
+          "hi": "तुरंत चिकित्सकीय मदद प्राप्त करें।"
+        }
+      ]
+    },
+    "breathed": {
+      "id": "breathed",
+      "title": {
+        "en": "Breathed it in",
+        "te": "పీల్చడం జరిగింది",
+        "hi": "सांस में चला गया"
+      },
+      "subtitle": {
+        "en": "Inhaled spray fumes or chemical powder",
+        "te": "రసాయన పొగ లేదా పౌడర్ శ్వాస ద్వారా లోపలికి వెళ్లింది",
+        "hi": "छिड़काव का धुआं या पाउडर सांस में चला गया"
+      },
+      "steps": [
+        {
+          "en": "Move to fresh air immediately.",
+          "te": "వెంటనే స్వచ్ఛమైన గాలి ఉన్న ప్రదేశానికి వెళ్లండి.",
+          "hi": "तुरंत खुली और ताजी हवा में जाएं।"
+        },
+        {
+          "en": "Loosen tight clothing.",
+          "te": "బిగుతుగా ఉన్న దుస్తులను వదులు చేయండి.",
+          "hi": "तंग कपड़ों को ढीला करें।"
+        },
+        {
+          "en": "If there is difficulty breathing, dizziness, vomiting or confusion, get medical help immediately.",
+          "te": "శ్వాస తీసుకోవడంలో ఇబ్బంది, తలతిరగడం, వాంతులు లేదా అయోమయం ఉంటే వెంటనే వైద్య సహాయం పొందండి.",
+          "hi": "सांस लेने में कठिनाई, चक्कर, उल्टी या घबराहट होने पर तुरंत डॉक्टर के पास जाएं।"
+        },
+        {
+          "en": "If the person is not breathing, call 112 right away.",
+          "te": "బాధితుడు శ్వాస తీసుకోకపోతే, వెంటనే 112 కి కాల్ చేయండి.",
+          "hi": "यदि व्यक्ति सांस नहीं ले रहा है, तो तुरंत 112 पर कॉल करें।"
+        }
+      ]
+    },
+    "swallowed": {
+      "id": "swallowed",
+      "title": {
+        "en": "Swallowed it",
+        "te": "మింగడం జరిగింది",
+        "hi": "निगल लिया"
+      },
+      "subtitle": {
+        "en": "Accidental swallowing of pesticide",
+        "te": "రసాయనం నోట్లోకి వెళ్లి మింగడం జరిగింది",
+        "hi": "गलती से कीटनाशक निगल लिया"
+      },
+      "steps": [
+        {
+          "en": "Call 112 or the poison helpline right away.",
+          "te": "వెంటనే 112 లేదా పాయిజన్ హెల్ప్‌లైన్‌కు కాల్ చేయండి.",
+          "hi": "तुरंत 112 या विष नियंत्रण हेल्पलाइन पर कॉल करें।"
+        },
+        {
+          "en": "Do NOT make the person vomit.",
+          "te": "బాధితుడితో బలవంతంగా వాంతి చేయించవద్దు.",
+          "hi": "व्यक्ति को उल्टी कराने का प्रयास बिल्कुल न करें।"
+        },
+        {
+          "en": "Do not give food, milk or drink unless medical staff tell you.",
+          "te": "వైద్యులు సూచించే వరకు ఆహారం, పాలు లేదా నీరు ఇవ్వవద్దు.",
+          "hi": "डॉक्टर के कहे बिना कोई भोजन, दूध या पानी न दें।"
+        },
+        {
+          "en": "If the person is drowsy, lay them on their side.",
+          "te": "బాధితుడు మత్తుగా లేదా స్పృహ తప్పుతున్నట్లు ఉంటే, వారిని ఒక పక్కకు ఒరిగేలా పడుకోబెట్టండి.",
+          "hi": "यदि व्यक्ति बेहोश या सुस्त हो रहा हो, तो उसे करवट के बल लिटाएं।"
+        },
+        {
+          "en": "Go to the hospital at once and take the container or label.",
+          "te": "వెంటనే ఆసుపత్రికి వెళ్లండి మరియు పురుగుమందు డబ్బా లేదా లేబుల్‌ను తీసుకెళ్లండి.",
+          "hi": "तुरंत अस्पताल जाएं और कीटनाशक का डिब्बा या लेबल साथ ले जाएं।"
+        }
+      ]
+    }
+  }
+}

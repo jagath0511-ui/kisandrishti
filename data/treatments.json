@@ -1,0 +1,559 @@
+[
+  {
+    "key": "paddy_blast",
+    "crop": "paddy",
+    "type": "fungal",
+    "name": {
+      "en": "Paddy Blast",
+      "te": "వరి అగ్గితెగులు",
+      "hi": "धान का झुलसा रोग (ब्लास्ट)"
+    },
+    "symptoms": {
+      "en": "Spindle-shaped diamond lesions on leaves with grey centers and brown margins; nodal and neck rot.",
+      "te": "ఆకులపై నూలు కండె ఆకారపు మచ్చలు బూడిద రంగు కేంద్రం, గోధుమ రంగు అంచులతో కనిపిస్తాయి; మెడ విరుపు.",
+      "hi": "पत्तियों पर आंख या नाव के आकार के धब्बे जिनका केंद्र धूसर और किनारे भूरे होते हैं; गर्दन का सड़ना।"
+    },
+    "stage1_organic": [
+      {
+        "en": "Spray Pseudomonas fluorescens @ 10g/L or Trichoderma viride on affected foliage.",
+        "te": "సూడోమోనాస్ ఫ్లోరోసెన్స్ 10 గ్రాములు లీటరు నీటికి లేదా ట్రైకోడెర్మా విరిడే పిచికారీ చేయండి.",
+        "hi": "स्यूडोमोनास फ्लोरोसेंस 10 ग्राम प्रति लीटर या ट्राइकोडर्मा विरिडी का छिड़काव करें।"
+      },
+      {
+        "en": "Avoid excessive nitrogen (urea) fertilizer application; split fertilizer into smaller doses.",
+        "te": "యూరియా ఎరువును అధికంగా వాడవద్దు; తక్కువ మోతాదుల్లో విడతల వారీగా వేయండి.",
+        "hi": "अधिक यूरिया (नाइट्रोजन) के प्रयोग से बचें; संतुलित खाद दें।"
+      },
+      {
+        "en": "Maintain proper water drainage and remove infected weed hosts around bunds.",
+        "te": "గట్ల వెంబడి కలుపు మొక్కలను తొలగించి, పొలంలో సరైన నీటి యాజమాన్యం పాటించండి.",
+        "hi": "खेत और मेड़ों से खरपतवार हटाएं तथा उचित जल निकासी रखें।"
+      }
+    ],
+    "stage2_chemical": [
+      {
+        "chemical_name": "TODO_VERIFY",
+        "dose_per_litre": "TODO_VERIFY",
+        "pre_harvest_interval_days": null,
+        "toxicity_class": "TODO_VERIFY",
+        "ppe": ["gloves", "face mask", "full-sleeve clothes"],
+        "source_url": "",
+        "source_note": "",
+        "verified": false
+      }
+    ]
+  },
+  {
+    "key": "paddy_brown_spot",
+    "crop": "paddy",
+    "type": "fungal",
+    "name": {
+      "en": "Paddy Brown Spot",
+      "te": "వరి గోధుమ రంగు మచ్చ తెగులు",
+      "hi": "धान का भूरा धब्बा रोग"
+    },
+    "symptoms": {
+      "en": "Small circular to oval dark brown spots on leaves with yellowish halos; poor grain filling.",
+      "te": "ఆకులపై చిన్న గుండ్రని ముదురు గోధుమ రంగు మచ్చలు పసుపు రంగు వలయాలతో ఉంటాయి.",
+      "hi": "पत्तियों पर छोटे गोल से अंडाकार भूरे धब्बे जिनके चारों ओर पीला घेरा होता है।"
+    },
+    "stage1_organic": [
+      {
+        "en": "Apply neem cake to soil and spray 5% neem seed kernel extract (NSKE).",
+        "te": "నేలలో వేపపిండి వేసి, 5% వేప గింజల కషాయం (NSKE) పిచికారీ చేయండి.",
+        "hi": "खेत में नीम की खली डालें और 5% नीम के बीज के अर्क (NSKE) का छिड़काव करें।"
+      },
+      {
+        "en": "Ensure balanced fertilization including potassium and zinc to boost plant immunity.",
+        "te": "పొటాష్ మరియు జింక్ ఎరువులను సమతుల్యంగా వేసి మొక్క రోగనిరోధక శక్తిని పెంచండి.",
+        "hi": "पोटाश और जिंक युक्त संतुलित पोषक तत्वों का प्रयोग करें।"
+      }
+    ],
+    "stage2_chemical": [
+      {
+        "chemical_name": "TODO_VERIFY",
+        "dose_per_litre": "TODO_VERIFY",
+        "pre_harvest_interval_days": null,
+        "toxicity_class": "TODO_VERIFY",
+        "ppe": ["gloves", "face mask", "full-sleeve clothes"],
+        "source_url": "",
+        "source_note": "",
+        "verified": false
+      }
+    ]
+  },
+  {
+    "key": "paddy_sheath_blight",
+    "crop": "paddy",
+    "type": "fungal",
+    "name": {
+      "en": "Paddy Sheath Blight",
+      "te": "వరి పొడ తెగులు (షీత్ బ్లైట్)",
+      "hi": "धान का शीथ ब्लाइट रोग"
+    },
+    "symptoms": {
+      "en": "Greenish-grey oval lesions on leaf sheaths near the waterline, spreading upwards with brown borders.",
+      "te": "నీటి మట్టం వద్ద ఆకు తొడుగులపై బూడిద రంగు మచ్చలు ఏర్పడి గోధుమ రంగు అంచులతో పైకి విస్తరిస్తాయి.",
+      "hi": "पानी की सतह के पास तने और पत्तियों के खोल पर धूसर-हरे धब्बे जो बाद में भूरे हो जाते हैं।"
+    },
+    "stage1_organic": [
+      {
+        "en": "Spray Trichoderma harzianum or Pseudomonas fluorescens on lower canopy and stem bases.",
+        "te": "మొక్కల మొదళ్ల వద్ద మరియు కింది భాగంలో ట్రైకోడెర్మా లేదా సూడోమోనాస్ పిచికారీ చేయండి.",
+        "hi": "पौधों के निचले हिस्से और तनों पर ट्राइकोडर्मा या स्यूडोमोनास का छिड़काव करें।"
+      },
+      {
+        "en": "Reduce excessive planting density and avoid prolonged stagnant water in the field.",
+        "te": "పైరులో గాలి వెలుతురు ప్రసరించేలా చేసి, పొలంలో ఎక్కువ రోజులు నిల్వ నీరు ఉంచవద్దు.",
+        "hi": "खेत में जलजमाव न होने दें और पौधों के बीच हवा का आवागमन बनाए रखें।"
+      }
+    ],
+    "stage2_chemical": [
+      {
+        "chemical_name": "TODO_VERIFY",
+        "dose_per_litre": "TODO_VERIFY",
+        "pre_harvest_interval_days": null,
+        "toxicity_class": "TODO_VERIFY",
+        "ppe": ["gloves", "face mask", "full-sleeve clothes"],
+        "source_url": "",
+        "source_note": "",
+        "verified": false
+      }
+    ]
+  },
+  {
+    "key": "paddy_bacterial_leaf_blight",
+    "crop": "paddy",
+    "type": "bacterial",
+    "name": {
+      "en": "Paddy Bacterial Leaf Blight",
+      "te": "వరి బ్యాక్టీరియా ఆకు ఎండు తెగులు",
+      "hi": "धान का जीवाणु पत्ती झुलसा"
+    },
+    "symptoms": {
+      "en": "Water-soaked stripes on leaf margins turning wavy yellow and white, drying from tip downwards.",
+      "te": "ఆకుల అంచుల నుండి నీటి చారికలు మొదలై పసుపు-తెలుపు రంగులోకి మారి పైనుండి కిందికి ఎండిపోతాయి.",
+      "hi": "पत्तियों के किनारों से पानी जैसे पीले-सफेद लहरदार धब्बे शुरू होकर पूरी पत्ती को सुखा देते हैं।"
+    },
+    "stage1_organic": [
+      {
+        "en": "Spray fresh cow dung slurry supernatant (20%) or fresh neem leaf extract on foliage.",
+        "te": "తాజా ఆవుపేడ తేట నీరు (20%) లేదా వేపాకు కషాయాన్ని పిచికారీ చేయండి.",
+        "hi": "20% ताजे गोबर के घोल का निथरा हुआ पानी या नीम पत्ती अर्क का छिड़काव करें।"
+      },
+      {
+        "en": "Drain field water completely for 3 to 4 days and temporarily stop top-dressing urea.",
+        "te": "పొలంలోని నీటిని 3-4 రోజులు తీసివేసి, తాత్కాలికంగా యూరియా వేయడం ఆపండి.",
+        "hi": "खेत से 3-4 दिनों के लिए पानी निकाल दें और यूरिया का छिड़काव रोक दें।"
+      }
+    ],
+    "stage2_chemical": [
+      {
+        "chemical_name": "TODO_VERIFY",
+        "dose_per_litre": "TODO_VERIFY",
+        "pre_harvest_interval_days": null,
+        "toxicity_class": "TODO_VERIFY",
+        "ppe": ["gloves", "face mask", "full-sleeve clothes"],
+        "source_url": "",
+        "source_note": "",
+        "verified": false
+      }
+    ]
+  },
+  {
+    "key": "paddy_healthy",
+    "crop": "paddy",
+    "type": "healthy",
+    "name": {
+      "en": "Healthy Paddy Crop",
+      "te": "ఆరోగ్యకరమైన వరి పైరు",
+      "hi": "स्वस्थ धान की फसल"
+    },
+    "symptoms": {
+      "en": "Vibrant green upright leaves, vigorous tillering, and healthy root development with no lesions.",
+      "te": "ఆకుపచ్చని దృఢమైన ఆకులు, ఆరోగ్యకరమైన పిలకలు, ఎటువంటి తెగులు మచ్చలు లేవు.",
+      "hi": "चमकदार हरी पत्तियां, मजबूत कल्ले और बिना किसी बीमारी के स्वस्थ पौधे।"
+    },
+    "stage1_organic": [
+      {
+        "en": "Continue alternate wetting and drying (AWD) water management and regular crop scouting.",
+        "te": "ఆరుతడి నీటి యాజమాన్యం మరియు క్రమంతప్పకుండా పైరు పరిశీలన కొనసాగించండి.",
+        "hi": "समय पर सिंचाई करें और नियमित रूप से फसल की निगरानी बनाए रखें।"
+      },
+      {
+        "en": "Apply balanced organic compost to maintain root health and beneficial soil microbes.",
+        "te": "నేలలో పోషకాల కోసం సేంద్రీయ ఎరువులను తగినంతగా అందించండి.",
+        "hi": "पौधों के पोषण के लिए जैविक खाद का संतुलित उपयोग जारी रखें।"
+      }
+    ],
+    "stage2_chemical": []
+  },
+  {
+    "key": "chilli_anthracnose",
+    "crop": "chilli",
+    "type": "fungal",
+    "name": {
+      "en": "Chilli Anthracnose (Die-back / Fruit Rot)",
+      "te": "మిరప కాయకుళ్లు / కొమ్మ ఎండు తెగులు",
+      "hi": "मिर्च का एन्थ्रेक्नोज़ (फल सड़न व टहनी सूखना)"
+    },
+    "symptoms": {
+      "en": "Sunken circular spots on fruits with concentric black rings; twigs dry from top downwards.",
+      "te": "కాయలపై గుండ్రటి నల్లటి వలయాలతో కూడిన గుంట మచ్చలు; పైనుండి కొమ్మలు ఎండిపోవడం.",
+      "hi": "फलों पर काले छल्लों वाले धंसे हुए धब्बे; टहनियों का ऊपर से नीचे की ओर सूखना।"
+    },
+    "stage1_organic": [
+      {
+        "en": "Pick and destroy all infected fruits and dried twigs away from the field.",
+        "te": "తెగులు సోకిన మిరప కాయలు మరియు ఎండిన కొమ్మలను తీసివేసి నాశనం చేయండి.",
+        "hi": "संक्रमित फलों और सूखी टहनियों को तोड़कर खेत से दूर नष्ट कर दें।"
+      },
+      {
+        "en": "Spray Trichoderma viride or 5% neem seed kernel extract (NSKE) at flowering stage.",
+        "te": "ట్రైకోడెర్మా విరిడే లేదా 5% వేప గింజల కషాయాన్ని పూత దశలో పిచికారీ చేయండి.",
+        "hi": "फूल आने के समय ट्राइकोडर्मा विरिडी या 5% नीम बीज अर्क (NSKE) का छिड़काव करें।"
+      }
+    ],
+    "stage2_chemical": [
+      {
+        "chemical_name": "TODO_VERIFY",
+        "dose_per_litre": "TODO_VERIFY",
+        "pre_harvest_interval_days": null,
+        "toxicity_class": "TODO_VERIFY",
+        "ppe": ["gloves", "face mask", "full-sleeve clothes"],
+        "source_url": "",
+        "source_note": "",
+        "verified": false
+      }
+    ]
+  },
+  {
+    "key": "chilli_powdery_mildew",
+    "crop": "chilli",
+    "type": "fungal",
+    "name": {
+      "en": "Chilli Powdery Mildew",
+      "te": "మిరప బూడిద తెగులు",
+      "hi": "मिर्च का चूर्णिल आसिता (पाउडरी मिल्ड्यू)"
+    },
+    "symptoms": {
+      "en": "White powdery fungal patches on the undersides of leaves, causing yellowing and premature leaf drop.",
+      "te": "ఆకుల అడుగు భాగంలో తెల్లటి బూడిద వంటి పొర ఏర్పడి, ఆకులు పసుపు రంగులోకి మారి రాలిపోతాయి.",
+      "hi": "पत्तियों की निचली सतह पर सफेद चूर्ण की परत, पत्तियां पीली होकर गिरने लगती हैं।"
+    },
+    "stage1_organic": [
+      {
+        "en": "Spray dilute milk-water solution (1:9 ratio) or bio-sulphur in the early morning.",
+        "te": "పాల-నీళ్ల మిశ్రమం (1:9 నిష్పత్తి) లేదా సేంద్రీయ గంధకం పిచికారీ చేయండి.",
+        "hi": "सुबह के समय दूध और पानी का हल्का घोल (1:9) या सल्फर चूर्ण का छिड़काव करें।"
+      },
+      {
+        "en": "Ensure adequate spacing between plants to enhance ventilation and sunlight penetration.",
+        "te": "మొక్కల మధ్య సరైన దూరం ఉంచి గాలి మరియు సూర్యరశ్మి బాగా తగిలేలా చూడండి.",
+        "hi": "पौधों के बीच पर्याप्त दूरी रखें ताकि धूप और हवा ठीक से लगे।"
+      }
+    ],
+    "stage2_chemical": [
+      {
+        "chemical_name": "TODO_VERIFY",
+        "dose_per_litre": "TODO_VERIFY",
+        "pre_harvest_interval_days": null,
+        "toxicity_class": "TODO_VERIFY",
+        "ppe": ["gloves", "face mask", "full-sleeve clothes"],
+        "source_url": "",
+        "source_note": "",
+        "verified": false
+      }
+    ]
+  },
+  {
+    "key": "chilli_leaf_curl",
+    "crop": "chilli",
+    "type": "viral",
+    "name": {
+      "en": "Chilli Leaf Curl Virus",
+      "te": "మిరప ఆకు ముడత తెగులు",
+      "hi": "मिर्च का पर्ण कुंचन रोग (पत्ती मरोड़)"
+    },
+    "symptoms": {
+      "en": "Severe upward or downward curling of leaves, stunted plant growth, puckering and thickened veins.",
+      "te": "ఆకులు పైకి లేదా కిందికి ముడుచుకుపోవడం, మొక్క ఎదుగుదల లోపించడం, ఈనెలు లావుగా మారడం.",
+      "hi": "पत्तियों का ऊपर या नीचे की ओर मुड़ना, पौधे का बौना रह जाना और पत्तियों का सिकुड़ना।"
+    },
+    "stage1_organic": [
+      {
+        "en": "Uproot and bury severely infected plants immediately away from the field.",
+        "te": "తీవ్రంగా ముడత సోకిన మొక్కలను పీకి పొలానికి దూరంగా పాతిపెట్టండి.",
+        "hi": "गंभीर रूप से ग्रसित पौधों को उखाड़कर तुरंत खेत से दूर जमीन में दबा दें।"
+      },
+      {
+        "en": "Install yellow and blue sticky traps (15-20 per acre) and spray 5ml/L neem oil against vector insects.",
+        "te": "ఎకరాకు 15-20 పసుపు, నీలి జిగురు అట్టలు అమర్చి, తెల్లదోమ నివారణకు వేపనూనె (5 మి.లీ/లీ) పిచికారీ చేయండి.",
+        "hi": "सफेद मक्खी और कीटों को रोकने के लिए पीले व नीले चिपचिपे कार्ड लगाएं और नीम तेल (5 मिली/ली) छिड़कें।"
+      }
+    ],
+    "stage2_chemical": [
+      {
+        "chemical_name": "TODO_VERIFY",
+        "dose_per_litre": "TODO_VERIFY",
+        "pre_harvest_interval_days": null,
+        "toxicity_class": "TODO_VERIFY",
+        "ppe": ["gloves", "face mask", "full-sleeve clothes"],
+        "source_url": "",
+        "source_note": "",
+        "verified": false
+      }
+    ]
+  },
+  {
+    "key": "chilli_cercospora_leaf_spot",
+    "crop": "chilli",
+    "type": "fungal",
+    "name": {
+      "en": "Chilli Cercospora Leaf Spot",
+      "te": "మిరప సర్కోస్పోరా ఆకుమచ్చ తెగులు",
+      "hi": "मिर्च का सर्कोस्पोरा पत्ती धब्बा"
+    },
+    "symptoms": {
+      "en": "Circular frog-eye spots on leaves with bleached white centers and dark reddish-brown margins.",
+      "te": "ఆకులపై కప్ప కన్ను ఆకారంలో తెల్లటి కేంద్రం, ఎర్రటి-గోధుమ అంచులతో కూడిన మచ్చలు.",
+      "hi": "पत्तियों पर मेंढक की आंख जैसे गोल धब्बे जिनका केंद्र सफेद और किनारे लाल-भूरे होते हैं।"
+    },
+    "stage1_organic": [
+      {
+        "en": "Collect and destroy fallen infected leaves from around the plant basin.",
+        "te": "రాలిపడిన తెగులు సోకిన ఆకులను సేకరించి దూరంగా నాశనం చేయండి.",
+        "hi": "गिरे हुए बीमार पत्तों को इकट्ठा करके खेत से बाहर नष्ट करें।"
+      },
+      {
+        "en": "Spray bio-fungicide Trichoderma viride or sour buttermilk solution (50ml/L).",
+        "te": "ట్రైకోడెర్మా లేదా పులిసిన మజ్జిగ ద్రావణం (50 మి.లీ/లీటరు) పిచికారీ చేయండి.",
+        "hi": "ट्राइकोडर्मा विरिडी या खट्टी छाछ के घोल (50 मिली/लीटर) का छिड़काव करें।"
+      }
+    ],
+    "stage2_chemical": [
+      {
+        "chemical_name": "TODO_VERIFY",
+        "dose_per_litre": "TODO_VERIFY",
+        "pre_harvest_interval_days": null,
+        "toxicity_class": "TODO_VERIFY",
+        "ppe": ["gloves", "face mask", "full-sleeve clothes"],
+        "source_url": "",
+        "source_note": "",
+        "verified": false
+      }
+    ]
+  },
+  {
+    "key": "chilli_healthy",
+    "crop": "chilli",
+    "type": "healthy",
+    "name": {
+      "en": "Healthy Chilli Plant",
+      "te": "ఆరోగ్యకరమైన మిరప మొక్క",
+      "hi": "स्वस्थ मिर्च का पौधा"
+    },
+    "symptoms": {
+      "en": "Dark green broad flat leaves, sturdy stem branches, healthy white blossoms, and firm fruits.",
+      "te": "ఆకుపచ్చని వెడల్పాటి ఆకులు, దృఢమైన కొమ్మలు, తెల్లటి ఆరోగ్యకరమైన పువ్వులు మరియు కాయలు.",
+      "hi": "गहरी हरी पत्तियां, मजबूत तना, स्वस्थ सफेद फूल और चमकदार मिर्च।"
+    },
+    "stage1_organic": [
+      {
+        "en": "Maintain balanced irrigation avoiding water stagnation in the root zone.",
+        "te": "వేరు భాగంలో నీరు నిల్వ ఉండకుండా సమతుల్యంగా తడులు ఇవ్వండి.",
+        "hi": "जड़ों के पास जलभराव से बचें और संतुलित सिंचाई करें।"
+      },
+      {
+        "en": "Apply organic mulch around ridges to conserve moisture and suppress weeds.",
+        "te": "తేమ కాపాడటానికి మరియు కలుపు నివారణకు సేంద్రీయ ఆచ్ఛాదన (మల్చింగ్) చేయండి.",
+        "hi": "नमी बनाए रखने और खरपतवार रोकने के लिए जैविक मल्चिंग का प्रयोग करें।"
+      }
+    ],
+    "stage2_chemical": []
+  },
+  {
+    "key": "tomato_early_blight",
+    "crop": "tomato",
+    "type": "fungal",
+    "name": {
+      "en": "Tomato Early Blight",
+      "te": "టమాటా ముందస్తు తెగులు (ఆల్టర్నేరియా ఆకుమచ్చ)",
+      "hi": "टमाटर का अगेती झुलसा (अल्टरनेरिया)"
+    },
+    "symptoms": {
+      "en": "Dark brown target-like concentric rings on older lower leaves, causing yellowing and drying.",
+      "te": "కింది ముదురు ఆకులపై వలయాకారపు నల్లటి మచ్చలు (టార్గెట్ బోర్డు వలె) ఏర్పడి ఆకులు ఎండిపోతాయి.",
+      "hi": "निचली पुरानी पत्तियों पर गहरे भूरे गोल छल्ले (टारगेट बोर्ड जैसे) और पत्तियों का पीला पड़ना।"
+    },
+    "stage1_organic": [
+      {
+        "en": "Prune lower leaves touching the soil surface and stake plants upright.",
+        "te": "నేలను తాకే కింది ఆకులను కత్తిరించి, మొక్కలకు కర్రల ఊతం ఇవ్వండి.",
+        "hi": "जमीन से छूने वाली निचली पत्तियों को काट दें और पौधों को सहारा देकर सीधा रखें।"
+      },
+      {
+        "en": "Spray 5% neem seed kernel extract (NSKE) or bio-fungicide Trichoderma harzianum.",
+        "te": "5% వేప గింజల కషాయం లేదా ట్రైకోడెర్మా హార్జియానమ్ పిచికారీ చేయండి.",
+        "hi": "5% नीम के बीज का अर्क या ट्राइकोडर्मा हरजिएनम का छिड़काव करें।"
+      }
+    ],
+    "stage2_chemical": [
+      {
+        "chemical_name": "TODO_VERIFY",
+        "dose_per_litre": "TODO_VERIFY",
+        "pre_harvest_interval_days": null,
+        "toxicity_class": "TODO_VERIFY",
+        "ppe": ["gloves", "face mask", "full-sleeve clothes"],
+        "source_url": "",
+        "source_note": "",
+        "verified": false
+      }
+    ]
+  },
+  {
+    "key": "tomato_late_blight",
+    "crop": "tomato",
+    "type": "fungal",
+    "name": {
+      "en": "Tomato Late Blight",
+      "te": "టమాటా చివరి దశ ఎండు తెగులు (లేట్ బ్లైట్)",
+      "hi": "टमाटर का पछेती झुलसा (लेट ब्लाइट)"
+    },
+    "symptoms": {
+      "en": "Large irregular water-soaked greasy brown lesions on leaves and stems with white mold underneath in humid cool weather.",
+      "te": "ఆకులు, కాండంపై పెద్ద ముదురు తడి మచ్చలు మరియు చల్లటి తేమ వాతావరణంలో అడుగున తెల్లటి బూజు.",
+      "hi": "पत्तियों और तनों पर बड़े अनियमित पानी जैसे गहरे भूरे धब्बे तथा निचली तरफ सफेद फफूंद।"
+    },
+    "stage1_organic": [
+      {
+        "en": "Avoid overhead sprinkler irrigation; water only at root bases to keep foliage dry.",
+        "te": "పైనుండి నీరు చిమ్మే పద్ధతి మానుకొని, మొక్కల మొదళ్ల వద్ద మాత్రమే నీరు అందించండి.",
+        "hi": "पत्तियों को गीला करने से बचें और केवल जड़ों के पास पानी दें।"
+      },
+      {
+        "en": "Remove severely infected plants and spray copper-based bio-mixes or Pseudomonas fluorescens.",
+        "te": "బాగా తెగులు సోకిన భాగాలను తొలగించి, సూడోమోనాస్ లేదా సేంద్రీయ రక్షణ ద్రావణాలు పిచికారీ చేయండి.",
+        "hi": "संक्रमित पौधों को हटा दें और स्यूडोमोनास फ्लोरोसेंस का छिड़काव करें।"
+      }
+    ],
+    "stage2_chemical": [
+      {
+        "chemical_name": "TODO_VERIFY",
+        "dose_per_litre": "TODO_VERIFY",
+        "pre_harvest_interval_days": null,
+        "toxicity_class": "TODO_VERIFY",
+        "ppe": ["gloves", "face mask", "full-sleeve clothes"],
+        "source_url": "",
+        "source_note": "",
+        "verified": false
+      }
+    ]
+  },
+  {
+    "key": "tomato_leaf_curl_virus",
+    "crop": "tomato",
+    "type": "viral",
+    "name": {
+      "en": "Tomato Leaf Curl Virus",
+      "te": "టమాటా ఆకు ముడత వైరస్ తెగులు",
+      "hi": "टमाटर का पर्ण कुंचन वायरस (पत्ती मुड़ना)"
+    },
+    "symptoms": {
+      "en": "Upward leaf curling, thick leathery puckered leaves, severe yellowing and bushy stunted growth.",
+      "te": "ఆకులు పైకి ముడుచుకుపోవడం, తోలు వలె మందంగా మారడం, తీవ్రమైన పసుపు రంగు మరియు మొక్క ఎదుగుదల ఆగడం.",
+      "hi": "पत्तियों का ऊपर मुड़ना, मोटी व सिकुड़ी होना और पौधे की रुकी हुई झाड़ीदार बढ़वार।"
+    },
+    "stage1_organic": [
+      {
+        "en": "Rogue out and destroy infected stunted plants early in the morning.",
+        "te": "వైరస్ సోకిన మొక్కలను ప్రారంభంలోనే పీకి దూరంగా నాశనం చేయండి.",
+        "hi": "शुरुआती अवस्था में ही ग्रसित पौधों को उखाड़कर नष्ट करें।"
+      },
+      {
+        "en": "Set up yellow sticky traps to capture whiteflies and spray neem oil (3-5 ml/L).",
+        "te": "తెల్లదోమలను అరికట్టడానికి పసుపు రంగు జిగురు అట్టలు అమర్చి, వేప నూనె (3-5 మి.లీ/లీ) పిచికారీ చేయండి.",
+        "hi": "सफेद मक्खी को नियंत्रित करने के लिए पीले चिपचिपे कार्ड लगाएं और नीम तेल छिड़कें।"
+      }
+    ],
+    "stage2_chemical": [
+      {
+        "chemical_name": "TODO_VERIFY",
+        "dose_per_litre": "TODO_VERIFY",
+        "pre_harvest_interval_days": null,
+        "toxicity_class": "TODO_VERIFY",
+        "ppe": ["gloves", "face mask", "full-sleeve clothes"],
+        "source_url": "",
+        "source_note": "",
+        "verified": false
+      }
+    ]
+  },
+  {
+    "key": "tomato_septoria_leaf_spot",
+    "crop": "tomato",
+    "type": "fungal",
+    "name": {
+      "en": "Tomato Septoria Leaf Spot",
+      "te": "టమాటా సెప్టోరియా ఆకుమచ్చ తెగులు",
+      "hi": "टमाटर का सेप्टोरिया पत्ती धब्बा"
+    },
+    "symptoms": {
+      "en": "Numerous small circular spots with grey centers and dark brown margins with tiny black specks on lower leaves.",
+      "te": "ఆకులపై బూడిద కేంద్రం మరియు ముదురు గోధుమ అంచులతో కూడిన అనేక చిన్న గుండ్రని మచ్చలు.",
+      "hi": "निचली पत्तियों पर छोटे गोलाकार धब्बे जिनका केंद्र धूसर और किनारे गहरे भूरे होते हैं।"
+    },
+    "stage1_organic": [
+      {
+        "en": "Strip off affected lower leaves and practice strict crop rotation without solanaceous crops.",
+        "te": "తెగులు సోకిన కింది ఆకులను తుంచివేసి, పంట మార్పిడి విధానాన్ని పాటించండి.",
+        "hi": "संक्रमित निचली पत्तियों को तोड़ दें और फसल चक्र अपनाएं।"
+      },
+      {
+        "en": "Apply straw mulch around plants to prevent soil splash onto lower foliage during rain.",
+        "te": "వర్షపు నీటి తుంపర్లు నేల నుండి ఆకులపై పడకుండా మొక్కల చుట్టూ గడ్డితో మల్చింగ్ చేయండి.",
+        "hi": "बारिश में मिट्टी के छींटे पत्तियों पर न पड़ें, इसके लिए पुआल की मल्चिंग करें।"
+      }
+    ],
+    "stage2_chemical": [
+      {
+        "chemical_name": "TODO_VERIFY",
+        "dose_per_litre": "TODO_VERIFY",
+        "pre_harvest_interval_days": null,
+        "toxicity_class": "TODO_VERIFY",
+        "ppe": ["gloves", "face mask", "full-sleeve clothes"],
+        "source_url": "",
+        "source_note": "",
+        "verified": false
+      }
+    ]
+  },
+  {
+    "key": "tomato_healthy",
+    "crop": "tomato",
+    "type": "healthy",
+    "name": {
+      "en": "Healthy Tomato Plant",
+      "te": "ఆరోగ్యకరమైన టమాటా మొక్క",
+      "hi": "स्वस्थ टमाटर का पौधा"
+    },
+    "symptoms": {
+      "en": "Lush green robust foliage, strong stems, prolific yellow flower clusters, and clean developing green fruit.",
+      "te": "పచ్చని ఆకులు, బలమైన కాండం, పుష్కలంగా పసుపు పువ్వులు మరియు మచ్చలు లేని పచ్చని కాయలు.",
+      "hi": "घनी हरी पत्तियां, मजबूत तना, स्वस्थ पीले फूल और बिना दाग-धब्बे के फल।"
+    },
+    "stage1_organic": [
+      {
+        "en": "Maintain regular drip irrigation, stake plants upright, and prune suckers cleanly.",
+        "te": "క్రమంతప్పకుండా బిందు సేద్యం అందిస్తూ, మొక్కలను చక్కగా కట్టి ఊతం ఇవ్వండి.",
+        "hi": "नियमित ड्रिप सिंचाई करें और पौधों को सहारा देकर उचित बढ़वार बनाए रखें।"
+      },
+      {
+        "en": "Apply well-decomposed vermicompost and bio-fertilizers around the root zone monthly.",
+        "te": "నెలకు ఒకసారి వేరు భాగం చుట్టూ వర్మీ కంపోస్ట్ మరియు జీవ ఎరువులను అందించండి.",
+        "hi": "हर महीने जड़ों के पास केंचुआ खाद और जैविक खाद डालें।"
+      }
+    ],
+    "stage2_chemical": []
+  }
+]

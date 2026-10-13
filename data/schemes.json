@@ -1,0 +1,62 @@
+[
+  {
+    "id": "pm-kisan",
+    "name": {
+      "en": "PM-KISAN (Pradhan Mantri Kisan Samman Nidhi)",
+      "te": "పీఎం-కిసాన్ (ప్రధానమంత్రి కిసాన్ సమ్మాన్ నిధి)",
+      "hi": "पीएम-किसान (प्रधानमंत्री किसान सम्मान निधि)"
+    },
+    "one_line": {
+      "en": "A central government initiative that provides income support directly to landholding farmer families across India.",
+      "te": "దేశవ్యాప్తంగా భూమి కలిగిన రైతు కుటుంబాలకు నేరుగా ఆర్థిక సహాయం అందించే కేంద్ర ప్రభుత్వ పథకం.",
+      "hi": "देशभर के भूमिधारक किसान परिवारों को सीधे आय सहायता प्रदान करने वाली एक केंद्रीय योजना।"
+    },
+    "official_url": "TODO_VERIFY",
+    "last_checked": "TODO_VERIFY"
+  },
+  {
+    "id": "pmfby",
+    "name": {
+      "en": "PM Fasal Bima Yojana (Crop Insurance)",
+      "te": "పీఎం ఫసల్ బీమా యోజన (పంట బీమా)",
+      "hi": "प्रधानमंत्री फसल बीमा योजना (फसल बीमा)"
+    },
+    "one_line": {
+      "en": "An agricultural insurance scheme that provides financial cover against crop loss caused by natural calamities, pests, and diseases.",
+      "te": "ప్రకృతి వైపరీత్యాలు, తెగుళ్లు మరియు వ్యాధుల వల్ల పంట నష్టపోయినప్పుడు రైతులకు ఆర్థిక రక్షణ కల్పించే బీమా పథకం.",
+      "hi": "प्राकृतिक आपदाओं, कीटों और बीमारियों के कारण फसल नुकसान से वित्तीय सुरक्षा देने वाली कृषि बीमा योजना।"
+    },
+    "official_url": "TODO_VERIFY",
+    "last_checked": "TODO_VERIFY"
+  },
+  {
+    "id": "kcc",
+    "name": {
+      "en": "Kisan Credit Card (KCC)",
+      "te": "కిసాన్ క్రెడిట్ కార్డ్ (కెసిసి)",
+      "hi": "किसान क्रेडिट कार्ड (केसीसी)"
+    },
+    "one_line": {
+      "en": "A credit facility that provides timely and affordable loans to farmers for purchasing seeds, fertilizers, and farm equipment.",
+      "te": "రైతులు విత్తనాలు, ఎరువులు మరియు వ్యవసాయ పరికరాలను కొనుగోలు చేయడానికి సకాలంలో తక్కువ వడ్డీతో రుణాలు అందించే పథకం.",
+      "hi": "किसानों को बीज, खाद और कृषि उपकरण खरीदने के लिए समय पर किफायती ऋण उपलब्ध कराने की सुविधा।"
+    },
+    "official_url": "TODO_VERIFY",
+    "last_checked": "TODO_VERIFY"
+  },
+  {
+    "id": "soil-health-card",
+    "name": {
+      "en": "Soil Health Card Scheme",
+      "te": "సాయిల్ హెల్త్ కార్డ్ పథకం (నేల ఆరోగ్య కార్డు)",
+      "hi": "मृदा स्वास्थ्य कार्ड योजना"
+    },
+    "one_line": {
+      "en": "A government scheme where soil samples from farmer fields are tested in laboratories to provide nutrient status and fertilizer guidance.",
+      "te": "రైతుల పొలాల మట్టి నమూనాలను ప్రయోగశాలల్లో పరీక్షించి, పోషకాల స్థితి మరియు ఎరువుల మోతాదును తెలియజేసే ప్రభుత్వ పథకం.",
+      "hi": "किसानों के खेतों की मिट्टी की प्रयोगशाला जांच करके पोषक तत्वों की स्थिति और उर्वरक मार्गदर्शन देने वाली योजना।"
+    },
+    "official_url": "TODO_VERIFY",
+    "last_checked": "TODO_VERIFY"
+  }
+]

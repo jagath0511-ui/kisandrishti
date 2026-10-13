@@ -1,0 +1,178 @@
+[
+  {
+    "id": "guntur",
+    "name": {
+      "en": "Guntur",
+      "te": "గుంటూరు",
+      "hi": "गुंटूर"
+    },
+    "state": "Andhra Pradesh",
+    "latitude": 16.3067,
+    "longitude": 80.4365
+  },
+  {
+    "id": "krishna",
+    "name": {
+      "en": "Krishna (Vijayawada)",
+      "te": "కృష్ణా (విజయవాడ)",
+      "hi": "कृष्णा (विजयवाड़ा)"
+    },
+    "state": "Andhra Pradesh",
+    "latitude": 16.5062,
+    "longitude": 80.6480
+  },
+  {
+    "id": "east_godavari",
+    "name": {
+      "en": "East Godavari (Rajahmundry)",
+      "te": "తూర్పు గోదావరి (రాజమండ్రి)",
+      "hi": "पूर्वी गोदावरी (राजमुंदरी)"
+    },
+    "state": "Andhra Pradesh",
+    "latitude": 17.0005,
+    "longitude": 81.8040
+  },
+  {
+    "id": "west_godavari",
+    "name": {
+      "en": "West Godavari (Eluru)",
+      "te": "పశ్చిమ గోదావరి (ఏలూరు)",
+      "hi": "पश्चिम गोदावरी (एलुरु)"
+    },
+    "state": "Andhra Pradesh",
+    "latitude": 16.7107,
+    "longitude": 81.0952
+  },
+  {
+    "id": "visakhapatnam",
+    "name": {
+      "en": "Visakhapatnam",
+      "te": "విశాఖపట్నం",
+      "hi": "विशाखापट्टनम"
+    },
+    "state": "Andhra Pradesh",
+    "latitude": 17.6868,
+    "longitude": 83.2185
+  },
+  {
+    "id": "kurnool",
+    "name": {
+      "en": "Kurnool",
+      "te": "కర్నూలు",
+      "hi": "कुरनूल"
+    },
+    "state": "Andhra Pradesh",
+    "latitude": 15.8281,
+    "longitude": 78.0373
+  },
+  {
+    "id": "anantapur",
+    "name": {
+      "en": "Anantapur",
+      "te": "అనంతపురం",
+      "hi": "अनंतपुर"
+    },
+    "state": "Andhra Pradesh",
+    "latitude": 14.6819,
+    "longitude": 77.6006
+  },
+  {
+    "id": "chittoor",
+    "name": {
+      "en": "Chittoor (Tirupati)",
+      "te": "చిత్తూరు (తిరుపతి)",
+      "hi": "चित्तूर (तिरुपति)"
+    },
+    "state": "Andhra Pradesh",
+    "latitude": 13.2172,
+    "longitude": 79.1003
+  },
+  {
+    "id": "prakasam",
+    "name": {
+      "en": "Prakasam (Ongole)",
+      "te": "ప్రకాశం (ఒంగోలు)",
+      "hi": "प्रकाशम (ओंगोल)"
+    },
+    "state": "Andhra Pradesh",
+    "latitude": 15.5057,
+    "longitude": 80.0499
+  },
+  {
+    "id": "warangal",
+    "name": {
+      "en": "Warangal",
+      "te": "వరంగల్",
+      "hi": "वारंगल"
+    },
+    "state": "Telangana",
+    "latitude": 17.9689,
+    "longitude": 79.5941
+  },
+  {
+    "id": "karimnagar",
+    "name": {
+      "en": "Karimnagar",
+      "te": "కరీంనగర్",
+      "hi": "करीमनगर"
+    },
+    "state": "Telangana",
+    "latitude": 18.4386,
+    "longitude": 79.1288
+  },
+  {
+    "id": "khammam",
+    "name": {
+      "en": "Khammam",
+      "te": "ఖమ్మం",
+      "hi": "खम्मम"
+    },
+    "state": "Telangana",
+    "latitude": 17.2473,
+    "longitude": 80.1514
+  },
+  {
+    "id": "nalgonda",
+    "name": {
+      "en": "Nalgonda",
+      "te": "నల్గొండ",
+      "hi": "नलगोंडा"
+    },
+    "state": "Telangana",
+    "latitude": 17.0575,
+    "longitude": 79.2684
+  },
+  {
+    "id": "nizamabad",
+    "name": {
+      "en": "Nizamabad",
+      "te": "నిజామాబాద్",
+      "hi": "निज़ामाबाद"
+    },
+    "state": "Telangana",
+    "latitude": 18.6725,
+    "longitude": 78.0941
+  },
+  {
+    "id": "mahabubnagar",
+    "name": {
+      "en": "Mahabubnagar",
+      "te": "మహబూబ్‌నగర్",
+      "hi": "महबूबनगर"
+    },
+    "state": "Telangana",
+    "latitude": 16.7488,
+    "longitude": 77.9859
+  },
+  {
+    "id": "rangareddy",
+    "name": {
+      "en": "Rangareddy (Hyderabad)",
+      "te": "రంగారెడ్డి (హైదరాబాద్)",
+      "hi": "रंगारेड्डी (हैदराबाद)"
+    },
+    "state": "Telangana",
+    "latitude": 17.3850,
+    "longitude": 78.4867
+  }
+]

@@ -1,0 +1,232 @@
+{
+  "appName": "KisanDrishti",
+  "appSubtitle": "AI Crop & Farm Safety Assistant",
+  "emergency": "Emergency",
+  "emergencyAria": "Go to emergency helpline and safety guidance",
+  "homeTitle": "What would you like to do?",
+  "nav": {
+    "doctor": "Crop Doctor",
+    "soil": "Soil Test",
+    "weather": "Weather",
+    "schemes": "Schemes"
+  },
+  "home": {
+    "doctorTitle": "Crop Doctor",
+    "doctorDesc": "Diagnose sick crops from a photo with organic & verified treatments",
+    "soilTitle": "Soil Test",
+    "soilDesc": "DIY jar test to find soil texture & health",
+    "weatherTitle": "Spray Safety Check",
+    "weatherDesc": "Check rain, wind & heat before spraying chemicals",
+    "schemesTitle": "Government Schemes",
+    "schemesDesc": "Find key agricultural subsidies & official portals"
+  },
+  "speech": {
+    "listen": "Listen",
+    "stop": "Stop",
+    "speedNormal": "Normal speed",
+    "speedSlow": "Slow speed",
+    "voiceUnavailable": "Voice for {lang} is not available on this phone. Please read the text.",
+    "notSupported": "Voice speech is not supported by this browser."
+  },
+  "doctor": {
+    "title": "Crop Doctor",
+    "subtitle": "Take a photo of a sick leaf to diagnose crop problems",
+    "takePhotoButton": "Take Photo",
+    "galleryButton": "Choose from Gallery",
+    "cropSelectorLabel": "Crop (Optional)",
+    "cropAll": "Auto-detect / All Crops",
+    "cropPaddy": "Paddy (Rice)",
+    "cropChilli": "Chilli",
+    "cropTomato": "Tomato",
+    "previewTitle": "Photo Preview",
+    "changePhoto": "Change Photo",
+    "diagnoseButton": "Diagnose Crop",
+    "loading": {
+      "step1": "Looking at your leaf...",
+      "step2": "Checking leaf symptoms...",
+      "step3": "Matching plant health patterns...",
+      "step4": "Preparing verified diagnosis..."
+    },
+    "result": {
+      "title": "Diagnosis Result",
+      "identifiedCrop": "Crop",
+      "problem": "Problem",
+      "type": "Condition Type",
+      "confidence": "Confidence",
+      "affectedArea": "Affected Area",
+      "symptoms": "Visible Symptoms",
+      "reasoning": "Doctor Explanation",
+      "scanAnother": "Scan Another Leaf"
+    },
+    "treatment": {
+      "stage1Title": "Organic & Preventive Steps First",
+      "stage1Subtitle": "Eco-friendly, safe methods to control the problem before considering chemicals.",
+      "stage2Title": "If the problem is not controlled (Chemical Stage)",
+      "stage2Subtitle": "Use only if organic steps are not enough, and preferably after talking to an agriculture officer.",
+      "noVerifiedChemicals": "No verified chemical treatments in database. Ask your agriculture officer or Krishi Vigyan Kendra (KVK).",
+      "dosePerLitre": "Dose per litre",
+      "preHarvestInterval": "Pre-Harvest Interval (Waiting period)",
+      "days": "days",
+      "safetyCardTitle": "Chemical Safety Card",
+      "toxicityClass": "Toxicity Class",
+      "protectiveGear": "Required Protective Gear (PPE)",
+      "labelAuthority": "Read the product label first. The label is the final authority.",
+      "iSprayedToday": "I Sprayed Today",
+      "doNotHarvestBefore": "Do not harvest before",
+      "iTouchedChemical": "I touched this chemical (Emergency Help)",
+      "checkWeather": "Is the weather safe for spraying?",
+      "mySpraysTitle": "My Spray Records",
+      "daysRemaining": "days remaining",
+      "safeToHarvest": "Safe to harvest",
+      "deleteRecord": "Delete",
+      "emptySprays": "No spray records logged yet."
+    },
+    "toxicity": {
+      "extremely_toxic": "Extremely Toxic (Red Triangle)",
+      "highly_toxic": "Highly Toxic (Yellow Triangle)",
+      "moderately_toxic": "Moderately Toxic (Blue Triangle)",
+      "slightly_toxic": "Slightly Toxic (Green Triangle)",
+      "TODO_VERIFY": "Unverified Toxicity"
+    },
+    "types": {
+      "fungal": "Fungal Disease",
+      "bacterial": "Bacterial Disease",
+      "viral": "Viral Disease",
+      "pest": "Pest Attack",
+      "nutrient_deficiency": "Nutrient Deficiency",
+      "environmental": "Weather / Heat Stress",
+      "healthy": "Healthy Crop",
+      "unknown": "Unknown Condition"
+    },
+    "confidenceLevels": {
+      "high": "High Confidence",
+      "medium": "Medium Confidence",
+      "low": "Low Confidence"
+    },
+    "areaRanges": {
+      "none": "None (0%)",
+      "under_10": "Less than 10%",
+      "10_to_30": "10% to 30%",
+      "30_to_60": "30% to 60%",
+      "over_60": "More than 60%",
+      "unknown": "Not determined"
+    },
+    "warnings": {
+      "medium": "Not fully sure, confirm with an expert (Agriculture Officer or KVK).",
+      "low": "Confidence is low. Please take a clearer photo before treating.",
+      "notPlant": "The image does not look like a plant or crop leaf.",
+      "poorQuality": "The photo is too blurry or dark."
+    },
+    "tips": {
+      "title": "How to take a good crop photo",
+      "instruction": "Take a close photo of one leaf in daylight, front and back, no shadow."
+    },
+    "errors": {
+      "network": "No internet connection. Please check your mobile data or Wi-Fi.",
+      "quota": "Diagnosis service is temporarily busy. Please wait 1 minute and try again.",
+      "generic": "Could not complete diagnosis. Please try again with a clear photo.",
+      "retry": "Try Again"
+    }
+  },
+  "disclaimer": "This app gives guidance, not a replacement for an agriculture officer or doctor.",
+  "weather": {
+    "title": "Spray Safety Check",
+    "subtitle": "Check if current weather is safe for spraying crops",
+    "locationPrompt": "We use your location to fetch hyper-local weather data for your field from Open-Meteo.",
+    "useGps": "Use My Current Location",
+    "locating": "Finding your location...",
+    "orPickDistrict": "Or select your district:",
+    "selectDistrictPlaceholder": "-- Choose your district --",
+    "gpsDenied": "Location permission was denied or unavailable. Please pick your district below.",
+    "loading": "Checking weather forecast...",
+    "status": {
+      "GOOD": "Good Time to Spray",
+      "WAIT": "Wait - Unfavorable Weather",
+      "DO_NOT_SPRAY": "Do Not Spray - High Hazard"
+    },
+    "metrics": {
+      "temperature": "Temperature",
+      "humidity": "Humidity",
+      "rainChance": "Rain Chance (Next 6h)",
+      "windSpeed": "Wind Speed"
+    },
+    "reasonsTitle": "Why this recommendation?",
+    "diseaseRiskTitle": "Fungal Disease Warning",
+    "bestHoursTitle": "Best Upcoming Spraying Hours",
+    "noBestHours": "No ideal spraying windows found in the next 48 hours. Please check again later.",
+    "errorTitle": "Weather Service Unavailable",
+    "errorMsg": "Unable to connect to Open-Meteo weather service. Please check your internet connection.",
+    "retry": "Check Again",
+    "changeLocation": "Change Location"
+  },
+  "soil": {
+    "title": "DIY Soil Test",
+    "subtitle": "Jar sedimentation test, texture estimation, and rough pH check",
+    "honestyNotice": "This is an estimate. It does not measure nutrients (NPK). For exact nutrient levels, get a government Soil Health Card lab test.",
+    "tabGuide": "Part A: Guide",
+    "tabMeasure": "Part B: Photo & Measure",
+    "jarTestTitle": "How to Do the Jar Test",
+    "jarStep1": "Fill about one third (1/3) of a straight-sided clear jar with soil (remove stones and debris).",
+    "jarStep2": "Fill nearly full with clean water and add a small spoon of dish soap if available (helps particles separate).",
+    "jarStep3": "Close the lid tightly and shake well for about 3 minutes. Place it on a flat place.",
+    "jarStep4": "Mark or note the settling times:",
+    "sandLayer": "Sand (bottom layer): Settles in about 1 minute.",
+    "siltLayer": "Silt (middle layer): Settles after about 2 hours.",
+    "clayLayer": "Clay (top layer): Settles after 24 hours or more.",
+    "phTestTitle": "Rough Kitchen pH Test",
+    "phDesc": "Two small checks with kitchen items to check if your soil is acidic or alkaline:",
+    "phVinegarTitle": "(a) Vinegar Test (Alkaline Check)",
+    "phVinegarDesc": "Put a little dry soil in a cup and add vinegar. Fizzing suggests lime-rich, likely alkaline soil (pH > 7.5).",
+    "phBakingSodaTitle": "(b) Baking Soda Test (Acidic Check)",
+    "phBakingSodaDesc": "In another cup, make a muddy paste with water and add baking soda. Fizzing suggests acidic soil (pH < 6.5).",
+    "phNeutral": "No fizz in both means roughly neutral soil (pH 6.5 - 7.5), which is ideal for most crops.",
+    "phLabNotice": "This is a rough test. The Soil Health Card lab test is the accurate way.",
+    "takePhoto": "Take Photo of Jar",
+    "choosePhoto": "Choose Photo from Gallery",
+    "helperDrag": "Drag the lines to where each layer ends (Sand, Silt, and Total Soil):",
+    "sandLine": "Top of Sand (Bottom)",
+    "siltLine": "Top of Silt (Middle)",
+    "totalLine": "Top of Whole Soil",
+    "resultTitle": "Soil Texture Result",
+    "sandPct": "Sand",
+    "siltPct": "Silt",
+    "clayPct": "Clay",
+    "tipsTitle": "Farming Tips for this Soil",
+    "triangleTitle": "USDA Soil Texture Triangle",
+    "soilHealthCardTitle": "Need Exact Nutrients (NPK)?",
+    "soilHealthCardDesc": "Get official government laboratory soil testing with customized fertilizer recommendations.",
+    "soilHealthCardLink": "View Soil Health Card Scheme",
+    "retakeJar": "Upload Different Photo"
+  },
+  "schemes": {
+    "title": "Government Schemes",
+    "subtitle": "Key government assistance programs for farmers",
+    "topNotice": "Information may change. Always confirm on the official website or at your agriculture office.",
+    "openOfficial": "Open official website",
+    "askOffice": "Ask your agriculture office",
+    "lastChecked": "Last checked",
+    "verificationPending": "Official website link and date verification pending"
+  },
+  "mixCalculator": {
+    "title": "Mix Calculator",
+    "subtitle": "Calculate chemical quantity per spray tank",
+    "tankSize": "Tank size (Litres):",
+    "custom": "Custom",
+    "amountPerTank": "Amount to add per tank:",
+    "doseRate": "Dose rate:",
+    "labelWarning": "Check the product label before mixing.",
+    "invalidDose": "Dose format could not be parsed automatically. Please check the product label."
+  },
+  "placeholders": {
+    "doctorTitle": "Crop Doctor",
+    "doctorDesc": "Take a photo of your sick crop to diagnose disease and get verified treatments. Feature implementation coming next.",
+    "soilTitle": "Soil Test",
+    "soilDesc": "DIY jar test and USDA texture analysis. Feature implementation coming next.",
+    "weatherTitle": "Spray Safety Check",
+    "weatherDesc": "Weather-based spray safety recommendations from Open-Meteo. Feature implementation coming next.",
+    "schemesTitle": "Government Schemes",
+    "schemesDesc": "Key government assistance schemes for farmers. Feature implementation coming next.",
+    "emergencyTitle": "Emergency First Aid & Helplines",
+    "emergencyDesc": "Immediate static instructions for chemical exposure (Skin, Eyes, Inhalation, Swallowed) and 24/7 helplines. Feature implementation coming next."
+  }
+}

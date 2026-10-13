@@ -1,0 +1,31 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f8fafc;
+  --foreground: #0f172a;
+}
+
+html {
+  font-size: 16px;
+  overflow-x: hidden;
+}
+
+body {
+  font-size: 16px;
+  line-height: 1.5;
+  background-color: var(--background);
+  color: var(--foreground);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* Accessible high-contrast focus outlines for mobile screen readers and keyboard navigation */
+:focus-visible {
+  outline: 3px solid #047857 !important;
+  outline-offset: 2px !important;
+}
+
+/* Guard against tap target collapsing on low-end devices */
+button, a, input, select, textarea {
+  touch-action: manipulation;
+}
