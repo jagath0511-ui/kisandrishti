@@ -1,22 +1,53 @@
 @import "tailwindcss";
 
 :root {
-  --background: #f8fafc;
-  --foreground: #0f172a;
+  --background: #EEF4F1;
+  --foreground: #022c22;
 }
 
 html {
   font-size: 16px;
   overflow-x: hidden;
+  background-color: #EEF4F1;
 }
 
 body {
   font-size: 16px;
   line-height: 1.5;
-  background-color: var(--background);
-  color: var(--foreground);
+  background-color: #EEF4F1;
+  color: #0f172a;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
+}
+
+/* Custom Botanical Design System Tokens & Utilities */
+.card-botanical {
+  background-color: #ffffff;
+  border-radius: 1.5rem; /* rounded-3xl */
+  border: 1px solid rgba(6, 78, 59, 0.10);
+  box-shadow: 0 10px 30px rgba(6, 78, 59, 0.08);
+}
+
+.card-botanical-interactive {
+  background-color: #ffffff;
+  border-radius: 1.5rem; /* rounded-3xl */
+  border: 1px solid rgba(6, 78, 59, 0.10);
+  box-shadow: 0 10px 30px rgba(6, 78, 59, 0.08);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card-botanical-interactive:hover {
+  box-shadow: 0 15px 35px rgba(6, 78, 59, 0.12);
+  border-color: rgba(6, 78, 59, 0.20);
+  transform: translateY(-1px);
+}
+
+.shadow-botanical {
+  box-shadow: 0 10px 30px rgba(6, 78, 59, 0.08);
+}
+
+.shadow-botanical-lg {
+  box-shadow: 0 20px 40px -10px rgba(6, 78, 59, 0.14), 0 8px 16px -4px rgba(6, 78, 59, 0.06);
 }
 
 /* Accessible high-contrast focus outlines for mobile screen readers and keyboard navigation */
@@ -29,3 +60,4 @@ body {
 button, a, input, select, textarea {
   touch-action: manipulation;
 }
+

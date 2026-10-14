@@ -81,7 +81,7 @@ export default function EmergencyPage() {
       </div>
 
       {/* TOP SECTION: Large Call Helpline Buttons (Always visible at top) */}
-      <div className="bg-red-700 text-white p-4 rounded-2xl shadow-lg border-3 border-red-950 space-y-3">
+      <div className="bg-gradient-to-br from-red-800 to-rose-950 text-white p-5 rounded-3xl shadow-[0_12px_36px_rgba(220,38,38,0.25)] border border-red-700/50 space-y-3">
         <div className="flex items-center gap-2">
           <AlertTriangle className="w-6 h-6 text-amber-300 stroke-[2.5]" aria-hidden="true" />
           <h2 className="text-lg font-black tracking-tight text-white uppercase">
@@ -89,15 +89,15 @@ export default function EmergencyPage() {
           </h2>
         </div>
 
-        <div className="space-y-2">
+        <div className="space-y-2.5">
           {/* Main 112 Call Button */}
           <a
             href="tel:112"
-            className="w-full min-h-[58px] py-3.5 px-4 bg-white hover:bg-red-50 active:bg-red-100 text-red-700 font-black text-xl rounded-xl shadow-md border-2 border-red-900 flex items-center justify-between transition-colors"
+            className="w-full min-h-[58px] py-3.5 px-4 bg-white hover:bg-red-50 active:bg-red-100 text-red-700 font-black text-xl rounded-2xl shadow-md border border-red-950/20 flex items-center justify-between transition-all active:scale-[0.99]"
             aria-label="Call National Emergency 112"
           >
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-full bg-red-700 text-white flex items-center justify-center shrink-0">
+              <div className="w-11 h-11 rounded-2xl bg-red-700 text-white flex items-center justify-center shrink-0 shadow-sm">
                 <PhoneCall className="w-6 h-6 stroke-[2.5]" aria-hidden="true" />
               </div>
               <div className="text-left leading-tight">
@@ -107,7 +107,7 @@ export default function EmergencyPage() {
                 </span>
               </div>
             </div>
-            <span className="text-xs font-black uppercase bg-red-700 text-white px-2 py-1 rounded">
+            <span className="text-xs font-black uppercase bg-red-700 text-white px-2.5 py-1 rounded-xl shadow-xs">
               FREE
             </span>
           </a>
@@ -115,32 +115,32 @@ export default function EmergencyPage() {
           {/* National Poison Centre (AIIMS) */}
           <a
             href="tel:1800116117"
-            className="w-full min-h-[52px] py-2.5 px-3 bg-red-900/90 hover:bg-red-900 active:bg-black text-white font-black text-base rounded-xl shadow-sm border border-red-300 flex items-center justify-between transition-colors"
+            className="w-full min-h-[52px] py-2.5 px-3.5 bg-red-950/80 hover:bg-red-950 text-white font-black text-base rounded-2xl shadow-sm border border-red-500/30 flex items-center justify-between transition-all active:scale-[0.99]"
             aria-label="Call National Poisons Information Centre"
           >
             <div className="flex items-center gap-2.5">
-              <PhoneCall className="w-5 h-5 text-amber-300 shrink-0" aria-hidden="true" />
+              <PhoneCall className="w-5 h-5 text-amber-300 shrink-0 stroke-[2.5]" aria-hidden="true" />
               <div className="text-left leading-tight">
                 <span className="block text-base font-black">Poison Centre: 1800-116-117</span>
-                <span className="block text-xs font-medium text-red-200">
+                <span className="block text-xs font-semibold text-red-200">
                   National Poisons Info Centre (AIIMS)
                 </span>
               </div>
             </div>
-            <span className="text-xs font-bold text-amber-300 underline">CALL</span>
+            <span className="text-xs font-black text-amber-300 underline">CALL</span>
           </a>
 
           {/* Kisan Call Centre */}
           <a
             href="tel:18001801551"
-            className="w-full min-h-[48px] py-2 px-3 bg-red-900/60 hover:bg-red-900 text-white font-bold text-sm rounded-xl border border-red-400 flex items-center justify-between transition-colors"
+            className="w-full min-h-[48px] py-2 px-3.5 bg-red-950/50 hover:bg-red-950 text-white font-bold text-sm rounded-2xl border border-red-500/20 flex items-center justify-between transition-all active:scale-[0.99]"
             aria-label="Call Kisan Call Centre"
           >
             <div className="flex items-center gap-2">
-              <PhoneCall className="w-4 h-4 text-emerald-300 shrink-0" aria-hidden="true" />
+              <PhoneCall className="w-4 h-4 text-emerald-300 shrink-0 stroke-[2.5]" aria-hidden="true" />
               <span>Kisan Helpline: 1800-180-1551</span>
             </div>
-            <span className="text-xs font-bold text-emerald-300 underline">CALL</span>
+            <span className="text-xs font-black text-emerald-300 underline">CALL</span>
           </a>
         </div>
       </div>
@@ -150,7 +150,7 @@ export default function EmergencyPage() {
         <h1 className="text-2xl font-black text-slate-950 tracking-tight leading-tight">
           What happened?
         </h1>
-        <p className="text-base text-slate-700 font-bold mt-0.5">
+        <p className="text-sm text-slate-700 font-semibold mt-0.5">
           Choose the situation below for immediate step-by-step first aid:
         </p>
       </div>
@@ -165,7 +165,7 @@ export default function EmergencyPage() {
               key={btn.key}
               type="button"
               onClick={() => setSelectedIncident(btn.key)}
-              className={`min-h-[72px] p-4 rounded-2xl border-3 text-left transition-all shadow-sm flex items-center gap-3.5 cursor-pointer ${
+              className={`min-h-[72px] p-4.5 rounded-3xl border text-left transition-all shadow-[0_6px_20px_rgba(0,0,0,0.05)] flex items-center gap-3.5 cursor-pointer active:scale-[0.99] ${
                 isSelected
                   ? 'ring-4 ring-red-500 border-red-800 bg-red-100/90'
                   : `${btn.bg}`
@@ -173,16 +173,16 @@ export default function EmergencyPage() {
               aria-pressed={isSelected}
             >
               <div
-                className={`p-3 rounded-xl ${btn.iconBg} shrink-0 shadow-sm`}
+                className={`w-12 h-12 rounded-2xl ${btn.iconBg} flex items-center justify-center shrink-0 shadow-sm`}
                 aria-hidden="true"
               >
-                <Icon className="w-6 h-6 stroke-[2.3]" />
+                <Icon className="w-6 h-6 stroke-[2.5]" />
               </div>
               <div className="min-w-0">
-                <span className="block text-xl font-black leading-tight">
+                <span className="block text-xl font-black leading-tight tracking-tight">
                   {btn.title}
                 </span>
-                <span className="block text-xs font-bold opacity-80 mt-0.5 line-clamp-1">
+                <span className="block text-xs font-semibold opacity-85 mt-0.5 line-clamp-1">
                   {btn.subtitle}
                 </span>
               </div>
@@ -193,14 +193,14 @@ export default function EmergencyPage() {
 
       {/* FIRST AID STEPS DISPLAY (When an incident is selected) */}
       {selectedIncident && (
-        <div className="bg-white border-3 border-red-700 rounded-2xl p-4 shadow-md space-y-4 animate-in fade-in duration-200">
+        <div className="bg-white border border-red-600/30 rounded-3xl p-5 shadow-[0_12px_36px_rgba(220,38,38,0.12)] space-y-4 animate-in fade-in duration-200">
           {/* Header of selected incident */}
-          <div className="flex items-center justify-between border-b-2 border-slate-200 pb-3">
+          <div className="flex items-center justify-between border-b border-slate-200/80 pb-3.5">
             <div>
               <span className="text-xs uppercase font-black text-red-700 tracking-wider">
                 Immediate Action Steps
               </span>
-              <h2 className="text-2xl font-black text-slate-950 leading-tight">
+              <h2 className="text-2xl font-black text-slate-950 leading-tight tracking-tight">
                 {incidents[selectedIncident].title[locale as 'en' | 'te' | 'hi'] ||
                   incidents[selectedIncident].title.en}
               </h2>
@@ -221,12 +221,12 @@ export default function EmergencyPage() {
               return (
                 <li
                   key={idx}
-                  className="flex items-start gap-3.5 p-3.5 bg-red-50/70 border-2 border-red-200 rounded-xl"
+                  className="flex items-start gap-3.5 p-4 bg-red-50/70 border border-red-200/80 rounded-2xl"
                 >
-                  <span className="w-8 h-8 rounded-full bg-red-700 text-white font-black text-lg flex items-center justify-center shrink-0 mt-0.5 shadow-xs">
+                  <span className="w-8 h-8 rounded-full bg-red-700 text-white font-black text-base flex items-center justify-center shrink-0 mt-0.5 shadow-xs">
                     {idx + 1}
                   </span>
-                  <p className="text-lg font-black text-slate-950 leading-snug">
+                  <p className="text-base font-black text-slate-950 leading-snug">
                     {text}
                   </p>
                 </li>

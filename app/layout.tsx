@@ -36,7 +36,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="h-full antialiased">
-      <body className="min-h-full bg-slate-100 text-slate-900 font-sans">
+      <body className="min-h-full bg-[#EEF4F1] text-slate-950 font-sans selection:bg-emerald-200 selection:text-emerald-950">
         <I18nProvider>
           <AuthProvider>
             {/* Google Firebase CDN Scripts: 0 MB on laptop, loaded on-demand by client */}
@@ -54,7 +54,7 @@ export default function RootLayout({
             />
 
             {/* Mobile frame constrained to max-w-md (360px+ phone view) */}
-            <div className="w-full max-w-md mx-auto min-h-screen flex flex-col bg-white shadow-xl relative border-x border-slate-200">
+            <div className="w-full max-w-md mx-auto min-h-screen flex flex-col bg-[#F4F7F4] shadow-[0_20px_60px_-15px_rgba(6,78,59,0.15)] relative border-x border-emerald-950/10">
               <Header />
               <main className="flex-1 w-full pb-20 overflow-y-auto">
                 {children}

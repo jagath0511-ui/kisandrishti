@@ -20,20 +20,20 @@ export default function NutrientDeficiencyGuide() {
   };
 
   return (
-    <div className="p-4 sm:p-5 bg-white border-2 border-amber-600 rounded-2xl space-y-4 shadow-sm text-slate-900">
-      <div className="flex items-center gap-2.5 text-amber-950">
-        <div className="w-9 h-9 rounded-xl bg-amber-100 text-amber-800 flex items-center justify-center shrink-0">
-          <Layers className="w-5 h-5" aria-hidden="true" />
+    <div className="p-5 bg-white border border-emerald-950/10 rounded-3xl space-y-4 shadow-[0_10px_30px_rgba(6,78,59,0.08)] text-slate-900">
+      <div className="flex items-center gap-3 text-amber-950">
+        <div className="w-10 h-10 rounded-2xl bg-amber-100 text-amber-800 flex items-center justify-center shrink-0 shadow-xs">
+          <Layers className="w-5 h-5 stroke-[2.5]" aria-hidden="true" />
         </div>
         <div>
-          <h3 className="text-base font-black">
+          <h3 className="text-base font-black text-slate-950 tracking-tight">
             {language === 'te'
               ? '🍃 పోషకాల లోపాల నిర్ధారణ (ఆకు స్థానం ఆధారంగా 2-ట్యాప్ గైడ్)'
               : language === 'hi'
               ? '🍃 पोषक तत्वों की कमी गाइड (पत्तियों की स्थिति से पहचान)'
               : '🍃 Nutrient Deficiency & Yellow Leaf Diagnostic Guide'}
           </h3>
-          <p className="text-xs text-slate-600 font-medium">
+          <p className="text-xs text-slate-700 font-semibold leading-relaxed mt-0.5">
             {language === 'te'
               ? 'పసుపు ఆకులన్నీ తెగుళ్లు కావు! జింక్, నత్రజని లోపాలకు అనవసరంగా ఫంగిసైడ్ పిచికారీ చేసి ఖర్చు చేయకండి.'
               : language === 'hi'
@@ -45,7 +45,7 @@ export default function NutrientDeficiencyGuide() {
 
       {/* 2-Tap Position Filter */}
       <div className="space-y-2">
-        <label className="text-xs font-bold text-slate-700 block">
+        <label className="text-xs font-bold text-slate-800 block">
           {language === 'te'
             ? 'ప్రశ్న 1: పసుపు రంగు ఎక్కడ ప్రారంభమైంది?'
             : language === 'hi'
@@ -56,13 +56,13 @@ export default function NutrientDeficiencyGuide() {
           <button
             type="button"
             onClick={() => setPosition('top_new')}
-            className={`p-3 rounded-xl border-2 text-left transition-all cursor-pointer ${
+            className={`p-3.5 rounded-2xl border text-left transition-all cursor-pointer ${
               position === 'top_new'
-                ? 'bg-amber-100 border-amber-700 text-amber-950 shadow-xs'
-                : 'bg-slate-50 border-slate-300 text-slate-700 hover:bg-slate-100'
+                ? 'bg-amber-700 border-amber-800 text-white shadow-md'
+                : 'bg-slate-50 border-slate-200/80 text-slate-700 hover:bg-slate-100'
             }`}
           >
-            <div className="font-bold text-sm flex items-center justify-between">
+            <div className="font-black text-sm flex items-center justify-between">
               <span>
                 {language === 'te'
                   ? '🌱 పై లేత చిగురు ఆకులు'
@@ -70,9 +70,9 @@ export default function NutrientDeficiencyGuide() {
                   ? '🌱 ऊपरी नई कोपलें / पत्तियां'
                   : '🌱 Top / Young New Leaves'}
               </span>
-              {position === 'top_new' && <CheckCircle2 className="w-4 h-4 text-amber-700 shrink-0" />}
+              {position === 'top_new' && <CheckCircle2 className="w-4 h-4 text-white shrink-0 stroke-[2.5]" />}
             </div>
-            <p className="text-xs text-slate-600 mt-0.5">
+            <p className={`text-xs mt-0.5 ${position === 'top_new' ? 'text-amber-100 font-semibold' : 'text-slate-600 font-medium'}`}>
               {language === 'te'
                 ? 'జింక్ (ఖైరా), ఇనుము, బోరాన్ లోపాలు'
                 : language === 'hi'
@@ -84,13 +84,13 @@ export default function NutrientDeficiencyGuide() {
           <button
             type="button"
             onClick={() => setPosition('bottom_old')}
-            className={`p-3 rounded-xl border-2 text-left transition-all cursor-pointer ${
+            className={`p-3.5 rounded-2xl border text-left transition-all cursor-pointer ${
               position === 'bottom_old'
-                ? 'bg-amber-100 border-amber-700 text-amber-950 shadow-xs'
-                : 'bg-slate-50 border-slate-300 text-slate-700 hover:bg-slate-100'
+                ? 'bg-amber-700 border-amber-800 text-white shadow-md'
+                : 'bg-slate-50 border-slate-200/80 text-slate-700 hover:bg-slate-100'
             }`}
           >
-            <div className="font-bold text-sm flex items-center justify-between">
+            <div className="font-black text-sm flex items-center justify-between">
               <span>
                 {language === 'te'
                   ? '🍂 కింది ముదిరిన పాత ఆకులు'
@@ -98,9 +98,9 @@ export default function NutrientDeficiencyGuide() {
                   ? '🍂 निचली पुरानी पत्तियां'
                   : '🍂 Bottom / Older Leaves First'}
               </span>
-              {position === 'bottom_old' && <CheckCircle2 className="w-4 h-4 text-amber-700 shrink-0" />}
+              {position === 'bottom_old' && <CheckCircle2 className="w-4 h-4 text-white shrink-0 stroke-[2.5]" />}
             </div>
-            <p className="text-xs text-slate-600 mt-0.5">
+            <p className={`text-xs mt-0.5 ${position === 'bottom_old' ? 'text-amber-100 font-semibold' : 'text-slate-600 font-medium'}`}>
               {language === 'te'
                 ? 'నత్రజని (యూరియా), పొటాష్, మెగ్నీషియం'
                 : language === 'hi'
@@ -113,7 +113,7 @@ export default function NutrientDeficiencyGuide() {
 
       {/* Crop Filter Pill Bar */}
       <div className="flex items-center gap-1.5 overflow-x-auto pb-1 text-xs">
-        <span className="font-bold text-slate-500 mr-1">
+        <span className="font-bold text-slate-600 mr-1">
           {language === 'te' ? 'పంట:' : language === 'hi' ? 'फसल:' : 'Crop:'}
         </span>
         {[
@@ -127,10 +127,10 @@ export default function NutrientDeficiencyGuide() {
             key={c.key}
             type="button"
             onClick={() => setSelectedCrop(c.key)}
-            className={`px-3 py-1.5 rounded-lg font-bold border transition-colors cursor-pointer ${
+            className={`px-3 py-1.5 rounded-xl font-bold border transition-colors cursor-pointer ${
               selectedCrop === c.key
-                ? 'bg-amber-700 text-white border-amber-800'
-                : 'bg-slate-100 text-slate-700 border-slate-300 hover:bg-slate-200'
+                ? 'bg-amber-800 text-white border-amber-900 shadow-xs'
+                : 'bg-slate-100 text-slate-700 border-slate-200 hover:bg-slate-200'
             }`}
           >
             {c.label}

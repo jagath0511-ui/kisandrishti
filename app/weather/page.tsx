@@ -233,16 +233,16 @@ export default function WeatherPage() {
     switch (status) {
       case 'GOOD':
         return (
-          <div className="p-5 bg-green-50 border-3 border-green-700 rounded-2xl shadow-sm space-y-2">
-            <div className="flex items-center gap-3">
-              <div className="w-12 h-12 rounded-xl bg-green-700 text-white flex items-center justify-center flex-shrink-0 shadow">
-                <CheckCircle2 className="w-8 h-8" aria-hidden="true" />
+          <div className="p-5 bg-emerald-50/90 border border-emerald-600/40 rounded-3xl shadow-[0_10px_30px_rgba(5,150,105,0.12)] space-y-2">
+            <div className="flex items-center gap-3.5">
+              <div className="w-12 h-12 rounded-2xl bg-emerald-800 text-white flex items-center justify-center flex-shrink-0 shadow-sm">
+                <CheckCircle2 className="w-8 h-8 stroke-[2.5]" aria-hidden="true" />
               </div>
               <div>
-                <span className="inline-block px-2.5 py-0.5 text-xs font-black uppercase tracking-wider bg-green-200 text-green-950 rounded-full mb-1">
+                <span className="inline-block px-2.5 py-0.5 text-xs font-black uppercase tracking-wider bg-emerald-200 text-emerald-950 rounded-full mb-1">
                   {locale === 'te' ? 'అనుకూలం' : locale === 'hi' ? 'अनुकूल' : 'FAVORABLE'}
                 </span>
-                <h2 className="text-xl font-black text-green-950">
+                <h2 className="text-xl font-black text-emerald-950 tracking-tight">
                   {t('weather.status.GOOD')}
                 </h2>
               </div>
@@ -251,16 +251,16 @@ export default function WeatherPage() {
         );
       case 'WAIT':
         return (
-          <div className="p-5 bg-amber-50 border-3 border-amber-600 rounded-2xl shadow-sm space-y-2">
-            <div className="flex items-center gap-3">
-              <div className="w-12 h-12 rounded-xl bg-amber-600 text-white flex items-center justify-center flex-shrink-0 shadow">
-                <Clock className="w-8 h-8" aria-hidden="true" />
+          <div className="p-5 bg-amber-50/90 border border-amber-600/40 rounded-3xl shadow-[0_10px_30px_rgba(217,119,6,0.12)] space-y-2">
+            <div className="flex items-center gap-3.5">
+              <div className="w-12 h-12 rounded-2xl bg-amber-600 text-white flex items-center justify-center flex-shrink-0 shadow-sm">
+                <Clock className="w-8 h-8 stroke-[2.5]" aria-hidden="true" />
               </div>
               <div>
                 <span className="inline-block px-2.5 py-0.5 text-xs font-black uppercase tracking-wider bg-amber-200 text-amber-950 rounded-full mb-1">
                   {locale === 'te' ? 'ఆగండి' : locale === 'hi' ? 'रुकें' : 'CAUTION'}
                 </span>
-                <h2 className="text-xl font-black text-amber-950">
+                <h2 className="text-xl font-black text-amber-950 tracking-tight">
                   {t('weather.status.WAIT')}
                 </h2>
               </div>
@@ -269,16 +269,16 @@ export default function WeatherPage() {
         );
       case 'DO_NOT_SPRAY':
         return (
-          <div className="p-5 bg-red-50 border-3 border-red-700 rounded-2xl shadow-sm space-y-2">
-            <div className="flex items-center gap-3">
-              <div className="w-12 h-12 rounded-xl bg-red-700 text-white flex items-center justify-center flex-shrink-0 shadow">
-                <ShieldAlert className="w-8 h-8" aria-hidden="true" />
+          <div className="p-5 bg-red-50/90 border border-red-600/40 rounded-3xl shadow-[0_10px_30px_rgba(220,38,38,0.12)] space-y-2">
+            <div className="flex items-center gap-3.5">
+              <div className="w-12 h-12 rounded-2xl bg-red-700 text-white flex items-center justify-center flex-shrink-0 shadow-sm">
+                <ShieldAlert className="w-8 h-8 stroke-[2.5]" aria-hidden="true" />
               </div>
               <div>
                 <span className="inline-block px-2.5 py-0.5 text-xs font-black uppercase tracking-wider bg-red-200 text-red-950 rounded-full mb-1">
                   {locale === 'te' ? 'ప్రమాదం' : locale === 'hi' ? 'खतरा' : 'HIGH RISK'}
                 </span>
-                <h2 className="text-xl font-black text-red-950">
+                <h2 className="text-xl font-black text-red-950 tracking-tight">
                   {t('weather.status.DO_NOT_SPRAY')}
                 </h2>
               </div>
@@ -292,14 +292,14 @@ export default function WeatherPage() {
     <div className="w-full pb-12">
       {/* 2-Tab Switcher at Top */}
       <div className="p-3 max-w-lg mx-auto">
-        <div className="flex bg-slate-200 p-1.5 rounded-2xl shadow-inner border border-slate-300">
+        <div className="flex bg-emerald-950/8 p-1.5 rounded-2xl border border-emerald-950/10 shadow-inner">
           <button
             type="button"
             onClick={() => setActiveTab('satellite')}
             className={`flex-1 py-3 px-2 rounded-xl font-black text-xs sm:text-sm flex items-center justify-center gap-2 transition-all min-h-[48px] ${
               activeTab === 'satellite'
-                ? 'bg-emerald-700 text-white shadow-md'
-                : 'text-slate-700 hover:text-slate-950 hover:bg-slate-300/60'
+                ? 'bg-emerald-800 text-white shadow-md'
+                : 'text-slate-700 hover:text-slate-950 hover:bg-white/60 font-bold'
             }`}
           >
             <span>🛰️</span>
@@ -316,8 +316,8 @@ export default function WeatherPage() {
             onClick={() => setActiveTab('forecast')}
             className={`flex-1 py-3 px-2 rounded-xl font-black text-xs sm:text-sm flex items-center justify-center gap-2 transition-all min-h-[48px] ${
               activeTab === 'forecast'
-                ? 'bg-sky-700 text-white shadow-md'
-                : 'text-slate-700 hover:text-slate-950 hover:bg-slate-300/60'
+                ? 'bg-emerald-800 text-white shadow-md'
+                : 'text-slate-700 hover:text-slate-950 hover:bg-white/60 font-bold'
             }`}
           >
             <span>🌦️</span>
@@ -340,43 +340,43 @@ export default function WeatherPage() {
           <div className="flex items-center justify-between gap-2">
             <Link
               href="/"
-              className="inline-flex items-center gap-2 min-h-[48px] px-3 py-2 text-base font-bold text-sky-950 bg-sky-100 hover:bg-sky-200 rounded-lg border border-sky-300"
+              className="inline-flex items-center gap-2 min-h-[48px] px-3.5 py-2 text-base font-black text-sky-950 bg-sky-100/90 hover:bg-sky-200 rounded-xl border border-sky-300 transition-all active:scale-95"
             >
-          <ArrowLeft className="w-5 h-5" aria-hidden="true" />
-          <span>{locale === 'te' ? 'హోమ్' : locale === 'hi' ? 'होम' : 'Home'}</span>
-        </Link>
-        {safetyResult && <ListenButton text={getSpeechSummary()} />}
-      </div>
-
-      {/* Page Header */}
-      <div className="p-4 bg-sky-50 border-2 border-sky-700 rounded-2xl space-y-1">
-        <div className="flex items-center gap-3">
-          <div className="w-10 h-10 rounded-xl bg-sky-700 text-white flex items-center justify-center flex-shrink-0">
-            <CloudSun className="w-6 h-6" aria-hidden="true" />
-          </div>
-          <div>
-            <h1 className="text-xl font-black text-sky-950 leading-tight">
-              {t('weather.title')}
-            </h1>
-            <p className="text-xs text-sky-800 font-medium">
-              {t('weather.subtitle')}
-            </p>
-          </div>
-        </div>
-      </div>
-
-      {/* Location Selection Block (Shown if no result or if user taps Change) */}
-      {(!safetyResult || isLoadingWeather || weatherError) && (
-        <div className="p-5 bg-white border-2 border-stone-300 rounded-2xl space-y-4 shadow-sm">
-          {/* Explanation Why */}
-          <div className="p-3.5 bg-blue-50 border border-blue-200 rounded-xl flex items-start gap-3">
-            <HelpCircle className="w-5 h-5 text-blue-700 flex-shrink-0 mt-0.5" aria-hidden="true" />
-            <p className="text-sm font-medium text-blue-950 leading-snug">
-              {t('weather.locationPrompt')}
-            </p>
+              <ArrowLeft className="w-5 h-5 stroke-[2.5]" aria-hidden="true" />
+              <span>{locale === 'te' ? 'హోమ్' : locale === 'hi' ? 'होम' : 'Home'}</span>
+            </Link>
+            {safetyResult && <ListenButton text={getSpeechSummary()} />}
           </div>
 
-          {/* GPS Button */}
+          {/* Page Header */}
+          <div className="p-4 bg-gradient-to-r from-sky-900 to-teal-950 text-white border border-sky-800/40 rounded-3xl space-y-1 shadow-[0_10px_30px_rgba(2,132,199,0.15)]">
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-2xl bg-white/10 backdrop-blur-xs border border-white/20 text-sky-200 flex items-center justify-center flex-shrink-0 shadow-inner">
+                <CloudSun className="w-6 h-6 stroke-[2.5]" aria-hidden="true" />
+              </div>
+              <div>
+                <h1 className="text-xl font-black text-white leading-tight tracking-tight">
+                  {t('weather.title')}
+                </h1>
+                <p className="text-xs text-sky-200/90 font-semibold">
+                  {t('weather.subtitle')}
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Location Selection Block (Shown if no result or if user taps Change) */}
+          {(!safetyResult || isLoadingWeather || weatherError) && (
+            <div className="p-5 bg-white border border-emerald-950/10 rounded-3xl space-y-4 shadow-[0_10px_30px_rgba(6,78,59,0.08)]">
+              {/* Explanation Why */}
+              <div className="p-3.5 bg-blue-50/80 border border-blue-200/80 rounded-2xl flex items-start gap-3">
+                <HelpCircle className="w-5 h-5 text-blue-700 flex-shrink-0 mt-0.5" aria-hidden="true" />
+                <p className="text-sm font-semibold text-blue-950 leading-snug">
+                  {t('weather.locationPrompt')}
+                </p>
+              </div>
+
+              {/* GPS Button */}
           <button
             type="button"
             onClick={handleUseGps}
@@ -489,17 +489,17 @@ export default function WeatherPage() {
       {safetyResult && !isLoadingWeather && (
         <div className="space-y-5">
           {/* Active Location Header & Change Pill */}
-          <div className="flex items-center justify-between p-3 bg-stone-100 border border-stone-300 rounded-xl">
+          <div className="flex items-center justify-between p-3.5 bg-white border border-emerald-950/10 rounded-2xl shadow-xs">
             <div className="flex items-center gap-2 overflow-hidden">
-              <MapPin className="w-5 h-5 text-emerald-800 flex-shrink-0" aria-hidden="true" />
-              <span className="text-sm font-bold text-stone-900 truncate">
+              <MapPin className="w-5 h-5 text-emerald-800 flex-shrink-0 stroke-[2.5]" aria-hidden="true" />
+              <span className="text-sm font-black text-slate-900 truncate">
                 {locationName || 'Field Location'}
               </span>
             </div>
             <button
               type="button"
               onClick={handleChangeLocation}
-              className="text-xs font-bold text-emerald-800 hover:underline px-2 py-1 bg-white border border-stone-300 rounded-lg flex-shrink-0"
+              className="text-xs font-black text-emerald-800 hover:text-emerald-950 px-3 py-1.5 bg-emerald-50 hover:bg-emerald-100 border border-emerald-950/10 rounded-xl flex-shrink-0 transition-all active:scale-95"
             >
               {t('weather.changeLocation')}
             </button>
@@ -511,52 +511,52 @@ export default function WeatherPage() {
           {/* Live Metrics Grid */}
           <div className="grid grid-cols-2 gap-3">
             {/* Temperature */}
-            <div className="p-3 bg-white border border-stone-300 rounded-xl flex items-center gap-2.5 shadow-sm">
-              <div className="w-9 h-9 rounded-lg bg-orange-100 text-orange-800 flex items-center justify-center flex-shrink-0">
-                <Thermometer className="w-5 h-5" aria-hidden="true" />
+            <div className="p-3.5 bg-white border border-emerald-950/10 rounded-2xl flex items-center gap-2.5 shadow-sm">
+              <div className="w-9 h-9 rounded-xl bg-orange-100 text-orange-800 flex items-center justify-center flex-shrink-0">
+                <Thermometer className="w-5 h-5 stroke-[2.5]" aria-hidden="true" />
               </div>
               <div>
-                <p className="text-xs text-stone-600 font-semibold">{t('weather.metrics.temperature')}</p>
-                <p className="text-base font-black text-stone-950">
+                <p className="text-xs text-slate-600 font-bold">{t('weather.metrics.temperature')}</p>
+                <p className="text-base font-black text-slate-950">
                   {safetyResult.currentMetrics.temperature.toFixed(1)}°C
                 </p>
               </div>
             </div>
 
             {/* Wind Speed */}
-            <div className="p-3 bg-white border border-stone-300 rounded-xl flex items-center gap-2.5 shadow-sm">
-              <div className="w-9 h-9 rounded-lg bg-cyan-100 text-cyan-800 flex items-center justify-center flex-shrink-0">
-                <Wind className="w-5 h-5" aria-hidden="true" />
+            <div className="p-3.5 bg-white border border-emerald-950/10 rounded-2xl flex items-center gap-2.5 shadow-sm">
+              <div className="w-9 h-9 rounded-xl bg-cyan-100 text-cyan-800 flex items-center justify-center flex-shrink-0">
+                <Wind className="w-5 h-5 stroke-[2.5]" aria-hidden="true" />
               </div>
               <div>
-                <p className="text-xs text-stone-600 font-semibold">{t('weather.metrics.windSpeed')}</p>
-                <p className="text-base font-black text-stone-950">
+                <p className="text-xs text-slate-600 font-bold">{t('weather.metrics.windSpeed')}</p>
+                <p className="text-base font-black text-slate-950">
                   {safetyResult.currentMetrics.windSpeed.toFixed(1)} km/h
                 </p>
               </div>
             </div>
 
             {/* Rain Chance */}
-            <div className="p-3 bg-white border border-stone-300 rounded-xl flex items-center gap-2.5 shadow-sm">
-              <div className="w-9 h-9 rounded-lg bg-blue-100 text-blue-800 flex items-center justify-center flex-shrink-0">
-                <CloudRain className="w-5 h-5" aria-hidden="true" />
+            <div className="p-3.5 bg-white border border-emerald-950/10 rounded-2xl flex items-center gap-2.5 shadow-sm">
+              <div className="w-9 h-9 rounded-xl bg-blue-100 text-blue-800 flex items-center justify-center flex-shrink-0">
+                <CloudRain className="w-5 h-5 stroke-[2.5]" aria-hidden="true" />
               </div>
               <div>
-                <p className="text-xs text-stone-600 font-semibold">{t('weather.metrics.rainChance')}</p>
-                <p className="text-base font-black text-stone-950">
+                <p className="text-xs text-slate-600 font-bold">{t('weather.metrics.rainChance')}</p>
+                <p className="text-base font-black text-slate-950">
                   {Math.round(safetyResult.currentMetrics.rainProbability)}%
                 </p>
               </div>
             </div>
 
             {/* Humidity */}
-            <div className="p-3 bg-white border border-stone-300 rounded-xl flex items-center gap-2.5 shadow-sm">
-              <div className="w-9 h-9 rounded-lg bg-indigo-100 text-indigo-800 flex items-center justify-center flex-shrink-0">
-                <Droplets className="w-5 h-5" aria-hidden="true" />
+            <div className="p-3.5 bg-white border border-emerald-950/10 rounded-2xl flex items-center gap-2.5 shadow-sm">
+              <div className="w-9 h-9 rounded-xl bg-indigo-100 text-indigo-800 flex items-center justify-center flex-shrink-0">
+                <Droplets className="w-5 h-5 stroke-[2.5]" aria-hidden="true" />
               </div>
               <div>
-                <p className="text-xs text-stone-600 font-semibold">{t('weather.metrics.humidity')}</p>
-                <p className="text-base font-black text-stone-950">
+                <p className="text-xs text-slate-600 font-bold">{t('weather.metrics.humidity')}</p>
+                <p className="text-base font-black text-slate-950">
                   {Math.round(safetyResult.currentMetrics.humidity)}%
                 </p>
               </div>
@@ -564,15 +564,15 @@ export default function WeatherPage() {
           </div>
 
           {/* Reasons List */}
-          <div className="p-4 bg-white border-2 border-stone-300 rounded-2xl space-y-2.5 shadow-sm">
-            <h3 className="text-base font-black text-stone-950 flex items-center gap-2">
+          <div className="p-5 bg-white border border-emerald-950/10 rounded-3xl space-y-3 shadow-[0_10px_30px_rgba(6,78,59,0.08)]">
+            <h3 className="text-base font-black text-slate-950 flex items-center gap-2">
               <span>{t('weather.reasonsTitle')}</span>
             </h3>
             <ul className="space-y-2">
               {safetyResult.reasons.map((reason, idx) => (
                 <li
                   key={idx}
-                  className="p-3 bg-stone-50 border border-stone-200 rounded-xl text-sm font-medium text-stone-900 leading-relaxed"
+                  className="p-3.5 bg-slate-50 border border-slate-200/80 rounded-2xl text-sm font-semibold text-slate-800 leading-relaxed"
                 >
                   {getLocalized(reason, locale)}
                 </li>
@@ -582,28 +582,28 @@ export default function WeatherPage() {
 
           {/* Fungal Disease Warning (if humidity >= 85% with warm weather) */}
           {safetyResult.diseaseRiskNote && (
-            <div className="p-4 bg-purple-50 border-2 border-purple-700 rounded-2xl space-y-2 shadow-sm">
+            <div className="p-5 bg-purple-50/90 border border-purple-600/40 rounded-3xl space-y-2 shadow-[0_10px_30px_rgba(88,28,135,0.08)]">
               <div className="flex items-center gap-2 text-purple-950">
-                <AlertTriangle className="w-5 h-5 text-purple-700 flex-shrink-0" aria-hidden="true" />
+                <AlertTriangle className="w-5 h-5 text-purple-700 flex-shrink-0 stroke-[2.5]" aria-hidden="true" />
                 <h3 className="text-base font-black">
                   {t('weather.diseaseRiskTitle')}
                 </h3>
               </div>
-              <p className="text-sm font-medium text-purple-950 leading-relaxed">
+              <p className="text-sm font-semibold text-purple-950 leading-relaxed">
                 {getLocalized(safetyResult.diseaseRiskNote, locale)}
               </p>
             </div>
           )}
 
           {/* Best Upcoming Spraying Hours */}
-          <div className="p-4 bg-white border-2 border-stone-300 rounded-2xl space-y-3 shadow-sm">
-            <h3 className="text-base font-black text-stone-950 flex items-center gap-2">
-              <Clock className="w-5 h-5 text-emerald-700" aria-hidden="true" />
+          <div className="p-5 bg-white border border-emerald-950/10 rounded-3xl space-y-3 shadow-[0_10px_30px_rgba(6,78,59,0.08)]">
+            <h3 className="text-base font-black text-slate-950 flex items-center gap-2">
+              <Clock className="w-5 h-5 text-emerald-700 stroke-[2.5]" aria-hidden="true" />
               <span>{t('weather.bestHoursTitle')}</span>
             </h3>
 
             {safetyResult.bestSprayWindows.length === 0 ? (
-              <p className="p-3 bg-stone-50 border border-stone-200 rounded-xl text-sm font-medium text-stone-700">
+              <p className="p-3.5 bg-slate-50 border border-slate-200/80 rounded-2xl text-sm font-semibold text-slate-700">
                 {t('weather.noBestHours')}
               </p>
             ) : (
@@ -611,13 +611,13 @@ export default function WeatherPage() {
                 {safetyResult.bestSprayWindows.map((win, idx) => (
                   <div
                     key={idx}
-                    className="p-3.5 bg-emerald-50 border-2 border-emerald-600 rounded-xl flex items-center justify-between"
+                    className="p-4 bg-emerald-50/90 border border-emerald-600/40 rounded-2xl flex items-center justify-between"
                   >
                     <div>
                       <p className="text-base font-black text-emerald-950">
                         {getLocalized(win.displayTime, locale)}
                       </p>
-                      <p className="text-xs font-semibold text-emerald-800">
+                      <p className="text-xs font-bold text-emerald-800">
                         {locale === 'te'
                           ? `సగటు ఉష్ణోగ్రత: ${win.temperatureAvg}°C • గరిష్ట గాలి: ${win.windSpeedMax} km/h`
                           : locale === 'hi'
@@ -625,7 +625,7 @@ export default function WeatherPage() {
                           : `Avg Temp: ${win.temperatureAvg}°C • Max Wind: ${win.windSpeedMax} km/h`}
                       </p>
                     </div>
-                    <span className="px-2.5 py-1 text-xs font-black uppercase bg-emerald-200 text-emerald-950 rounded-lg">
+                    <span className="px-2.5 py-1 text-xs font-black uppercase bg-emerald-200 text-emerald-950 rounded-xl">
                       {locale === 'te' ? 'సిఫార్సు' : locale === 'hi' ? 'सुझाव' : 'IDEAL'}
                     </span>
                   </div>
@@ -636,7 +636,7 @@ export default function WeatherPage() {
 
           {/* 48-Hour Disease & Pest Outbreak Radar */}
           {radarResult && radarResult.hasAlerts && (
-            <div className="p-4 bg-purple-50 border-2 border-purple-800 rounded-2xl space-y-3 shadow-sm">
+            <div className="p-5 bg-purple-50/90 border border-purple-950/15 rounded-3xl space-y-3 shadow-[0_10px_30px_rgba(88,28,135,0.08)]">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-2 text-purple-950">
                   <AlertTriangle className="w-5 h-5 text-purple-800 shrink-0" aria-hidden="true" />

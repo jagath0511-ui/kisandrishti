@@ -28,20 +28,20 @@ export default function ChemicalCompatibilityChecker() {
   const jarGuide = getJarTestGuide();
 
   return (
-    <div className="p-4 sm:p-5 bg-white border-2 border-emerald-600 rounded-2xl space-y-4 shadow-sm text-slate-900">
-      <div className="flex items-center gap-2.5 text-emerald-950">
-        <div className="w-9 h-9 rounded-xl bg-emerald-100 text-emerald-800 flex items-center justify-center shrink-0">
-          <Beaker className="w-5 h-5" aria-hidden="true" />
+    <div className="p-5 bg-white border border-emerald-950/10 rounded-3xl space-y-4 shadow-[0_10px_30px_rgba(6,78,59,0.08)] text-slate-900">
+      <div className="flex items-center gap-3 text-emerald-950">
+        <div className="w-10 h-10 rounded-2xl bg-emerald-100 text-emerald-800 flex items-center justify-center shrink-0 shadow-xs">
+          <Beaker className="w-5 h-5 stroke-[2.5]" aria-hidden="true" />
         </div>
         <div>
-          <h3 className="text-base font-black">
+          <h3 className="text-base font-black text-slate-950 tracking-tight">
             {language === 'te'
               ? '🧪 పురుగుమందుల కలయిక తనిఖీ (జార్ టెస్ట్ & W-A-L-E నియమం)'
               : language === 'hi'
               ? '🧪 रासायनिक अनुकूलता व जार टेस्ट (क्या इन्हें मिला सकते हैं?)'
               : '🧪 Chemical Compatibility & Jar Mix Checker'}
           </h3>
-          <p className="text-xs text-slate-600 font-medium">
+          <p className="text-xs text-slate-700 font-semibold leading-relaxed mt-0.5">
             {language === 'te'
               ? 'రెండు రసాయనాలు కలిపితే ఆకులు మాడిపోవడం లేదా ముద్దకట్టడం జరగకుండా ముందుగానే తనిఖీ చేయండి.'
               : language === 'hi'
@@ -54,13 +54,13 @@ export default function ChemicalCompatibilityChecker() {
       {/* Selectors */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
         <div className="space-y-1">
-          <label className="text-xs font-bold text-slate-700 block">
+          <label className="text-xs font-bold text-slate-800 block">
             {language === 'te' ? '1వ మందు రకం (Chemical 1)' : language === 'hi' ? 'दवा 1 का प्रकार' : 'Chemical 1 Formulation'}
           </label>
           <select
             value={form1}
             onChange={(e) => setForm1(e.target.value)}
-            className="w-full min-h-[46px] px-3 py-2 bg-slate-50 border-2 border-slate-300 rounded-xl text-sm font-bold text-slate-900 focus:border-emerald-600 focus:outline-none"
+            className="w-full min-h-[48px] px-3.5 py-2.5 bg-slate-50 border border-slate-300/80 rounded-2xl text-sm font-bold text-slate-900 focus:border-emerald-600 focus:ring-2 focus:ring-emerald-400 focus:outline-none cursor-pointer"
           >
             {FORMULATION_OPTIONS.map((opt) => (
               <option key={opt.value} value={opt.value}>
@@ -71,13 +71,13 @@ export default function ChemicalCompatibilityChecker() {
         </div>
 
         <div className="space-y-1">
-          <label className="text-xs font-bold text-slate-700 block">
+          <label className="text-xs font-bold text-slate-800 block">
             {language === 'te' ? '2వ మందు రకం (Chemical 2)' : language === 'hi' ? 'दवा 2 का प्रकार' : 'Chemical 2 Formulation'}
           </label>
           <select
             value={form2}
             onChange={(e) => setForm2(e.target.value)}
-            className="w-full min-h-[46px] px-3 py-2 bg-slate-50 border-2 border-slate-300 rounded-xl text-sm font-bold text-slate-900 focus:border-emerald-600 focus:outline-none"
+            className="w-full min-h-[48px] px-3.5 py-2.5 bg-slate-50 border border-slate-300/80 rounded-2xl text-sm font-bold text-slate-900 focus:border-emerald-600 focus:ring-2 focus:ring-emerald-400 focus:outline-none cursor-pointer"
           >
             {FORMULATION_OPTIONS.map((opt) => (
               <option key={opt.value} value={opt.value}>
@@ -90,42 +90,42 @@ export default function ChemicalCompatibilityChecker() {
 
       {/* Verdict Banner */}
       <div
-        className={`p-4 rounded-xl border-2 space-y-1.5 transition-colors ${
+        className={`p-4 rounded-2xl border space-y-1.5 transition-colors shadow-xs ${
           verdict.status === 'INCOMPATIBLE'
-            ? 'bg-red-50 border-red-600 text-red-950'
+            ? 'bg-red-50/90 border-red-600/50 text-red-950'
             : verdict.status === 'CAUTION'
-            ? 'bg-amber-50 border-amber-600 text-amber-950'
-            : 'bg-emerald-50 border-emerald-600 text-emerald-950'
+            ? 'bg-amber-50/90 border-amber-600/50 text-amber-950'
+            : 'bg-emerald-50/90 border-emerald-600/50 text-emerald-950'
         }`}
       >
         <div className="flex items-center gap-2">
           {verdict.status === 'INCOMPATIBLE' && (
-            <AlertOctagon className="w-5 h-5 text-red-700 shrink-0" aria-hidden="true" />
+            <AlertOctagon className="w-5 h-5 text-red-700 shrink-0 stroke-[2.5]" aria-hidden="true" />
           )}
           {verdict.status === 'CAUTION' && (
-            <AlertTriangle className="w-5 h-5 text-amber-700 shrink-0" aria-hidden="true" />
+            <AlertTriangle className="w-5 h-5 text-amber-700 shrink-0 stroke-[2.5]" aria-hidden="true" />
           )}
           {(verdict.status === 'SAFE_TO_MIX' || verdict.status === 'COMPATIBLE_WITH_WALE') && (
-            <CheckCircle2 className="w-5 h-5 text-emerald-700 shrink-0" aria-hidden="true" />
+            <CheckCircle2 className="w-5 h-5 text-emerald-700 shrink-0 stroke-[2.5]" aria-hidden="true" />
           )}
           <span className="text-base font-black uppercase tracking-wide">
             {verdict.statusLabel || verdict.status}
           </span>
         </div>
-        <p className="text-xs sm:text-sm font-medium leading-relaxed">
+        <p className="text-xs sm:text-sm font-semibold leading-relaxed">
           {verdict.reason}
         </p>
       </div>
 
       {/* Collapsible W-A-L-E Guide */}
-      <div className="border border-slate-200 rounded-xl overflow-hidden">
+      <div className="border border-emerald-950/10 rounded-2xl overflow-hidden shadow-xs">
         <button
           type="button"
           onClick={() => setShowWale(!showWale)}
-          className="w-full px-4 py-2.5 bg-slate-50 hover:bg-slate-100 flex items-center justify-between text-left text-xs font-bold text-slate-800 cursor-pointer"
+          className="w-full px-4 py-3 bg-slate-50 hover:bg-slate-100 flex items-center justify-between text-left text-xs font-black text-slate-800 cursor-pointer transition-colors"
         >
           <span className="flex items-center gap-2">
-            <Info className="w-4 h-4 text-emerald-700" />
+            <Info className="w-4 h-4 text-emerald-700 stroke-[2.5]" />
             {language === 'te'
               ? 'మందులు డ్రమ్ములో వేసే సరైన క్రమం: W-A-L-E నియమం'
               : language === 'hi'
@@ -136,8 +136,8 @@ export default function ChemicalCompatibilityChecker() {
         </button>
 
         {showWale && (
-          <div className="p-3 bg-white space-y-2 text-xs">
-            <ol className="space-y-2 text-slate-700">
+          <div className="p-3.5 bg-white space-y-2 text-xs">
+            <ol className="space-y-2 text-slate-800 font-semibold">
               {waleGuide.map((step, idx) => (
                 <li key={idx} className="leading-snug">
                   <span className="inline-block w-6 h-6 rounded-full bg-emerald-700 text-white font-black text-center leading-6 mr-2">

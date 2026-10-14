@@ -613,12 +613,12 @@ export default function DoctorPage() {
       <div className="flex items-center justify-between">
         <Link
           href="/"
-          className="inline-flex items-center gap-1.5 min-h-[48px] px-3 py-2 text-base font-bold text-emerald-950 bg-emerald-100 hover:bg-emerald-200 active:bg-emerald-300 rounded-lg border border-emerald-300 transition-colors"
+          className="inline-flex items-center gap-1.5 min-h-[48px] px-3.5 py-2 text-base font-black text-emerald-950 bg-emerald-100/90 hover:bg-emerald-200 active:bg-emerald-300 rounded-xl border border-emerald-300 transition-all active:scale-95"
         >
-          <ArrowLeft className="w-5 h-5 shrink-0" aria-hidden="true" />
+          <ArrowLeft className="w-5 h-5 stroke-[2.5] shrink-0" aria-hidden="true" />
           <span>Home</span>
         </Link>
-        <span className="text-base font-black text-emerald-900 tracking-tight">
+        <span className="text-base font-black text-emerald-950 tracking-tight">
           {t('doctor.title')}
         </span>
       </div>
@@ -645,20 +645,20 @@ export default function DoctorPage() {
       {/* VIEW 1: Initial Capture & Upload Controls */}
       {!compressedImage && !result && !isLoading && (
         <div className="space-y-4">
-          <div className="bg-emerald-50 border-2 border-emerald-700 rounded-2xl p-4 shadow-sm text-center">
-            <h1 className="text-xl font-black text-emerald-950 leading-tight">
+          <div className="bg-gradient-to-r from-emerald-900 to-teal-950 text-white border border-emerald-800/40 rounded-3xl p-5 shadow-[0_10px_30px_rgba(6,78,59,0.15)] text-center">
+            <h1 className="text-xl font-black text-white leading-tight tracking-tight">
               {t('doctor.title')}
             </h1>
-            <p className="text-base text-emerald-900 font-medium mt-1">
+            <p className="text-sm text-emerald-100/90 font-semibold mt-1">
               {t('doctor.subtitle')}
             </p>
           </div>
 
           {/* Optional Crop Selector */}
-          <div className="bg-white border-2 border-slate-300 rounded-xl p-3 shadow-sm">
+          <div className="bg-white border border-emerald-950/10 rounded-3xl p-4 shadow-[0_10px_30px_rgba(6,78,59,0.08)]">
             <label
               htmlFor="crop-select"
-              className="block text-base font-black text-slate-900 mb-1"
+              className="block text-base font-black text-slate-950 mb-1 tracking-tight"
             >
               {t('doctor.cropSelectorLabel')}
             </label>
@@ -666,7 +666,7 @@ export default function DoctorPage() {
               id="crop-select"
               value={selectedCrop}
               onChange={(e) => setSelectedCrop(e.target.value)}
-              className="w-full min-h-[48px] px-3 py-2 text-base font-medium text-slate-900 bg-slate-50 border-2 border-slate-400 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-600 cursor-pointer"
+              className="w-full min-h-[48px] px-3.5 py-2.5 text-base font-bold text-slate-900 bg-slate-50 border border-slate-300/80 rounded-2xl focus:outline-none focus:ring-2 focus:ring-emerald-600 cursor-pointer"
             >
               <option value="">{t('doctor.cropAll')}</option>
               <option value="paddy">{t('doctor.cropPaddy')}</option>
@@ -679,9 +679,9 @@ export default function DoctorPage() {
           <button
             type="button"
             onClick={() => cameraInputRef.current?.click()}
-            className="w-full min-h-[56px] py-3.5 px-4 bg-emerald-700 hover:bg-emerald-800 active:bg-emerald-900 text-white font-black text-lg rounded-xl shadow-md border-2 border-emerald-900 flex items-center justify-center gap-3 transition-colors cursor-pointer"
+            className="w-full min-h-[56px] py-3.5 px-4 bg-emerald-800 hover:bg-emerald-900 active:bg-emerald-950 text-white font-black text-lg rounded-2xl shadow-[0_4px_16px_rgba(6,78,59,0.25)] border border-emerald-700/50 flex items-center justify-center gap-3 transition-all active:scale-[0.99] cursor-pointer"
           >
-            <Camera className="w-6 h-6 stroke-[2.3]" aria-hidden="true" />
+            <Camera className="w-6 h-6 stroke-[2.5]" aria-hidden="true" />
             <span>{t('doctor.takePhotoButton')}</span>
           </button>
 
@@ -689,20 +689,20 @@ export default function DoctorPage() {
           <button
             type="button"
             onClick={() => galleryInputRef.current?.click()}
-            className="w-full min-h-[52px] py-3 px-4 bg-white hover:bg-slate-100 active:bg-slate-200 text-slate-900 font-black text-base rounded-xl shadow-sm border-2 border-slate-400 flex items-center justify-center gap-2.5 transition-colors cursor-pointer"
+            className="w-full min-h-[52px] py-3 px-4 bg-white hover:bg-slate-100 active:bg-slate-200 text-slate-900 font-black text-base rounded-2xl shadow-xs border border-slate-300/80 flex items-center justify-center gap-2.5 transition-all active:scale-[0.99] cursor-pointer"
           >
-            <ImageIcon className="w-5 h-5 text-slate-700" aria-hidden="true" />
+            <ImageIcon className="w-5 h-5 text-slate-700 stroke-[2.5]" aria-hidden="true" />
             <span>{t('doctor.galleryButton')}</span>
           </button>
 
           {/* Photography Tips Card */}
-          <div className="bg-amber-50 border-2 border-amber-500 rounded-xl p-3.5 flex items-start gap-3 shadow-sm">
+          <div className="bg-amber-50/90 border border-amber-950/15 rounded-3xl p-4 flex items-start gap-3 shadow-[0_6px_20px_rgba(180,83,9,0.06)]">
             <Lightbulb className="w-6 h-6 text-amber-700 shrink-0 mt-0.5" aria-hidden="true" />
             <div className="text-amber-950">
               <h2 className="text-base font-black leading-snug">
                 {t('doctor.tips.title')}
               </h2>
-              <p className="text-base font-medium leading-relaxed mt-0.5">
+              <p className="text-sm font-semibold leading-relaxed mt-0.5 text-amber-900">
                 {t('doctor.tips.instruction')}
               </p>
             </div>
@@ -849,9 +849,9 @@ export default function DoctorPage() {
           <button
             type="button"
             onClick={handleDiagnose}
-            className="w-full min-h-[56px] py-3.5 px-4 bg-emerald-700 hover:bg-emerald-800 active:bg-emerald-900 text-white font-black text-lg rounded-xl shadow-md border-2 border-emerald-900 flex items-center justify-center gap-2.5 transition-colors cursor-pointer"
+            className="w-full min-h-[56px] py-3.5 px-4 bg-emerald-800 hover:bg-emerald-900 active:bg-emerald-950 text-white font-black text-lg rounded-2xl shadow-[0_4px_16px_rgba(6,78,59,0.25)] border border-emerald-700/50 flex items-center justify-center gap-2.5 transition-all active:scale-[0.99] cursor-pointer"
           >
-            <Activity className="w-6 h-6 stroke-[2.3]" aria-hidden="true" />
+            <Activity className="w-6 h-6 stroke-[2.5]" aria-hidden="true" />
             <span>{t('doctor.diagnoseButton')}</span>
           </button>
         </div>
@@ -859,7 +859,7 @@ export default function DoctorPage() {
 
       {/* VIEW 3: Friendly Loading State */}
       {isLoading && (
-        <div className="bg-emerald-50 border-2 border-emerald-700 rounded-2xl p-6 text-center space-y-5 shadow-sm">
+        <div className="bg-emerald-50/90 border border-emerald-600/40 rounded-3xl p-6 text-center space-y-5 shadow-[0_10px_30px_rgba(6,78,59,0.08)]">
           <div className="w-16 h-16 mx-auto rounded-full bg-emerald-200 border-4 border-emerald-600 border-t-transparent animate-spin flex items-center justify-center shadow" />
           <div className="space-y-2">
             <h2 className="text-xl font-black text-emerald-950">
@@ -868,7 +868,7 @@ export default function DoctorPage() {
               {loadingStep === 3 && t('doctor.loading.step3')}
               {loadingStep === 4 && t('doctor.loading.step4')}
             </h2>
-            <p className="text-base text-emerald-800 font-medium">
+            <p className="text-sm text-emerald-800 font-semibold">
               Connecting with verified plant-health database...
             </p>
           </div>
@@ -877,30 +877,30 @@ export default function DoctorPage() {
 
       {/* VIEW 4: Error State with Retry Button */}
       {errorState && (
-        <div className="bg-red-50 border-3 border-red-600 rounded-2xl p-5 space-y-4 shadow-md">
+        <div className="bg-red-50/90 border border-red-600/40 rounded-3xl p-5 space-y-4 shadow-[0_10px_30px_rgba(220,38,38,0.08)]">
           <div className="flex items-start gap-3">
-            <AlertCircle className="w-6 h-6 text-red-700 shrink-0 mt-0.5" aria-hidden="true" />
+            <AlertCircle className="w-6 h-6 text-red-700 shrink-0 mt-0.5 stroke-[2.5]" aria-hidden="true" />
             <div className="text-red-950">
               <h2 className="text-lg font-black">Error</h2>
-              <p className="text-base font-medium mt-1 leading-relaxed">
+              <p className="text-base font-semibold mt-1 leading-relaxed">
                 {errorState}
               </p>
             </div>
           </div>
 
-          <div className="flex gap-2 pt-2">
+          <div className="flex gap-2.5 pt-2">
             <button
               type="button"
               onClick={handleDiagnose}
-              className="flex-1 min-h-[48px] px-4 py-2.5 bg-red-600 hover:bg-red-700 active:bg-red-800 text-white font-black text-base rounded-xl border-2 border-red-900 flex items-center justify-center gap-2 shadow cursor-pointer"
+              className="flex-1 min-h-[48px] px-4 py-2.5 bg-red-700 hover:bg-red-800 active:bg-red-900 text-white font-black text-base rounded-2xl shadow-sm flex items-center justify-center gap-2 cursor-pointer transition-all active:scale-[0.99]"
             >
-              <RotateCcw className="w-5 h-5" aria-hidden="true" />
+              <RotateCcw className="w-5 h-5 stroke-[2.5]" aria-hidden="true" />
               <span>{t('doctor.errors.retry')}</span>
             </button>
             <button
               type="button"
               onClick={handleReset}
-              className="min-h-[48px] px-4 py-2.5 bg-white text-slate-800 font-bold text-base rounded-xl border-2 border-slate-300 cursor-pointer"
+              className="min-h-[48px] px-4 py-2.5 bg-white text-slate-900 font-black text-base rounded-2xl border border-slate-300/80 cursor-pointer transition-all active:scale-[0.99]"
             >
               {t('doctor.result.scanAnother')}
             </button>
@@ -913,16 +913,16 @@ export default function DoctorPage() {
         <div className="space-y-4">
           {/* Toast Notification when a spray is recorded */}
           {lastLoggedSpray && (
-            <div className="bg-emerald-800 text-white p-4 rounded-xl shadow-lg border-2 border-emerald-950 flex items-start gap-3">
-              <Calendar className="w-6 h-6 text-emerald-300 shrink-0 mt-0.5" aria-hidden="true" />
+            <div className="bg-emerald-900 text-white p-4.5 rounded-3xl shadow-lg border border-emerald-700/40 flex items-start gap-3">
+              <Calendar className="w-6 h-6 text-emerald-300 shrink-0 mt-0.5 stroke-[2.5]" aria-hidden="true" />
               <div className="flex-1">
-                <div className="font-bold text-sm text-emerald-200 uppercase tracking-wider">
+                <div className="font-black text-xs text-emerald-200 uppercase tracking-wider">
                   Spray Logged Successfully
                 </div>
                 <div className="text-base font-black mt-0.5">
                   {lastLoggedSpray.chemical}
                 </div>
-                <div className="text-base font-bold text-amber-300 mt-1">
+                <div className="text-sm font-black text-amber-300 mt-1">
                   {t('doctor.treatment.doNotHarvestBefore')}:{' '}
                   <span className="underline text-white font-black">
                     {formatFriendlyDate(lastLoggedSpray.safeDate)}
@@ -933,8 +933,8 @@ export default function DoctorPage() {
           )}
 
           {/* 1. Diagnosis Summary Card */}
-          <div className="bg-white border-2 border-slate-300 rounded-2xl p-4 shadow-sm space-y-4">
-            <div className="flex items-start justify-between gap-2 border-b border-slate-200 pb-3">
+          <div className="bg-white border border-emerald-950/10 rounded-3xl p-5 shadow-[0_10px_30px_rgba(6,78,59,0.08)] space-y-4">
+            <div className="flex items-start justify-between gap-2 border-b border-slate-200/80 pb-3.5">
               <div>
                 <span className="text-xs uppercase font-black text-slate-500 tracking-wider">
                   {t('doctor.result.identifiedCrop')}: {result.crop || 'Crop Leaf'}

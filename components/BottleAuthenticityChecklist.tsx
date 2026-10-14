@@ -16,7 +16,7 @@ export default function BottleAuthenticityChecklist({
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="border border-emerald-300 bg-emerald-50/60 rounded-xl overflow-hidden mt-3 text-slate-800">
+    <div className="border border-emerald-950/10 bg-emerald-50/70 rounded-2xl overflow-hidden mt-3 text-slate-800 shadow-xs">
       <button
         type="button"
         onClick={() => setIsOpen(!isOpen)}

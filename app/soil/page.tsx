@@ -181,16 +181,16 @@ export default function SoilPage() {
       </div>
 
       {/* Main Page Title Card */}
-      <div className="p-4 bg-emerald-50 border-2 border-emerald-700 rounded-2xl space-y-1 shadow-sm">
+      <div className="p-4 bg-gradient-to-r from-emerald-900 to-teal-900 text-white border border-emerald-800/40 rounded-3xl space-y-1 shadow-[0_10px_30px_rgba(6,78,59,0.14)]">
         <div className="flex items-center gap-3">
-          <div className="w-10 h-10 rounded-xl bg-emerald-700 text-white flex items-center justify-center flex-shrink-0">
-            <FlaskConical className="w-6 h-6" aria-hidden="true" />
+          <div className="w-10 h-10 rounded-2xl bg-white/10 backdrop-blur-xs border border-white/20 text-emerald-300 flex items-center justify-center flex-shrink-0 shadow-inner">
+            <FlaskConical className="w-6 h-6 stroke-[2.5]" aria-hidden="true" />
           </div>
           <div>
-            <h1 className="text-xl font-black text-emerald-950 leading-tight">
+            <h1 className="text-xl font-black text-white leading-tight tracking-tight">
               {t('soil.title')}
             </h1>
-            <p className="text-xs text-emerald-800 font-medium">
+            <p className="text-xs text-emerald-200/90 font-semibold">
               {t('soil.subtitle')}
             </p>
           </div>
@@ -198,7 +198,7 @@ export default function SoilPage() {
       </div>
 
       {/* Mandatory Honesty Notice Banner */}
-      <div className="p-3.5 bg-amber-50 border-2 border-amber-500 rounded-xl flex items-start gap-3 shadow-sm">
+      <div className="p-4 bg-amber-50/90 border border-amber-950/15 rounded-3xl flex items-start gap-3 shadow-[0_6px_20px_rgba(180,83,9,0.06)]">
         <Info className="w-5 h-5 text-amber-800 flex-shrink-0 mt-0.5" aria-hidden="true" />
         <p className="text-sm font-bold text-amber-950 leading-snug">
           {t('soil.honestyNotice')}
@@ -206,29 +206,29 @@ export default function SoilPage() {
       </div>
 
       {/* Segmented Tab Buttons (Part A Guide vs Part B Measure) */}
-      <div className="grid grid-cols-2 gap-2 p-1 bg-stone-200 rounded-xl">
+      <div className="grid grid-cols-2 gap-2 p-1.5 bg-emerald-950/8 border border-emerald-950/10 rounded-2xl shadow-inner">
         <button
           type="button"
           onClick={() => setActiveTab('guide')}
-          className={`min-h-[48px] px-3 py-2 text-sm font-black rounded-lg transition-colors flex items-center justify-center gap-2 ${
+          className={`min-h-[48px] px-3 py-2 text-sm font-black rounded-xl transition-all flex items-center justify-center gap-2 ${
             activeTab === 'guide'
-              ? 'bg-white text-emerald-950 shadow'
-              : 'text-stone-700 hover:text-stone-900'
+              ? 'bg-emerald-800 text-white shadow-md'
+              : 'text-slate-700 hover:text-slate-950 hover:bg-white/60 font-bold'
           }`}
         >
-          <BookOpen className="w-4 h-4" aria-hidden="true" />
+          <BookOpen className="w-4 h-4 stroke-[2.5]" aria-hidden="true" />
           <span>{t('soil.tabGuide')}</span>
         </button>
         <button
           type="button"
           onClick={() => setActiveTab('measure')}
-          className={`min-h-[48px] px-3 py-2 text-sm font-black rounded-lg transition-colors flex items-center justify-center gap-2 ${
+          className={`min-h-[48px] px-3 py-2 text-sm font-black rounded-xl transition-all flex items-center justify-center gap-2 ${
             activeTab === 'measure'
-              ? 'bg-white text-emerald-950 shadow'
-              : 'text-stone-700 hover:text-stone-900'
+              ? 'bg-emerald-800 text-white shadow-md'
+              : 'text-slate-700 hover:text-slate-950 hover:bg-white/60 font-bold'
           }`}
         >
-          <Sliders className="w-4 h-4" aria-hidden="true" />
+          <Sliders className="w-4 h-4 stroke-[2.5]" aria-hidden="true" />
           <span>{t('soil.tabMeasure')}</span>
         </button>
       </div>
@@ -237,14 +237,14 @@ export default function SoilPage() {
       {activeTab === 'guide' && (
         <div className="space-y-5">
           {/* Jar Test Instructions Card */}
-          <div className="p-5 bg-white border-2 border-stone-300 rounded-2xl space-y-4 shadow-sm">
-            <h2 className="text-lg font-black text-stone-950 flex items-center gap-2">
-              <FlaskConical className="w-5 h-5 text-emerald-700" aria-hidden="true" />
+          <div className="p-5 bg-white border border-emerald-950/10 rounded-3xl space-y-4 shadow-[0_10px_30px_rgba(6,78,59,0.08)]">
+            <h2 className="text-lg font-black text-slate-950 flex items-center gap-2 tracking-tight">
+              <FlaskConical className="w-5 h-5 text-emerald-700 stroke-[2.5]" aria-hidden="true" />
               <span>{t('soil.jarTestTitle')}</span>
             </h2>
 
             {/* Visual Jar Diagram SVG */}
-            <div className="p-3 bg-stone-50 border border-stone-200 rounded-xl flex items-center justify-center">
+            <div className="p-4 bg-stone-50/80 border border-emerald-950/10 rounded-2xl flex items-center justify-center">
               <svg
                 viewBox="0 0 160 200"
                 className="w-36 h-44 drop-shadow-sm"
@@ -280,31 +280,31 @@ export default function SoilPage() {
             </div>
 
             {/* Step-by-step numbered points */}
-            <ol className="space-y-3 text-sm font-medium text-stone-900">
+            <ol className="space-y-3 text-sm font-semibold text-slate-800">
               <li className="flex items-start gap-2.5">
-                <span className="w-6 h-6 rounded-full bg-emerald-700 text-white font-bold flex items-center justify-center flex-shrink-0 text-xs">
+                <span className="w-6 h-6 rounded-full bg-emerald-800 text-white font-black flex items-center justify-center flex-shrink-0 text-xs shadow-xs">
                   1
                 </span>
                 <span>{t('soil.jarStep1')}</span>
               </li>
               <li className="flex items-start gap-2.5">
-                <span className="w-6 h-6 rounded-full bg-emerald-700 text-white font-bold flex items-center justify-center flex-shrink-0 text-xs">
+                <span className="w-6 h-6 rounded-full bg-emerald-800 text-white font-black flex items-center justify-center flex-shrink-0 text-xs shadow-xs">
                   2
                 </span>
                 <span>{t('soil.jarStep2')}</span>
               </li>
               <li className="flex items-start gap-2.5">
-                <span className="w-6 h-6 rounded-full bg-emerald-700 text-white font-bold flex items-center justify-center flex-shrink-0 text-xs">
+                <span className="w-6 h-6 rounded-full bg-emerald-800 text-white font-black flex items-center justify-center flex-shrink-0 text-xs shadow-xs">
                   3
                 </span>
                 <span>{t('soil.jarStep3')}</span>
               </li>
               <li className="flex items-start gap-2.5">
-                <span className="w-6 h-6 rounded-full bg-emerald-700 text-white font-bold flex items-center justify-center flex-shrink-0 text-xs">
+                <span className="w-6 h-6 rounded-full bg-emerald-800 text-white font-black flex items-center justify-center flex-shrink-0 text-xs shadow-xs">
                   4
                 </span>
                 <div className="space-y-1">
-                  <p className="font-bold">{t('soil.jarStep4')}</p>
+                  <p className="font-black text-slate-950">{t('soil.jarStep4')}</p>
                   <p className="text-amber-900">• {t('soil.sandLayer')}</p>
                   <p className="text-orange-900">• {t('soil.siltLayer')}</p>
                   <p className="text-purple-900">• {t('soil.clayLayer')}</p>
@@ -316,7 +316,7 @@ export default function SoilPage() {
             <button
               type="button"
               onClick={() => setActiveTab('measure')}
-              className="w-full min-h-[50px] px-4 py-3 bg-emerald-700 hover:bg-emerald-800 text-white font-bold rounded-xl flex items-center justify-center gap-2 shadow"
+              className="w-full min-h-[50px] px-4 py-3 bg-emerald-800 hover:bg-emerald-900 text-white font-black rounded-2xl flex items-center justify-center gap-2 shadow-[0_4px_16px_rgba(6,78,59,0.25)] transition-all active:scale-[0.99]"
             >
               <Camera className="w-5 h-5" aria-hidden="true" />
               <span>{t('soil.tabMeasure')}</span>
@@ -324,45 +324,45 @@ export default function SoilPage() {
           </div>
 
           {/* Rough Kitchen pH Test Guide */}
-          <div className="p-5 bg-white border-2 border-stone-300 rounded-2xl space-y-4 shadow-sm">
-            <h2 className="text-lg font-black text-stone-950 flex items-center gap-2">
-              <Sparkles className="w-5 h-5 text-indigo-700" aria-hidden="true" />
+          <div className="p-5 bg-white border border-emerald-950/10 rounded-3xl space-y-4 shadow-[0_10px_30px_rgba(6,78,59,0.08)]">
+            <h2 className="text-lg font-black text-slate-950 flex items-center gap-2 tracking-tight">
+              <Sparkles className="w-5 h-5 text-indigo-700 stroke-[2.5]" aria-hidden="true" />
               <span>{t('soil.phTestTitle')}</span>
             </h2>
-            <p className="text-sm font-medium text-stone-800">
+            <p className="text-sm font-semibold text-slate-700">
               {t('soil.phDesc')}
             </p>
 
             <div className="space-y-3">
               {/* Vinegar Test */}
-              <div className="p-3.5 bg-blue-50 border border-blue-200 rounded-xl space-y-1">
+              <div className="p-4 bg-blue-50/80 border border-blue-200/80 rounded-2xl space-y-1">
                 <h3 className="text-sm font-black text-blue-950">
                   {t('soil.phVinegarTitle')}
                 </h3>
-                <p className="text-sm font-medium text-blue-900 leading-relaxed">
+                <p className="text-sm font-semibold text-blue-900 leading-relaxed">
                   {t('soil.phVinegarDesc')}
                 </p>
               </div>
 
               {/* Baking Soda Test */}
-              <div className="p-3.5 bg-amber-50 border border-amber-200 rounded-xl space-y-1">
+              <div className="p-4 bg-amber-50/80 border border-amber-200/80 rounded-2xl space-y-1">
                 <h3 className="text-sm font-black text-amber-950">
                   {t('soil.phBakingSodaTitle')}
                 </h3>
-                <p className="text-sm font-medium text-amber-900 leading-relaxed">
+                <p className="text-sm font-semibold text-amber-900 leading-relaxed">
                   {t('soil.phBakingSodaDesc')}
                 </p>
               </div>
 
               {/* Neutral Result */}
-              <div className="p-3.5 bg-green-50 border border-green-200 rounded-xl">
-                <p className="text-sm font-bold text-green-950 leading-relaxed">
+              <div className="p-4 bg-emerald-50/80 border border-emerald-200/80 rounded-2xl">
+                <p className="text-sm font-black text-emerald-950 leading-relaxed">
                   ✓ {t('soil.phNeutral')}
                 </p>
               </div>
             </div>
 
-            <p className="text-xs font-semibold text-stone-600 bg-stone-100 p-2.5 rounded-lg border border-stone-200">
+            <p className="text-xs font-semibold text-slate-700 bg-slate-100/90 p-3 rounded-xl border border-slate-200">
               {t('soil.phLabNotice')}
             </p>
           </div>
@@ -373,7 +373,7 @@ export default function SoilPage() {
       {activeTab === 'measure' && (
         <div className="space-y-5">
           {/* Photo Upload Buttons */}
-          <div className="p-4 bg-white border-2 border-stone-300 rounded-2xl space-y-3 shadow-sm">
+          <div className="p-5 bg-white border border-emerald-950/10 rounded-3xl space-y-3 shadow-[0_10px_30px_rgba(6,78,59,0.08)]">
             <input
               ref={fileInputRef}
               type="file"
@@ -382,7 +382,7 @@ export default function SoilPage() {
               onChange={handleFileChange}
             />
 
-            <div className="grid grid-cols-2 gap-2">
+            <div className="grid grid-cols-2 gap-2.5">
               <button
                 type="button"
                 onClick={() => {
@@ -391,9 +391,9 @@ export default function SoilPage() {
                     fileInputRef.current.click();
                   }
                 }}
-                className="min-h-[50px] px-3 py-2 bg-emerald-700 hover:bg-emerald-800 text-white font-bold rounded-xl flex items-center justify-center gap-2 shadow"
+                className="min-h-[50px] px-3.5 py-2.5 bg-emerald-800 hover:bg-emerald-900 text-white font-black rounded-2xl flex items-center justify-center gap-2 shadow-[0_4px_14px_rgba(6,78,59,0.25)] transition-all active:scale-[0.99]"
               >
-                <Camera className="w-5 h-5" aria-hidden="true" />
+                <Camera className="w-5 h-5 stroke-[2.5]" aria-hidden="true" />
                 <span className="text-sm">{t('soil.takePhoto')}</span>
               </button>
 
@@ -405,15 +405,15 @@ export default function SoilPage() {
                     fileInputRef.current.click();
                   }
                 }}
-                className="min-h-[50px] px-3 py-2 bg-stone-100 hover:bg-stone-200 text-stone-900 border border-stone-300 font-bold rounded-xl flex items-center justify-center gap-2"
+                className="min-h-[50px] px-3.5 py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-900 border border-slate-300/80 font-black rounded-2xl flex items-center justify-center gap-2 transition-all active:scale-[0.99]"
               >
-                <ImageIcon className="w-5 h-5" aria-hidden="true" />
+                <ImageIcon className="w-5 h-5 stroke-[2.5]" aria-hidden="true" />
                 <span className="text-sm">{t('soil.choosePhoto')}</span>
               </button>
             </div>
 
             {/* Helper Instructions */}
-            <div className="p-3 bg-blue-50 border border-blue-200 rounded-xl flex items-start gap-2.5">
+            <div className="p-3.5 bg-blue-50/80 border border-blue-200/80 rounded-2xl flex items-start gap-2.5">
               <HelpCircle className="w-5 h-5 text-blue-700 flex-shrink-0 mt-0.5" aria-hidden="true" />
               <p className="text-xs font-bold text-blue-950 leading-relaxed">
                 {t('soil.helperDrag')}
@@ -422,12 +422,12 @@ export default function SoilPage() {
           </div>
 
           {/* Interactive Photo Canvas with Draggable Lines */}
-          <div className="p-4 bg-white border-2 border-stone-300 rounded-2xl space-y-3 shadow-sm">
+          <div className="p-5 bg-white border border-emerald-950/10 rounded-3xl space-y-3 shadow-[0_10px_30px_rgba(6,78,59,0.08)]">
             <div
               ref={containerRef}
               onPointerMove={handlePointerMove}
               onPointerUp={handlePointerUp}
-              className="relative w-full h-80 bg-stone-100 rounded-xl overflow-hidden border-2 border-stone-400 select-none touch-none shadow-inner"
+              className="relative w-full h-80 bg-stone-100 rounded-2xl overflow-hidden border-2 border-stone-300 select-none touch-none shadow-inner"
             >
               {/* Uploaded Jar Image or Default Schematic Jar */}
               {imageSrc ? (
@@ -532,22 +532,22 @@ export default function SoilPage() {
           </div>
 
           {/* Result Card */}
-          <div className="p-5 bg-emerald-50 border-3 border-emerald-700 rounded-2xl space-y-4 shadow-sm">
+          <div className="p-5 bg-emerald-50/90 border border-emerald-600/40 rounded-3xl space-y-4 shadow-[0_10px_30px_rgba(6,78,59,0.08)]">
             <div className="flex items-start justify-between gap-2">
               <div>
                 <span className="inline-block px-2.5 py-0.5 text-xs font-black uppercase tracking-wider bg-emerald-200 text-emerald-950 rounded-full mb-1">
                   USDA Texture Class
                 </span>
-                <h2 className="text-2xl font-black text-emerald-950">
+                <h2 className="text-2xl font-black text-emerald-950 tracking-tight">
                   {getLocalized(result.info.name, locale)}
                 </h2>
               </div>
-              <div className="w-12 h-12 rounded-xl bg-emerald-700 text-white flex items-center justify-center flex-shrink-0 shadow">
-                <CheckCircle2 className="w-7 h-7" aria-hidden="true" />
+              <div className="w-12 h-12 rounded-2xl bg-emerald-800 text-white flex items-center justify-center flex-shrink-0 shadow-sm">
+                <CheckCircle2 className="w-7 h-7 stroke-[2.5]" aria-hidden="true" />
               </div>
             </div>
 
-            <p className="text-sm font-medium text-emerald-950 leading-relaxed">
+            <p className="text-sm font-semibold text-emerald-950 leading-relaxed">
               {getLocalized(result.info.description, locale)}
             </p>
 
@@ -556,10 +556,10 @@ export default function SoilPage() {
               <h3 className="text-sm font-black text-emerald-950">
                 {t('soil.tipsTitle')}:
               </h3>
-              <ul className="space-y-2 text-sm font-medium text-emerald-950">
+              <ul className="space-y-2 text-sm font-semibold text-emerald-950">
                 {result.info.tips.map((tip, idx) => (
-                  <li key={idx} className="p-2.5 bg-white border border-emerald-200 rounded-xl leading-relaxed flex items-start gap-2">
-                    <span className="text-emerald-700 font-bold">•</span>
+                  <li key={idx} className="p-3 bg-white border border-emerald-950/10 rounded-2xl leading-relaxed flex items-start gap-2 shadow-xs">
+                    <span className="text-emerald-700 font-black">•</span>
                     <span>{getLocalized(tip, locale)}</span>
                   </li>
                 ))}
@@ -568,12 +568,12 @@ export default function SoilPage() {
           </div>
 
           {/* SVG Soil Texture Triangle Visualization */}
-          <div className="p-4 bg-white border-2 border-stone-300 rounded-2xl space-y-3 shadow-sm">
-            <h3 className="text-base font-black text-stone-950">
+          <div className="p-5 bg-white border border-emerald-950/10 rounded-3xl space-y-3 shadow-[0_10px_30px_rgba(6,78,59,0.08)]">
+            <h3 className="text-base font-black text-slate-950">
               {t('soil.triangleTitle')}
             </h3>
 
-            <div className="p-2 bg-stone-50 border border-stone-200 rounded-xl flex items-center justify-center">
+            <div className="p-3 bg-stone-50/80 border border-stone-200/80 rounded-2xl flex items-center justify-center">
               <svg
                 viewBox="0 0 300 260"
                 className="w-full max-w-[280px] h-auto drop-shadow-sm select-none"
@@ -636,17 +636,17 @@ export default function SoilPage() {
                 />
               </svg>
             </div>
-            <p className="text-center text-xs font-semibold text-stone-600">
+            <p className="text-center text-xs font-semibold text-slate-600">
               Red dot indicates your estimated soil position.
             </p>
           </div>
 
           {/* Link to Soil Health Card Scheme Card */}
-          <div className="p-4 bg-sky-50 border-2 border-sky-600 rounded-2xl space-y-2.5 shadow-sm">
+          <div className="p-5 bg-sky-50/90 border border-sky-600/40 rounded-3xl space-y-2.5 shadow-[0_10px_30px_rgba(2,132,199,0.08)]">
             <h3 className="text-base font-black text-sky-950">
               {t('soil.soilHealthCardTitle')}
             </h3>
-            <p className="text-sm font-medium text-sky-900 leading-relaxed">
+            <p className="text-sm font-semibold text-sky-900 leading-relaxed">
               {t('soil.soilHealthCardDesc')}
             </p>
             {soilHealthScheme && (
@@ -654,7 +654,7 @@ export default function SoilPage() {
                 href={soilHealthScheme.official_url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full min-h-[48px] px-4 py-2.5 bg-sky-700 hover:bg-sky-800 text-white font-bold text-sm rounded-xl flex items-center justify-center gap-2 shadow"
+                className="w-full min-h-[48px] px-4 py-2.5 bg-sky-700 hover:bg-sky-800 text-white font-black text-sm rounded-2xl flex items-center justify-center gap-2 shadow"
               >
                 <span>{t('soil.soilHealthCardLink')}</span>
                 <ExternalLink className="w-4 h-4" aria-hidden="true" />
