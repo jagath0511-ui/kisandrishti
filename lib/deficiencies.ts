@@ -46,3 +46,4 @@ export function getDeficienciesByCrop(crop: string): DeficiencyEntry[] {
 export function getDeficiencyByKey(key: string): DeficiencyEntry | null {
   return rawDeficiencies.find((d) => d.key === key) || null;
 }
+

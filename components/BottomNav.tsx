@@ -40,7 +40,8 @@ export function BottomNav() {
     >
       <div className="max-w-md mx-auto grid grid-cols-4 items-center">
         {navItems.map((item) => {
-          const isActive = pathname === item.href;
+          const isActive =
+            pathname === item.href || (item.href === '/weather' && pathname === '/satellite');
           const Icon = item.icon;
 
           return (

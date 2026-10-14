@@ -52,6 +52,13 @@ import { shareConsultationCard } from '../../lib/shareCard';
 import BottleAuthenticityChecklist from '../../components/BottleAuthenticityChecklist';
 import ChemicalCompatibilityChecker from '../../components/ChemicalCompatibilityChecker';
 import NutrientDeficiencyGuide from '../../components/NutrientDeficiencyGuide';
+import {
+  acresToCents,
+  acresToGuntas,
+  calculateTotalWaterLitres,
+  calculateKnapsackDrums,
+  translateDosageToHouseholdMeasures,
+} from '../../lib/fieldGeometry';
 
 interface ChemicalItem {
   chemical_name: string;
@@ -110,10 +117,34 @@ function ChemicalMixCalculator({
   cibrcRegNo?: string;
   chemicalName?: string;
 }) {
-  const { t } = useI18n();
+  const { t, locale } = useI18n();
   const [tankSize, setTankSize] = useState<number>(16);
   const [customInput, setCustomInput] = useState<string>('16');
   const [isCustom, setIsCustom] = useState<boolean>(false);
+  const [lockedPlot, setLockedPlot] = useState<{
+    name: string;
+    surveyNumber: string;
+    acres: number;
+  } | null>(null);
+
+  useEffect(() => {
+    try {
+      const saved = localStorage.getItem('kisan_field_boundary_v2');
+      if (saved) {
+        const parsedPlots = JSON.parse(saved);
+        if (Array.isArray(parsedPlots) && parsedPlots.length > 0) {
+          const first = parsedPlots[0];
+          setLockedPlot({
+            name: first.name || 'Plot 1',
+            surveyNumber: first.surveyNumber || '142/2B',
+            acres: typeof first.acres === 'number' ? first.acres : 1.4,
+          });
+        }
+      }
+    } catch {
+      // Ignore localStorage errors
+    }
+  }, []);
 
   const parsed = parseDosePerLitre(dosePerLitre);
   if (!parsed) {
@@ -123,6 +154,18 @@ function ChemicalMixCalculator({
 
   const result = calculateTankMix(parsed.doseNumber, tankSize, parsed.unit);
   const presetSizes = [10, 15, 16, 20];
+  const household = translateDosageToHouseholdMeasures(parsed.doseNumber, tankSize);
+
+  const totalWater = lockedPlot ? calculateTotalWaterLitres(lockedPlot.acres) : null;
+  const totalDrums = lockedPlot && totalWater ? calculateKnapsackDrums(totalWater, tankSize) : null;
+  const totalChemicalNumber = lockedPlot && totalWater ? totalWater * parsed.doseNumber : null;
+  const totalHousehold = totalChemicalNumber
+    ? {
+        teaspoons: Number((totalChemicalNumber / 5).toFixed(0)),
+        matchboxes: Number((totalChemicalNumber / 15).toFixed(0)),
+        bottleCaps: Number((totalChemicalNumber / 10).toFixed(0)),
+      }
+    : null;
 
   const handleSelectPreset = (size: number) => {
     setTankSize(size);
@@ -198,16 +241,89 @@ function ChemicalMixCalculator({
       )}
 
       {result && (
-        <div className="p-3 bg-white border border-emerald-300 rounded-xl space-y-1">
+        <div className="p-3 bg-white border border-emerald-300 rounded-xl space-y-1.5">
           <span className="text-xs font-bold text-slate-500 uppercase block">
             {t('mixCalculator.amountPerTank')}
           </span>
-          <div className="text-2xl font-black text-emerald-950">
-            {result.formatted}
+          <div className="flex items-baseline justify-between flex-wrap gap-2">
+            <div className="text-2xl font-black text-emerald-950">
+              {result.formatted}
+            </div>
+            <span className="text-xs font-bold text-slate-800 bg-emerald-100 px-2 py-0.5 rounded-md border border-emerald-300">
+              {parsed.unit.toLowerCase().includes('ml') || parsed.unit.toLowerCase().includes('l')
+                ? `~${household.bottleCaps} ${locale === 'te' ? 'మూతలు (10ml)' : locale === 'hi' ? 'ढक्कन (10ml)' : 'Bottle Caps (10ml)'}`
+                : `~${household.teaspoons} ${locale === 'te' ? 'చెంచాలు (5g)' : locale === 'hi' ? 'चम्मच (5g)' : 'Spoons (5g)'} / ~${household.matchboxes} ${locale === 'te' ? 'అగ్గిపెట్టెలు (15g)' : locale === 'hi' ? 'माचिस (15g)' : 'Matchboxes (15g)'}`}
+            </span>
           </div>
           <span className="text-xs text-slate-600 font-semibold block">
             ({parsed.doseNumber} {parsed.unit}/L × {tankSize} L)
           </span>
+        </div>
+      )}
+
+      {/* Locked Satellite Farm Plot Sync & Total Field Dosage */}
+      {lockedPlot && totalWater && totalDrums && totalChemicalNumber && (
+        <div className="p-3.5 bg-white border-2 border-emerald-600 rounded-xl space-y-2.5 shadow-xs">
+          <div className="flex items-center justify-between">
+            <span className="text-xs font-black text-emerald-950 uppercase tracking-wide flex items-center gap-1.5">
+              <span>🛰️</span>
+              <span>
+                {locale === 'te'
+                  ? 'మీ లాక్ చేయబడిన ఉపగ్రహ పొలం'
+                  : locale === 'hi'
+                  ? 'आपकी लॉक की गई उपग्रह खेत सीमा'
+                  : 'Your Locked Satellite Field'}
+              </span>
+            </span>
+            <Link
+              href="/satellite"
+              className="text-xs font-black text-emerald-700 hover:text-emerald-900 underline flex items-center gap-0.5"
+            >
+              <span>{locale === 'te' ? 'హబ్ తెరవండి' : locale === 'hi' ? 'हब खोलें' : 'Open Hub'}</span>
+              <span>&rarr;</span>
+            </Link>
+          </div>
+
+          <div className="text-xs text-slate-800 font-black">
+            {lockedPlot.name} • సర్వే #{lockedPlot.surveyNumber} • {lockedPlot.acres} {locale === 'te' ? 'ఎకరాలు' : locale === 'hi' ? 'एकड़' : 'Acres'} ({acresToCents(lockedPlot.acres)} Cents / {acresToGuntas(lockedPlot.acres)} Guntas)
+          </div>
+
+          <div className="grid grid-cols-2 gap-2 text-xs">
+            <div className="p-2 bg-emerald-50 rounded-lg border border-emerald-200">
+              <span className="text-slate-600 block font-semibold">
+                {locale === 'te' ? 'మొత్తం స్ప్రే నీరు:' : locale === 'hi' ? 'कुल स्प्रे पानी:' : 'Total Spray Water:'}
+              </span>
+              <span className="text-sm font-black text-emerald-950">
+                {totalWater} L <span className="text-[10px] text-slate-500 font-normal">(150L/Ac)</span>
+              </span>
+            </div>
+            <div className="p-2 bg-emerald-50 rounded-lg border border-emerald-200">
+              <span className="text-slate-600 block font-semibold">
+                {locale === 'te' ? 'మొత్తం స్ప్రే డ్రమ్ములు:' : locale === 'hi' ? 'कुल ड्रम संख्या:' : 'Total Knapsack Drums:'}
+              </span>
+              <span className="text-sm font-black text-emerald-950">
+                {totalDrums} {locale === 'te' ? 'డ్రమ్ములు' : locale === 'hi' ? 'ड्रम' : 'Drums'} ({tankSize}L)
+              </span>
+            </div>
+          </div>
+
+          <div className="p-2.5 bg-amber-50 border border-amber-300 rounded-lg text-xs text-amber-950 space-y-1">
+            <span className="font-black block">
+              🌾 {locale === 'te' ? `మొత్తం ${lockedPlot.acres} ఎకరాలకు కావాల్సిన మందు:` : locale === 'hi' ? `पूरे ${lockedPlot.acres} एकड़ के लिए कुल दवा:` : `Total Chemical for ${lockedPlot.acres} Acres:`}
+            </span>
+            <span className="text-base font-black text-emerald-900 block">
+              {totalChemicalNumber >= 1000
+                ? `${(totalChemicalNumber / 1000).toFixed(2)} ${parsed.unit.toLowerCase().includes('ml') ? 'L' : 'kg'}`
+                : `${totalChemicalNumber.toFixed(0)} ${parsed.unit}`}
+            </span>
+            {totalHousehold && (
+              <span className="text-[11px] text-slate-700 block font-semibold">
+                {parsed.unit.toLowerCase().includes('ml') || parsed.unit.toLowerCase().includes('l')
+                  ? `(~${totalHousehold.bottleCaps} ${locale === 'te' ? 'మూతలు' : locale === 'hi' ? 'ढक्कन' : 'caps'})`
+                  : `(~${totalHousehold.matchboxes} ${locale === 'te' ? 'అగ్గిపెట్టెలు' : locale === 'hi' ? 'माचिस' : 'matchboxes'} లేదా ~${totalHousehold.teaspoons} ${locale === 'te' ? 'చెంచాలు' : locale === 'hi' ? 'चम्मच' : 'spoons'})`}
+              </span>
+            )}
+          </div>
         </div>
       )}
 

@@ -48,3 +48,4 @@ describe('Crop Nutrient Deficiency Diagnostic Key', () => {
     expect(zinc?.foliar_remedy.en).toContain('Zinc Sulphate');
   });
 });
+

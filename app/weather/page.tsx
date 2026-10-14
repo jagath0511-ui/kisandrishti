@@ -33,6 +33,7 @@ import {
   DiseaseRadarResult,
 } from '../../lib/diseaseRadar';
 import ChemicalCompatibilityChecker from '../../components/ChemicalCompatibilityChecker';
+import KisanSatelliteWeatherHub from '../../components/KisanSatelliteWeatherHub';
 import districtsData from '../../data/districts.json';
 
 interface DistrictItem {
@@ -58,6 +59,7 @@ function getLocalized(text: LocalizedText, loc: SupportedLocale): string {
 export default function WeatherPage() {
   const { t, locale } = useI18n();
 
+  const [activeTab, setActiveTab] = useState<'satellite' | 'forecast'>('satellite');
   const [latitude, setLatitude] = useState<number | null>(null);
   const [longitude, setLongitude] = useState<number | null>(null);
   const [locationName, setLocationName] = useState<string>('');
@@ -274,13 +276,59 @@ export default function WeatherPage() {
   };
 
   return (
-    <div className="p-4 space-y-5 pb-12 max-w-lg mx-auto">
-      {/* Top Bar */}
-      <div className="flex items-center justify-between gap-2">
-        <Link
-          href="/"
-          className="inline-flex items-center gap-2 min-h-[48px] px-3 py-2 text-base font-bold text-sky-950 bg-sky-100 hover:bg-sky-200 rounded-lg border border-sky-300"
-        >
+    <div className="w-full pb-12">
+      {/* 2-Tab Switcher at Top */}
+      <div className="p-3 max-w-lg mx-auto">
+        <div className="flex bg-slate-200 p-1.5 rounded-2xl shadow-inner border border-slate-300">
+          <button
+            type="button"
+            onClick={() => setActiveTab('satellite')}
+            className={`flex-1 py-3 px-2 rounded-xl font-black text-xs sm:text-sm flex items-center justify-center gap-2 transition-all min-h-[48px] ${
+              activeTab === 'satellite'
+                ? 'bg-emerald-700 text-white shadow-md'
+                : 'text-slate-700 hover:text-slate-950 hover:bg-slate-300/60'
+            }`}
+          >
+            <span>🛰️</span>
+            <span>
+              {locale === 'te'
+                ? 'ఉపగ్రహ స్కై హబ్'
+                : locale === 'hi'
+                ? 'उपग्रह स्काई हब'
+                : 'Satellite Sky Hub'}
+            </span>
+          </button>
+          <button
+            type="button"
+            onClick={() => setActiveTab('forecast')}
+            className={`flex-1 py-3 px-2 rounded-xl font-black text-xs sm:text-sm flex items-center justify-center gap-2 transition-all min-h-[48px] ${
+              activeTab === 'forecast'
+                ? 'bg-sky-700 text-white shadow-md'
+                : 'text-slate-700 hover:text-slate-950 hover:bg-slate-300/60'
+            }`}
+          >
+            <span>🌦️</span>
+            <span>
+              {locale === 'te'
+                ? 'స్ప్రే వాతావరణం'
+                : locale === 'hi'
+                ? 'स्प्रे मौसम'
+                : 'Spray Weather'}
+            </span>
+          </button>
+        </div>
+      </div>
+
+      {activeTab === 'satellite' ? (
+        <KisanSatelliteWeatherHub />
+      ) : (
+        <div className="p-4 space-y-5 max-w-lg mx-auto">
+          {/* Top Bar */}
+          <div className="flex items-center justify-between gap-2">
+            <Link
+              href="/"
+              className="inline-flex items-center gap-2 min-h-[48px] px-3 py-2 text-base font-bold text-sky-950 bg-sky-100 hover:bg-sky-200 rounded-lg border border-sky-300"
+            >
           <ArrowLeft className="w-5 h-5" aria-hidden="true" />
           <span>{locale === 'te' ? 'హోమ్' : locale === 'hi' ? 'होम' : 'Home'}</span>
         </Link>
@@ -662,6 +710,8 @@ export default function WeatherPage() {
                 : 'Need to diagnose a sick crop? Go to Crop Doctor'}
             </span>
           </Link>
+        </div>
+      )}
         </div>
       )}
     </div>

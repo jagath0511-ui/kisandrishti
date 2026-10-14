@@ -72,3 +72,4 @@ describe('Pest & Disease Outbreak Radar', () => {
     expect(lateBlight?.organicSpray.en).toContain('Trichoderma harzianum');
   });
 });
+

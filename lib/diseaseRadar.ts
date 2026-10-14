@@ -151,3 +151,4 @@ export function evaluateDiseaseRadar(
     evaluatedHours: window.length,
   };
 }
+
