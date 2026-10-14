@@ -70,7 +70,7 @@ export function normalizeSoilFractions(
 
   // Round to nearest integer and balance rounding error
   let sand = Math.round((s / total) * 100);
-  let silt = Math.round((si / total) * 100);
+  const silt = Math.round((si / total) * 100);
   let clay = 100 - (sand + silt);
 
   // Guard edge rounding overshoot
