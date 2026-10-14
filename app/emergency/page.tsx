@@ -90,6 +90,28 @@ export default function EmergencyPage() {
         </div>
 
         <div className="space-y-2.5">
+          {/* Main 108 Ambulance Call Button (AP & Telangana Native Emergency) */}
+          <a
+            href="tel:108"
+            className="w-full min-h-[58px] py-3.5 px-4 bg-white hover:bg-emerald-50 active:bg-emerald-100 text-emerald-800 font-black text-xl rounded-2xl shadow-md border-2 border-emerald-600 flex items-center justify-between transition-all active:scale-[0.99]"
+            aria-label="Call 108 Free Medical Ambulance (AP & Telangana)"
+          >
+            <div className="flex items-center gap-3">
+              <div className="w-11 h-11 rounded-2xl bg-emerald-700 text-white flex items-center justify-center shrink-0 shadow-sm">
+                <PhoneCall className="w-6 h-6 stroke-[2.5]" aria-hidden="true" />
+              </div>
+              <div className="text-left leading-tight">
+                <span className="block text-2xl font-black text-emerald-950">CALL 108</span>
+                <span className="block text-xs font-bold text-slate-700">
+                  Medical Ambulance (Free AP & TG 24/7)
+                </span>
+              </div>
+            </div>
+            <span className="text-xs font-black uppercase bg-emerald-700 text-white px-2.5 py-1 rounded-xl shadow-xs">
+              FREE
+            </span>
+          </a>
+
           {/* Main 112 Call Button */}
           <a
             href="tel:112"

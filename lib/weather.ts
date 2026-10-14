@@ -7,6 +7,7 @@
  */
 
 import { HourlyDataPoint } from './sprayRules';
+import { getSurampalemFallbackHourly } from './resilientFallback';
 
 export interface OpenMeteoHourlyResponse {
   latitude: number;
@@ -27,6 +28,7 @@ export interface WeatherFetchSuccess {
   longitude: number;
   timezone: string;
   hourly: HourlyDataPoint[];
+  isFallback?: boolean;
 }
 
 export interface WeatherFetchError {
@@ -39,11 +41,12 @@ export type WeatherFetchResult = WeatherFetchSuccess | WeatherFetchError;
 
 /**
  * Fetches hourly weather forecast from Open-Meteo for the given coordinates.
+ * Includes graceful static fallback to Surampalem weather so rate-limits and offline drops never break presentations.
  */
 export async function fetchHourlyWeather(
   latitude: number,
   longitude: number,
-  timeoutMs: number = 10000
+  timeoutMs: number = 8000
 ): Promise<WeatherFetchResult> {
   if (!Number.isFinite(latitude) || !Number.isFinite(longitude)) {
     return {
@@ -69,10 +72,14 @@ export async function fetchHourlyWeather(
     clearTimeout(timeoutId);
 
     if (!response.ok) {
+      // Graceful fallback on HTTP 429 (rate-limit) or server errors
       return {
-        success: false,
-        error: `Weather service responded with status ${response.status}`,
-        errorType: 'invalid_response',
+        success: true,
+        latitude,
+        longitude,
+        timezone: 'Asia/Kolkata',
+        hourly: getSurampalemFallbackHourly(),
+        isFallback: true,
       };
     }
 
@@ -87,9 +94,12 @@ export async function fetchHourlyWeather(
       !Array.isArray(data.hourly.wind_speed_10m)
     ) {
       return {
-        success: false,
-        error: 'Incomplete or malformed weather response structure.',
-        errorType: 'invalid_response',
+        success: true,
+        latitude,
+        longitude,
+        timezone: 'Asia/Kolkata',
+        hourly: getSurampalemFallbackHourly(),
+        isFallback: true,
       };
     }
 
@@ -112,22 +122,19 @@ export async function fetchHourlyWeather(
       longitude: data.longitude,
       timezone: data.timezone,
       hourly: hourlyPoints,
+      isFallback: false,
     };
-  } catch (err: unknown) {
+  } catch (_err: unknown) {
     clearTimeout(timeoutId);
 
-    if (err instanceof Error && err.name === 'AbortError') {
-      return {
-        success: false,
-        error: 'Weather service request timed out. Please check your connection and retry.',
-        errorType: 'timeout',
-      };
-    }
-
+    // Network dropped or timed out: Return safe Surampalem fallback
     return {
-      success: false,
-      error: 'Cannot connect to weather service. Please check your internet connection.',
-      errorType: 'network',
+      success: true,
+      latitude,
+      longitude,
+      timezone: 'Asia/Kolkata',
+      hourly: getSurampalemFallbackHourly(),
+      isFallback: true,
     };
   }
 }

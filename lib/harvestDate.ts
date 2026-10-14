@@ -156,14 +156,19 @@ export async function syncSprayRecordToCloud(
   spray: SprayRecord,
   uid: string
 ): Promise<boolean> {
+  const controller = new AbortController();
+  const timeoutId = setTimeout(() => controller.abort(), 2500);
   try {
     const res = await fetch('/api/user/sprays', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ uid, spray }),
+      signal: controller.signal,
     });
+    clearTimeout(timeoutId);
     return res.ok;
   } catch {
+    clearTimeout(timeoutId);
     return false;
   }
 }
@@ -172,8 +177,13 @@ export async function syncSprayRecordToCloud(
  * Fetches spray records from Cloud Firestore and merges into localStorage
  */
 export async function fetchAndMergeCloudSprays(uid: string): Promise<SprayRecord[]> {
+  const controller = new AbortController();
+  const timeoutId = setTimeout(() => controller.abort(), 2500);
   try {
-    const res = await fetch(`/api/user/sprays?uid=${encodeURIComponent(uid)}`);
+    const res = await fetch(`/api/user/sprays?uid=${encodeURIComponent(uid)}`, {
+      signal: controller.signal,
+    });
+    clearTimeout(timeoutId);
     if (!res.ok) return getSprayRecords();
 
     const data = await res.json();
@@ -189,6 +199,7 @@ export async function fetchAndMergeCloudSprays(uid: string): Promise<SprayRecord
     localStorage.setItem(STORAGE_KEY, JSON.stringify(merged));
     return merged;
   } catch {
+    clearTimeout(timeoutId);
     return getSprayRecords();
   }
 }

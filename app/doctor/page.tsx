@@ -384,14 +384,21 @@ export default function DoctorPage() {
     }
   };
 
-  // Load and merge spray records on mount or when user auth changes
+  // Load spray records immediately from localStorage (0-latency offline resilience), then sync cloud if online
   useEffect(() => {
+    // Immediate local load
+    setSprayRecords(getSprayRecords());
+
     if (user?.uid) {
-      fetchAndMergeCloudSprays(user.uid).then((merged) => {
-        setSprayRecords(merged);
-      });
-    } else {
-      setSprayRecords(getSprayRecords());
+      fetchAndMergeCloudSprays(user.uid)
+        .then((merged) => {
+          if (Array.isArray(merged) && merged.length > 0) {
+            setSprayRecords(merged);
+          }
+        })
+        .catch(() => {
+          // Gracefully keep localStorage records
+        });
     }
   }, [user]);
 

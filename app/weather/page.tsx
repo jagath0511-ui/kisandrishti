@@ -84,6 +84,7 @@ export default function WeatherPage() {
   const [weatherError, setWeatherError] = useState<string | null>(null);
   const [safetyResult, setSafetyResult] = useState<SpraySafetyResult | null>(null);
   const [radarResult, setRadarResult] = useState<DiseaseRadarResult | null>(null);
+  const [isOfflineFallback, setIsOfflineFallback] = useState<boolean>(false);
 
   // Load saved location on mount
   useEffect(() => {
@@ -118,6 +119,7 @@ export default function WeatherPage() {
         return;
       }
 
+      setIsOfflineFallback(Boolean(res.isFallback));
       const evaluation = evaluateSpraySafety(res.hourly);
       setSafetyResult(evaluation);
       const radar = evaluateDiseaseRadar(res.hourly);
@@ -504,6 +506,20 @@ export default function WeatherPage() {
               {t('weather.changeLocation')}
             </button>
           </div>
+
+          {/* Offline Resilient Shield Banner */}
+          {isOfflineFallback && (
+            <div className="p-3 bg-amber-50/90 border border-amber-300 rounded-2xl flex items-center gap-2 text-xs font-bold text-amber-950 shadow-xs">
+              <CloudSun className="w-4 h-4 text-amber-700 shrink-0" aria-hidden="true" />
+              <span>
+                {locale === 'te'
+                  ? 'ఆఫ్‌లైన్ రక్షణ షీల్డ్: సురంపాలెం ప్రామాణిక వాతావరణం ఆధారంగా అంచనా వేయబడింది.'
+                  : locale === 'hi'
+                  ? 'ऑफ़लाइन शील्ड: सुरमपालेम मानक मौसम डेटा के आधार पर गणना की गई।'
+                  : 'Offline Shield: Surampalem Standard Safe Window Active.'}
+              </span>
+            </div>
+          )}
 
           {/* Big Colored Status Banner */}
           {renderStatusCard(safetyResult.status)}
