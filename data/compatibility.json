@@ -1,0 +1,137 @@
+{
+  "formulation_classes": {
+    "WP": {
+      "name": "Wettable Powder",
+      "wale_order": 1,
+      "wale_step": "W - Wettable Powders",
+      "description": "Dry powders that suspend in water. Must be pre-mixed into a smooth slurry before adding to tank."
+    },
+    "WDG": {
+      "name": "Water Dispersible Granules",
+      "wale_order": 1,
+      "wale_step": "W - Water Dispersibles",
+      "description": "Dry granules that disperse into water. Mix with slurry first."
+    },
+    "SC": {
+      "name": "Suspension Concentrate / Flowable",
+      "wale_order": 3,
+      "wale_step": "L - Liquids / Flowables",
+      "description": "Liquid suspension of finely ground active ingredient in water. Add after agitating powders."
+    },
+    "SL": {
+      "name": "Soluble Liquid",
+      "wale_order": 3,
+      "wale_step": "L - Liquid Solubles",
+      "description": "Clear liquid solution that dissolves completely in water."
+    },
+    "EC": {
+      "name": "Emulsifiable Concentrate",
+      "wale_order": 4,
+      "wale_step": "E - Emulsifiables",
+      "description": "Oily liquid forming a milky emulsion in water. Always add LAST to prevent clumping."
+    },
+    "COPPER": {
+      "name": "Copper-based (COC / Bordeaux)",
+      "wale_order": 1,
+      "wale_step": "W - Copper Fungicides",
+      "description": "Alkaline copper compounds. Incompatible with acidic chemicals and organophosphates."
+    },
+    "SULPHUR": {
+      "name": "Sulphur-based (Elemental / WP)",
+      "wale_order": 1,
+      "wale_step": "W - Sulphur",
+      "description": "Sulphur powder/granules. Never mix or follow with oil/EC sprays within 14 days."
+    },
+    "FERTILIZER": {
+      "name": "Foliar Fertilizer / Micronutrient (NPK, Zinc)",
+      "wale_order": 2,
+      "wale_step": "A - Agitate with Nutrients",
+      "description": "Water soluble fertilizers like 19:19:19 or Urea. Dissolve completely."
+    }
+  },
+  "incompatibility_rules": [
+    {
+      "typeA": "COPPER",
+      "typeB": "EC",
+      "status": "INCOMPATIBLE",
+      "reason": {
+        "en": "Copper compounds degrade oil emulsions, causing heavy leaf scorching (phytotoxicity) and nozzle curdling.",
+        "te": "రాగి (కాపర్) మందులను ఈసీ (నూనె రూప) మందులతో కలిపితే ఆకులు మాడిపోతాయి మరియు నాజిల్స్ మూసుకుపోతాయి.",
+        "hi": "कॉपर कवकनाशी को ईसी रसायनों के साथ मिलाने से पत्तियां झुलस जाती हैं और नोजल चोक हो जाते हैं।"
+      }
+    },
+    {
+      "typeA": "SULPHUR",
+      "typeB": "EC",
+      "status": "INCOMPATIBLE",
+      "reason": {
+        "en": "Mixing Sulphur with oil/EC formulations causes severe chemical burn on leaves, especially in hot sun (>30°C).",
+        "te": "గంధకం (సల్ఫర్) ను ఈసీ మందులతో కలిపితే ఎండ వేడిమికి ఆకులు తీవ్రంగా మాడిపోతాయి.",
+        "hi": "सल्फर को ईसी फॉर्मूलेशन के साथ मिलाने से धूप में फसलों पर गंभीर रासायनिक झुलसा होता है।"
+      }
+    },
+    {
+      "typeA": "COPPER",
+      "typeB": "FERTILIZER",
+      "status": "CAUTION",
+      "reason": {
+        "en": "Alkaline copper can precipitate micronutrients like Zinc or Phosphorus out of solution into useless sludge.",
+        "te": "కాపర్ మందులు జింక్ లేదా భాస్వరం వంటి సూక్ష్మపోషకాలతో కలిసి నిరుపయోగమైన అవక్షేపంగా (బురదగా) మారుతాయి.",
+        "hi": "कॉपर जिंक या फॉस्फोरस जैसे पोषक तत्वों के साथ मिलकर अनुपयोगी तलछट बना देता है।"
+      }
+    },
+    {
+      "typeA": "WP",
+      "typeB": "EC",
+      "status": "COMPATIBLE_WITH_WALE",
+      "reason": {
+        "en": "Compatible ONLY if mixed in proper W-A-L-E order: Pre-mix WP into a smooth paste first, add water, then add EC last.",
+        "te": "W-A-L-E పద్ధతిలోనే కలపాలి: ముందుగా WP పొడిని నీటిలో పేస్టులా కలిపి ట్యాంకులో పోయాలి, చివరగా EC మందు కలపాలి.",
+        "hi": "केवल W-A-L-E क्रम में ही मिलाएं: पहले WP पाउडर का पेस्ट बनाएं, फिर अंत में EC मिलाएं।"
+      }
+    }
+  ],
+  "wale_rules": [
+    {
+      "step": 1,
+      "letter": "W",
+      "title": "Wettable Powders & Dry Granules (WP, WDG)",
+      "desc": "Make a thin slurry in a small bucket of water first, then pour into half-full spray tank."
+    },
+    {
+      "step": 2,
+      "letter": "A",
+      "title": "Agitate & Add Water",
+      "desc": "Stir the tank thoroughly to keep powders in suspension before adding liquids."
+    },
+    {
+      "step": 3,
+      "letter": "L",
+      "title": "Liquid Concentrates & Suspension (SC, SL)",
+      "desc": "Pour liquid flowables slowly into the running or agitated water."
+    },
+    {
+      "step": 4,
+      "letter": "E",
+      "title": "Emulsifiable Concentrates (EC) & Oils",
+      "desc": "Always add oil/EC products LAST, then top up the tank with clean water."
+    }
+  ],
+  "jar_test_guide": {
+    "title": "The 15-Minute Glass Jar Compatibility Test",
+    "steps": [
+      "Take a clean 500 ml glass jar and fill half with the exact water you will use.",
+      "Add proportionate drops of chemical A (e.g. 1/4 teaspoon), shake well.",
+      "Add proportionate drops of chemical B, shake for 30 seconds.",
+      "Let it sit for 15 minutes in the shade."
+    ],
+    "bad_signs": [
+      "Curdling or milk-like curd separation",
+      "Heavy sludge settling at bottom or oily scum on top",
+      "Jar gets hot or produces steam (dangerous chemical reaction)",
+      "Granules clump together and will not dissolve"
+    ],
+    "conclusion": "If any bad sign appears, DO NOT MIX in your 15L or 200L tank. Spray them separately."
+  }
+}
+

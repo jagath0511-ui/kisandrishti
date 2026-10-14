@@ -28,6 +28,11 @@ import {
   SprayStatus,
   LocalizedText,
 } from '../../lib/sprayRules';
+import {
+  evaluateDiseaseRadar,
+  DiseaseRadarResult,
+} from '../../lib/diseaseRadar';
+import ChemicalCompatibilityChecker from '../../components/ChemicalCompatibilityChecker';
 import districtsData from '../../data/districts.json';
 
 interface DistrictItem {
@@ -63,6 +68,7 @@ export default function WeatherPage() {
   const [isLoadingWeather, setIsLoadingWeather] = useState<boolean>(false);
   const [weatherError, setWeatherError] = useState<string | null>(null);
   const [safetyResult, setSafetyResult] = useState<SpraySafetyResult | null>(null);
+  const [radarResult, setRadarResult] = useState<DiseaseRadarResult | null>(null);
 
   // Load saved location on mount
   useEffect(() => {
@@ -99,6 +105,8 @@ export default function WeatherPage() {
 
       const evaluation = evaluateSpraySafety(res.hourly);
       setSafetyResult(evaluation);
+      const radar = evaluateDiseaseRadar(res.hourly);
+      setRadarResult(radar);
       setLatitude(lat);
       setLongitude(lon);
       setLocationName(name);
@@ -564,6 +572,82 @@ export default function WeatherPage() {
               </div>
             )}
           </div>
+
+          {/* 48-Hour Disease & Pest Outbreak Radar */}
+          {radarResult && radarResult.hasAlerts && (
+            <div className="p-4 bg-purple-50 border-2 border-purple-800 rounded-2xl space-y-3 shadow-sm">
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-2 text-purple-950">
+                  <AlertTriangle className="w-5 h-5 text-purple-800 shrink-0" aria-hidden="true" />
+                  <h3 className="text-base font-black">
+                    {locale === 'te'
+                      ? '🦠 రాబోయే 48-గంటల తెగుళ్లు & పురుగుల ముందస్తు రాడార్'
+                      : locale === 'hi'
+                      ? '🦠 आगामी 48-घंटे कीट व रोग पूर्व चेतावनी रडार'
+                      : '🦠 48-Hour Disease & Pest Outbreak Radar'}
+                  </h3>
+                </div>
+                <span className="px-2 py-0.5 bg-purple-200 text-purple-950 rounded text-xs font-black">
+                  {radarResult.alerts.length} {locale === 'te' ? 'హెచ్చరికలు' : locale === 'hi' ? 'अलर्ट' : 'Alerts'}
+                </span>
+              </div>
+
+              <p className="text-xs text-purple-900 font-medium leading-relaxed">
+                {locale === 'te'
+                  ? 'రాబోయే 48 గంటల వాతావరణ అంచనా ఆధారంగా సూక్ష్మజీవులు మరియు పురుగులు వృద్ధి చెందే ప్రమాదం ఉంది. రసాయన మందుల ఖర్చు లేకుండా ముందస్తు సేంద్రీయ చర్యలు తీసుకోండి.'
+                  : locale === 'hi'
+                  ? 'मौसम के आधार पर कीट और फफूंद पनपने का खतरा है। बिना रासायनिक खर्च के समय रहते जैविक निवारक कदम उठाएं।'
+                  : 'Based on 48h microclimate conditions. Apply Stage 1 Preventive Organic Sprays before chemical intervention is needed.'}
+              </p>
+
+              <div className="space-y-3 pt-1">
+                {radarResult.alerts.map((alert) => (
+                  <div
+                    key={alert.id}
+                    className="p-3.5 bg-white border border-purple-300 rounded-xl space-y-2 text-xs text-slate-800"
+                  >
+                    <div className="flex items-center justify-between gap-2">
+                      <span className="font-black text-sm text-purple-950">
+                        {alert.diseaseName[locale as 'en' | 'te' | 'hi'] || alert.diseaseName.en}
+                      </span>
+                      <span
+                        className={`px-2 py-0.5 rounded text-[10px] font-black uppercase ${
+                          alert.severity === 'HIGH'
+                            ? 'bg-red-100 text-red-900 border border-red-400'
+                            : 'bg-amber-100 text-amber-900 border border-amber-400'
+                        }`}
+                      >
+                        {alert.severity} RISK
+                      </span>
+                    </div>
+
+                    <p className="text-slate-700 leading-relaxed">
+                      {alert.conditionSummary[locale as 'en' | 'te' | 'hi'] || alert.conditionSummary.en}
+                    </p>
+
+                    <div className="p-2 bg-purple-50 rounded-lg border border-purple-200 text-purple-950 space-y-0.5">
+                      <span className="font-bold block">
+                        {locale === 'te' ? 'ముందస్తు పరిశీలన:' : locale === 'hi' ? 'खेत में जांच:' : 'Scouting Action:'}
+                      </span>
+                      <p>{alert.preventiveAction[locale as 'en' | 'te' | 'hi'] || alert.preventiveAction.en}</p>
+                    </div>
+
+                    <div className="p-2.5 bg-emerald-50 rounded-lg border border-emerald-300 text-emerald-950 space-y-0.5">
+                      <span className="font-bold block">
+                        {locale === 'te' ? '🌿 సేంద్రీయ ముందస్తు పిచికారీ:' : locale === 'hi' ? '🌿 जैविक निवारक छिड़काव:' : '🌿 Stage 1 Organic Spray:'}
+                      </span>
+                      <p className="font-medium">
+                        {alert.organicSpray[locale as 'en' | 'te' | 'hi'] || alert.organicSpray.en}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* Chemical Compatibility & Jar Mix Checker */}
+          <ChemicalCompatibilityChecker />
 
           {/* Quick link to Crop Doctor */}
           <Link

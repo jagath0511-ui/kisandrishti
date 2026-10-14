@@ -28,6 +28,9 @@ export const ChemicalTreatmentSchema = z.object({
   source_url: z.string(),
   source_note: z.string(),
   verified: z.boolean(),
+  irac_frac_group: z.string().optional(),
+  formulation: z.string().optional(),
+  cibrc_reg_no: z.string().optional(),
 });
 export type ChemicalTreatment = z.infer<typeof ChemicalTreatmentSchema>;
 
@@ -121,4 +124,74 @@ export function getTreatment(
   );
 
   return result;
+}
+
+export interface MoARotationAlert {
+  hasRisk: boolean;
+  daysAgo?: number;
+  lastUsedChemical?: string;
+  matchedGroup?: string;
+  warningBadge: LocalizedText | null;
+  recommendation: LocalizedText | null;
+}
+
+/**
+ * Anti-Resistance MoA Rotation Guard
+ * Checks if the farmer sprayed a chemical with the same IRAC/FRAC Mode of Action
+ * within the specified window (default 21 days).
+ */
+export function checkMoARotationRisk(
+  candidateChemical: ChemicalTreatment,
+  recentSprays: Array<{ sprayDate: string; chemical: string; irac_frac_group?: string; crop?: string }>,
+  windowDays = 21,
+  currentDateStr?: string
+): MoARotationAlert {
+  if (!candidateChemical || !candidateChemical.irac_frac_group) {
+    return {
+      hasRisk: false,
+      warningBadge: null,
+      recommendation: null,
+    };
+  }
+
+  const now = currentDateStr ? new Date(currentDateStr).getTime() : Date.now();
+  const candidateGroup = candidateChemical.irac_frac_group.trim().toLowerCase();
+
+  for (const spray of recentSprays) {
+    const sprayTime = new Date(spray.sprayDate).getTime();
+    if (isNaN(sprayTime)) continue;
+
+    const diffDays = Math.round((now - sprayTime) / (1000 * 60 * 60 * 24));
+    if (diffDays >= 0 && diffDays <= windowDays) {
+      // Check if spray has matching irac_frac_group or if chemical name matches
+      const groupMatch = spray.irac_frac_group && spray.irac_frac_group.trim().toLowerCase() === candidateGroup;
+      const nameMatch = spray.chemical.toLowerCase() === candidateChemical.chemical_name.toLowerCase();
+
+      if (groupMatch || nameMatch) {
+        const groupLabel = candidateChemical.irac_frac_group;
+        return {
+          hasRisk: true,
+          daysAgo: diffDays,
+          lastUsedChemical: spray.chemical,
+          matchedGroup: groupLabel,
+          warningBadge: {
+            en: `⚠️ Resistance Alert: You sprayed a ${groupLabel} chemical ${diffDays} day${diffDays === 1 ? '' : 's'} ago (${spray.chemical}). Rotate to an alternative Mode of Action to prevent pest resistance!`,
+            te: `⚠️ పురుగు/తెగులు నిరోధకత హెచ్చరిక: మీరు ${diffDays} రోజుల క్రితం ${groupLabel} రసాయనం (${spray.chemical}) పిచికారీ చేశారు. తెగులు నిరోధకత పెరగకుండా ఉండటానికి వేరే మోడ్ ఆఫ్ యాక్షన్ (MoA) మందును వాడండి!`,
+            hi: `⚠️ प्रतिरोध चेतावनी (Resistance Alert): आपने ${diffDays} दिन पहले ${groupLabel} की दवा (${spray.chemical}) का छिड़काव किया था। कीट/फंगस में प्रतिरोध क्षमता न बने, इसके लिए अलग ग्रुप की दवा चुनें!`,
+          },
+          recommendation: {
+            en: `Select the alternative verified chemical option below with a different FRAC/IRAC code.`,
+            te: `క్రింద ఇవ్వబడిన వేరే FRAC/IRAC కోడ్ కలిగిన రసాయన ఎంపికను ఉపయోగించండి.`,
+            hi: `नीचे दिए गए दूसरे सत्यापित विकल्प का उपयोग करें जिसका FRAC/IRAC कोड अलग हो।`,
+          },
+        };
+      }
+    }
+  }
+
+  return {
+    hasRisk: false,
+    warningBadge: null,
+    recommendation: null,
+  };
 }

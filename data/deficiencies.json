@@ -1,0 +1,182 @@
+[
+  {
+    "key": "nitrogen",
+    "nutrient": {
+      "en": "Nitrogen (N) Deficiency",
+      "te": "నత్రజని (నైట్రోజన్) లోపం",
+      "hi": "नाइट्रोजन की कमी"
+    },
+    "leaf_position": "bottom_old",
+    "crops": ["paddy", "chilli", "cotton", "tomato"],
+    "visual_marker": {
+      "en": "V-shaped yellowing starting from leaf tip moving inward along midrib on older bottom leaves.",
+      "te": "కింది ముదిరిన ఆకుల చివర నుండి ఈనె వెంబడి 'V' ఆకారంలో పసుపు రంగులోకి మారుతుంది.",
+      "hi": "पुरानी निचली पत्तियों की नोक से मध्य शिरा के साथ 'V' आकार का पीलापन शुरू होता है।"
+    },
+    "symptoms": {
+      "en": "Stunted crop growth, pale yellowish-green lower leaves, poor tillering in paddy and branch thinning.",
+      "te": "మొక్కల ఎదుగుదల లోపించడం, కింది ఆకులు పాలిపోయిన పసుపు రంగులోకి మారడం, తక్కువ పిలకలు రావడం.",
+      "hi": "पौधों का ठूंठ जैसा विकास, निचली पत्तियां हल्की पीली होना, धान में कम कल्ले फूटना।"
+    },
+    "foliar_remedy": {
+      "en": "Foliar spray of 1% to 2% Urea (10-20g per litre water) for quick leaf greening.",
+      "te": "త్వరిత నివారణకు 1% నుండి 2% యూరియా ద్రావణం (లీటరు నీటికి 10-20 గ్రాములు) ఆకులపై పిచికారీ చేయండి.",
+      "hi": "त्वरित लाभ के लिए 1-2% यूरिया (10-20 ग्राम प्रति लीटर पानी) का पत्तियों पर छिड़काव करें।"
+    },
+    "soil_remedy": {
+      "en": "Top-dress split dosage of Neem-coated Urea as per recommended agricultural university schedule.",
+      "te": "సిఫార్సు చేసిన మోతాదులో వేప పూత పూసిన యూరియాను విడతల వారీగా పైపాటుగా వేయండి.",
+      "hi": "नीम लेपित यूरिया की अनुशंसित मात्रा को किस्तों में खेत में डालें।"
+    }
+  },
+  {
+    "key": "zinc_khaira",
+    "nutrient": {
+      "en": "Zinc (Zn) Deficiency / Khaira Disease in Paddy",
+      "te": "జింక్ (ఖైరా తెగులు) లోపం",
+      "hi": "जिंक की कमी / धान का खैरा रोग"
+    },
+    "leaf_position": "top_new",
+    "crops": ["paddy", "chilli", "tomato"],
+    "visual_marker": {
+      "en": "Dusty bronze or reddish-brown rust-colored spots on upper middle and young leaves; reduced leaf blade size.",
+      "te": "పై లేత ఆకులపై ఇటుక ఎరుపు లేదా తుప్పు రంగు మచ్చలు ఏర్పడి ఆకులు చిన్నవిగా మారతాయి.",
+      "hi": "ऊपरी नई पत्तियों पर तांबे या जंग के रंग के लाल-भूरे धब्बे, पत्तियां छोटी रह जाना।"
+    },
+    "symptoms": {
+      "en": "Plants remain severely stunted 2-3 weeks after transplanting; root system turns brown and rots; delayed panicle emergence.",
+      "te": "నాటిన 2-3 వారాల్లో మొక్కలు గిడసబారిపోతాయి; వేర్లు గోధుమ రంగులోకి మారి కుళ్లిపోతాయి; కంకి ఆలస్యమవుతుంది.",
+      "hi": "रोपाई के 2-3 सप्ताह बाद पौधों की वृद्धि रुक जाती है, जड़ें भूरी होकर सड़ने लगती हैं।"
+    },
+    "foliar_remedy": {
+      "en": "Spray 0.5% Zinc Sulphate (5g ZnSO4 + 2.5g slaked lime/chalk per litre of water) twice at 7-day intervals.",
+      "te": "లీటరు నీటికి 5 గ్రాముల జింక్ సల్ఫేట్ + 2.5 గ్రాముల సున్నం కలిపి 7 రోజుల వ్యవధిలో రెండుసార్లు పిచికారీ చేయండి.",
+      "hi": "5 ग्राम जिंक सल्फेट + 2.5 ग्राम बुझा हुआ चूना प्रति लीटर पानी में मिलाकर 7 दिन के अंतराल पर दो बार छिड़कें।"
+    },
+    "soil_remedy": {
+      "en": "Apply 20-25 kg Zinc Sulphate (21%) per acre at basal land preparation. Never mix directly with DAP.",
+      "te": "ఎకరానికి 20-25 కిలోల జింక్ సల్ఫేట్ చివరి దుక్కిలో వేయండి. DAP లేదా ఫాస్ఫేట్ ఎరువులతో నేరుగా కలపవద్దు.",
+      "hi": "खेत की अंतिम जुताई के समय 20-25 किग्रा जिंक सल्फेट प्रति एकड़ डालें। डीएपी के साथ सीधे न मिलाएं।"
+    }
+  },
+  {
+    "key": "potassium",
+    "nutrient": {
+      "en": "Potassium (K) Deficiency",
+      "te": "పొటాషియం (పొటాష్) లోపం",
+      "hi": "पोटेशियम की कमी"
+    },
+    "leaf_position": "bottom_old",
+    "crops": ["chilli", "cotton", "paddy", "tomato"],
+    "visual_marker": {
+      "en": "Marginal scorching and tip burn along the edges of older leaves; looks like fired edges.",
+      "te": "ముదిరిన ఆకుల అంచులు కాలినట్లుగా ఎండిపోవడం (టిప్ బర్న్).",
+      "hi": "पुरानी पत्तियों के किनारे और नोक जली हुई सी दिखाई देना (किनारे झुलसना)।"
+    },
+    "symptoms": {
+      "en": "Weak crop lodging, dull dark green foliage with necrotic margins, poor fruit setting and fruit drop in chilli/tomato.",
+      "te": "పైరు సులభంగా నేలవాలడం, ఆకుల అంచులు ఎండి రాలిపోవడం, పూత మరియు కాయ రాలడం.",
+      "hi": "पौधे कमजोर होकर गिरना, पत्तियों के किनारे सूखना, फल और फूल का अधिक झड़ना।"
+    },
+    "foliar_remedy": {
+      "en": "Foliar spray of 1% Potassium Nitrate (13:0:45) or SOP (0:0:50) @ 10g per litre during flowering and fruit development.",
+      "te": "పూత మరియు కాయ దశలో 1% పొటాషియం నైట్రేట్ (13-0-45) 10 గ్రాములు లీటరు నీటికి పిచికారీ చేయండి.",
+      "hi": "फूल और फल बनते समय 1% पोटेशियम नाइट्रेट (13:0:45) 10 ग्राम प्रति लीटर पानी का छिड़काव करें।"
+    },
+    "soil_remedy": {
+      "en": "Apply MOP (Muriate of Potash 60% K2O) in two splits during basal and flowering stages.",
+      "te": "సిఫార్సు చేసిన పొటాష్ (MOP) ఎరువును దుక్కిలో మరియు పూత దశలో రెండు విడతలుగా వేయండి.",
+      "hi": "अनुशंसित मात्रा में एमओपी (म्यूरेट ऑफ पोटाश) को बुवाई और फूल आने के समय दो भागों में दें।"
+    }
+  },
+  {
+    "key": "iron",
+    "nutrient": {
+      "en": "Iron (Fe) Deficiency (Interveinal Chlorosis)",
+      "te": "ఇనుము (ఐరన్) లోపం",
+      "hi": "आयरन (लोहा) की कमी"
+    },
+    "leaf_position": "top_new",
+    "crops": ["paddy", "chilli", "cotton", "tomato"],
+    "visual_marker": {
+      "en": "Youngest top leaves turn pale yellow to bleached white while the leaf veins remain sharply dark green.",
+      "te": "పై లేత ఆకులు పసుపు-తెలుపు రంగులోకి మారతాయి కానీ ఈనెలు మాత్రం ఆకుపచ్చగా స్పష్టంగా కనిపిస్తాయి.",
+      "hi": "ऊपरी नई पत्तियां पीली व सफेद पड़ जाती हैं, लेकिन उनकी नसें (शिराएं) गहरी हरी रहती हैं।"
+    },
+    "symptoms": {
+      "en": "Common in calcareous or high-pH black soils; upper shoots stop growing, leaf tissue bleaches and turns papery white.",
+      "te": "నల్లరేగడి మరియు సున్నం అధికంగా ఉన్న నేలల్లో ఎక్కువగా వస్తుంది; చిగుర్లు ఎదగక ఆకులు కాగితంలా తెల్లబడతాయి.",
+      "hi": "चूनेदार या अधिक पीएच वाली मिट्टी में अधिक दिखता है; ऊपरी कोपलें सफेद पड़कर सूखने लगती हैं।"
+    },
+    "foliar_remedy": {
+      "en": "Foliar spray of 0.5% Ferrous Sulphate (5g FeSO4 + 1g Citric Acid / Lemon juice per litre water) twice a week.",
+      "te": "లీటరు నీటికి 5 గ్రాముల అన్నభేది (ఫెర్రస్ సల్ఫేట్) + 1 గ్రాము నిమ్మ ఉప్పు కలిపి వారానికి రెండుసార్లు పిచికారీ చేయండి.",
+      "hi": "5 ग्राम फेरस सल्फेट + 1 ग्राम साइट्रिक एसिड (नींबू सत्त) प्रति लीटर पानी में मिलाकर हफ्ते में दो बार छिड़कें।"
+    },
+    "soil_remedy": {
+      "en": "Incorporate well-rotted farmyard manure (FYM) with green manuring to lower soil alkalinity and mobilize iron.",
+      "te": "పశువుల ఎరువు మరియు పచ్చిరొట్ట ఎరువులను ఎక్కువగా వేసి నేల క్షారత్వాన్ని తగ్గించండి.",
+      "hi": "गोबर की सड़ी खाद और हरी खाद का प्रयोग करें ताकि मिट्टी का क्षारीय स्तर कम हो सके।"
+    }
+  },
+  {
+    "key": "boron",
+    "nutrient": {
+      "en": "Boron (B) Deficiency",
+      "te": "బోరాన్ లోపం",
+      "hi": "बोरॉन की कमी"
+    },
+    "leaf_position": "top_new",
+    "crops": ["chilli", "tomato", "cotton"],
+    "visual_marker": {
+      "en": "Brittle, thick distorted young leaves; death of terminal growing bud with cracking of fruits.",
+      "te": "లేత ఆకులు మందంగా మారి పెళుసుబారిపోతాయి; చిగురు మొగ్గ చనిపోవడం, కాయలపై పగుళ్లు ఏర్పడటం.",
+      "hi": "ऊपरी पत्तियां मोटी और मुड़ी हुई हो जाती हैं; मुख्य कोपल मर जाना और फलों में दरारें पड़ना।"
+    },
+    "symptoms": {
+      "en": "Severe flower drop, poor pollination, hollow/misshapen tomatoes and black necrotic spots in chilli fruits.",
+      "te": "పూత విపరీతంగా రాలిపోవడం, సరైన పరాగసంపర్కం జరగకపోవడం, కాయలు వంకర్లు తిరిగి లోపల నల్లబడటం.",
+      "hi": "फूलों का भारी गिरना, फलों का टेढ़ा-मेढ़ा होना और टमाटर/मिर्च के फलों पर काले धब्बे या दरारें।"
+    },
+    "foliar_remedy": {
+      "en": "Foliar spray of Solubor (Di-sodium octaborate tetrahydrate) @ 1.0 to 1.5g per litre at flower initiation.",
+      "te": "పూత ప్రారంభ దశలో లీటరు నీటికి 1.0 - 1.5 గ్రాముల బోరాక్స్ (Solubor) పిచికారీ చేయండి.",
+      "hi": "फूल आने के समय घुलनशील बोरॉन (सोलुबोर) 1-1.5 ग्राम प्रति लीटर पानी का छिड़काव करें।"
+    },
+    "soil_remedy": {
+      "en": "Apply Borax @ 4-5 kg per acre during soil preparation for vegetable crops.",
+      "te": "చివరి దుక్కిలో ఎకరానికి 4-5 కిలోల బోరాక్స్ వేయండి.",
+      "hi": "सब्जियों के लिए खेत की तैयारी में 4-5 किग्रा बोरेक्स प्रति एकड़ डालें।"
+    }
+  },
+  {
+    "key": "magnesium",
+    "nutrient": {
+      "en": "Magnesium (Mg) Deficiency",
+      "te": "మెగ్నీషియం లోపం",
+      "hi": "मैग्नीशियम की कमी"
+    },
+    "leaf_position": "bottom_old",
+    "crops": ["cotton", "chilli", "tomato"],
+    "visual_marker": {
+      "en": "Interveinal chlorosis on older leaves; in cotton, leaves turn purplish-red between veins ('Lalya' reddening).",
+      "te": "ముదిరిన ఆకుల ఈనెల మధ్య భాగం పసుపు రంగులోకి మారుతుంది; పత్తిలో ఆకులు ఎరుపు రంగులోకి (లాల్యా) మారుతాయి.",
+      "hi": "पुरानी पत्तियों की नसों के बीच पीलापन; कपास में नसों के बीच पत्तियां लाल-बैंगनी (लालिया रोग) पड़ जाती हैं।"
+    },
+    "symptoms": {
+      "en": "Premature leaf shedding in cotton and solanaceous crops; stunted boll/fruit sizing.",
+      "te": "పత్తి మరియు టమాటలో ఆకులు సమయానికి ముందే రాలిపోవడం; కాయలు చిన్నవిగా మిగిలిపోవడం.",
+      "hi": "समय से पहले पत्तियों का झड़ना और फलों व कपास के टिंडों का छोटा रह जाना।"
+    },
+    "foliar_remedy": {
+      "en": "Foliar spray of Magnesium Sulphate (Epsom salt) @ 10g per litre water twice during active vegetative and boll development.",
+      "te": "మెగ్నీషియం సల్ఫేట్ 10 గ్రాములు లీటరు నీటికి కలిపి పైపాటుగా పిచికారీ చేయండి.",
+      "hi": "मैग्नीशियम सल्फेट (एप्सम साल्ट) 10 ग्राम प्रति लीटर पानी में मिलाकर छिड़काव करें।"
+    },
+    "soil_remedy": {
+      "en": "Apply Dolomite lime or Magnesium Sulphate @ 15-20 kg per acre in acidic or light sandy soils.",
+      "te": "తేలికపాటి ఇసుక నేలల్లో ఎకరానికి 15-20 కిలోల మెగ్నీషియం సల్ఫేట్ వేయండి.",
+      "hi": "हल्की या बलुई मिट्टी में 15-20 किग्रा मैग्नीशियम सल्फेट प्रति एकड़ डालें।"
+    }
+  }
+]

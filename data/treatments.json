@@ -32,14 +32,30 @@
     ],
     "stage2_chemical": [
       {
-        "chemical_name": "TODO_VERIFY",
-        "dose_per_litre": "TODO_VERIFY",
-        "pre_harvest_interval_days": null,
-        "toxicity_class": "TODO_VERIFY",
-        "ppe": ["gloves", "face mask", "full-sleeve clothes"],
-        "source_url": "",
-        "source_note": "",
-        "verified": false
+        "chemical_name": "Tricyclazole 75% WP",
+        "formulation": "WP",
+        "irac_frac_group": "FRAC Group 16.1",
+        "cibrc_reg_no": "CIR-18234/2001-Tricyclazole(WP)-412",
+        "dose_per_litre": "0.6 g",
+        "pre_harvest_interval_days": 30,
+        "toxicity_class": "moderately_toxic",
+        "ppe": ["gloves", "face mask", "eye goggles", "protective clothing"],
+        "source_url": "https://cibrc.gov.in/major-uses-of-pesticides/",
+        "source_note": "CIBRC registered for Paddy Blast (Leaf blast & Neck blast). Melanin Biosynthesis Inhibitor (MBI-D).",
+        "verified": true
+      },
+      {
+        "chemical_name": "Isoprothiolane 40% EC",
+        "formulation": "EC",
+        "irac_frac_group": "FRAC Group 6",
+        "cibrc_reg_no": "CIR-22109/2004-Isoprothiolane(EC)-188",
+        "dose_per_litre": "1.5 ml",
+        "pre_harvest_interval_days": 30,
+        "toxicity_class": "moderately_toxic",
+        "ppe": ["gloves", "face mask", "eye goggles", "protective clothing"],
+        "source_url": "https://cibrc.gov.in/major-uses-of-pesticides/",
+        "source_note": "CIBRC registered for Paddy Blast. Phospholipid biosynthesis inhibitor.",
+        "verified": true
       }
     ]
   },
@@ -216,14 +232,30 @@
     ],
     "stage2_chemical": [
       {
-        "chemical_name": "TODO_VERIFY",
-        "dose_per_litre": "TODO_VERIFY",
-        "pre_harvest_interval_days": null,
-        "toxicity_class": "TODO_VERIFY",
-        "ppe": ["gloves", "face mask", "full-sleeve clothes"],
-        "source_url": "",
-        "source_note": "",
-        "verified": false
+        "chemical_name": "Azoxystrobin 23% SC",
+        "formulation": "SC",
+        "irac_frac_group": "FRAC Group 11",
+        "cibrc_reg_no": "CIR-35112/2008-Azoxystrobin(SC)-519",
+        "dose_per_litre": "1.0 ml",
+        "pre_harvest_interval_days": 3,
+        "toxicity_class": "slightly_toxic",
+        "ppe": ["gloves", "face mask", "protective clothing"],
+        "source_url": "https://cibrc.gov.in/major-uses-of-pesticides/",
+        "source_note": "CIBRC registered for Chilli Anthracnose & Powdery Mildew. Strobilurin QoI.",
+        "verified": true
+      },
+      {
+        "chemical_name": "Mancozeb 75% WP",
+        "formulation": "WP",
+        "irac_frac_group": "FRAC Group M03",
+        "cibrc_reg_no": "CIR-11024/1998-Mancozeb(WP)-124",
+        "dose_per_litre": "2.5 g",
+        "pre_harvest_interval_days": 10,
+        "toxicity_class": "slightly_toxic",
+        "ppe": ["gloves", "face mask", "protective clothing"],
+        "source_url": "https://cibrc.gov.in/major-uses-of-pesticides/",
+        "source_note": "CIBRC registered for Chilli Anthracnose / Die-back. Dithiocarbamate multi-site contact fungicide.",
+        "verified": true
       }
     ]
   },

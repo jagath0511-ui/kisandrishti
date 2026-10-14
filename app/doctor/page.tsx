@@ -29,6 +29,8 @@ import {
   Info,
   Clock,
   Calculator,
+  MessageCircle,
+  Share2,
 } from 'lucide-react';
 import { ListenButton } from '../../components/ListenButton';
 import { useI18n, SupportedLocale } from '../../lib/i18n';
@@ -45,6 +47,11 @@ import {
 } from '../../lib/harvestDate';
 import { useAuth } from '../../context/AuthContext';
 import { parseDosePerLitre, calculateTankMix } from '../../lib/mixCalculator';
+import { checkMoARotationRisk } from '../../lib/treatments';
+import { shareConsultationCard } from '../../lib/shareCard';
+import BottleAuthenticityChecklist from '../../components/BottleAuthenticityChecklist';
+import ChemicalCompatibilityChecker from '../../components/ChemicalCompatibilityChecker';
+import NutrientDeficiencyGuide from '../../components/NutrientDeficiencyGuide';
 
 interface ChemicalItem {
   chemical_name: string;
@@ -55,6 +62,9 @@ interface ChemicalItem {
   source_url: string;
   source_note?: string;
   verified: boolean;
+  irac_frac_group?: string;
+  formulation?: string;
+  cibrc_reg_no?: string;
 }
 
 interface TreatmentData {
@@ -91,7 +101,15 @@ interface DiagnosisResult {
   treatment: TreatmentData | null;
 }
 
-function ChemicalMixCalculator({ dosePerLitre }: { dosePerLitre?: string | null }) {
+function ChemicalMixCalculator({
+  dosePerLitre,
+  cibrcRegNo,
+  chemicalName,
+}: {
+  dosePerLitre?: string | null;
+  cibrcRegNo?: string;
+  chemicalName?: string;
+}) {
   const { t } = useI18n();
   const [tankSize, setTankSize] = useState<number>(16);
   const [customInput, setCustomInput] = useState<string>('16');
@@ -198,6 +216,9 @@ function ChemicalMixCalculator({ dosePerLitre }: { dosePerLitre?: string | null 
         <Info className="w-4 h-4 text-amber-700 shrink-0 mt-0.5" aria-hidden="true" />
         <span>{t('mixCalculator.labelWarning')}</span>
       </div>
+
+      {/* 3-Second Genuine Bottle & Expiry Checklist */}
+      <BottleAuthenticityChecklist cibrcRegNo={cibrcRegNo} chemicalName={chemicalName} />
     </div>
   );
 }
@@ -216,6 +237,9 @@ export default function DoctorPage() {
 
   // Accordion for Stage 2 (Chemicals) - collapsed by default
   const [stage2Open, setStage2Open] = useState<boolean>(false);
+  const [isSharingCard, setIsSharingCard] = useState<boolean>(false);
+  const [showNutrientGuide, setShowNutrientGuide] = useState<boolean>(false);
+  const [showCompatibility, setShowCompatibility] = useState<boolean>(false);
 
   // Spray Diary state
   const [sprayRecords, setSprayRecords] = useState<SprayRecord[]>([]);
@@ -223,6 +247,26 @@ export default function DoctorPage() {
     chemical: string;
     safeDate: string;
   } | null>(null);
+
+  const handleShareToOfficer = async () => {
+    if (!result) return;
+    setIsSharingCard(true);
+    try {
+      await shareConsultationCard({
+        cropName: result.crop || selectedCrop || 'Crop',
+        problemName: result.problem_name,
+        confidenceScore: result.confidence_score,
+        confidenceLevel: result.confidence === 'high' ? 'medium' : result.confidence,
+        districtName: 'Andhra Pradesh / Telangana',
+        photoUrl: compressedImage?.previewUrl,
+        lang: locale as any,
+      });
+    } catch (err) {
+      console.error('Officer share error:', err);
+    } finally {
+      setIsSharingCard(false);
+    }
+  };
 
   // Load and merge spray records on mount or when user auth changes
   useEffect(() => {
@@ -335,6 +379,7 @@ export default function DoctorPage() {
       chemical: chem.chemical_name,
       sprayDate: today,
       intervalDays,
+      irac_frac_group: chem.irac_frac_group,
     });
 
     // Sync to Cloud Firestore if user is authenticated
@@ -545,6 +590,54 @@ export default function DoctorPage() {
                 {t('doctor.tips.instruction')}
               </p>
             </div>
+          </div>
+
+          {/* Quick Rural Diagnostic Tools: Deficiency & Compatibility */}
+          <div className="space-y-3">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+              <button
+                type="button"
+                onClick={() => setShowNutrientGuide(!showNutrientGuide)}
+                className="w-full min-h-[48px] px-3.5 py-2.5 bg-amber-50 hover:bg-amber-100 border-2 border-amber-600 rounded-xl text-amber-950 font-black text-sm flex items-center justify-between transition-colors cursor-pointer"
+              >
+                <span className="flex items-center gap-2">
+                  <span>🍃</span>
+                  <span>
+                    {locale === 'te'
+                      ? 'పసుపు ఆకుల లోపాల గైడ్ (2-ట్యాప్)'
+                      : locale === 'hi'
+                      ? 'पीली पत्ती पोषण कमी गाइड'
+                      : 'Yellow Leaf Deficiency Guide'}
+                  </span>
+                </span>
+                <span className="text-xs text-amber-800 font-bold">
+                  {showNutrientGuide ? '▲' : '▼'}
+                </span>
+              </button>
+
+              <button
+                type="button"
+                onClick={() => setShowCompatibility(!showCompatibility)}
+                className="w-full min-h-[48px] px-3.5 py-2.5 bg-emerald-50 hover:bg-emerald-100 border-2 border-emerald-600 rounded-xl text-emerald-950 font-black text-sm flex items-center justify-between transition-colors cursor-pointer"
+              >
+                <span className="flex items-center gap-2">
+                  <span>🧪</span>
+                  <span>
+                    {locale === 'te'
+                      ? 'మందుల కలయిక తనిఖీ (W-A-L-E)'
+                      : locale === 'hi'
+                      ? 'दवा मिलान व जार टेस्ट'
+                      : 'Can I Mix These? (Jar Check)'}
+                  </span>
+                </span>
+                <span className="text-xs text-emerald-800 font-bold">
+                  {showCompatibility ? '▲' : '▼'}
+                </span>
+              </button>
+            </div>
+
+            {showNutrientGuide && <NutrientDeficiencyGuide />}
+            {showCompatibility && <ChemicalCompatibilityChecker />}
           </div>
 
           {/* Saved Sprays List (when on home capture screen) */}
@@ -879,6 +972,51 @@ export default function DoctorPage() {
             </div>
           )}
 
+          {/* Feature 3: 1-Tap WhatsApp "Ask MPEO / Rythu Bharosa Card" */}
+          {(result.confidence === 'medium' || result.confidence === 'low') && (
+            <div className="bg-emerald-50 border-2 border-emerald-700 rounded-2xl p-4 shadow-sm space-y-2.5">
+              <div className="flex items-start gap-2.5">
+                <MessageCircle className="w-6 h-6 text-emerald-700 shrink-0 mt-0.5" aria-hidden="true" />
+                <div>
+                  <h4 className="text-base font-black text-emerald-950">
+                    {locale === 'te'
+                      ? 'వ్యవసాయ అధికారి / రైతు భరోసా కేంద్రం (RBK) పరిశీలన'
+                      : locale === 'hi'
+                      ? 'कृषि अधिकारी / किसान सेवा केंद्र परामर्श कार्ड'
+                      : 'Ask Agriculture Extension Officer / Rythu Bharosa (RBK)'}
+                  </h4>
+                  <p className="text-xs font-semibold text-emerald-800 mt-0.5 leading-snug">
+                    {locale === 'te'
+                      ? 'ఖచ్చితత్వం తక్కువ/మధ్యస్థంగా ఉంది కాబట్టి రసాయనాలు దాచబడ్డాయి. ఫోటో మరియు వాతావరణ వివరాలతో కూడిన కార్డును నేరుగా మీ గ్రామ వ్యవసాయ అధికారి (MPEO/VAA) వాట్సాప్‌కు పంపండి.'
+                      : locale === 'hi'
+                      ? 'सटीकता स्तर कम/मध्यम होने के कारण दवा का डोज छुपाया गया है। फोटो व मौसम विवरण सहित कार्ड सीधे अपने कृषि अधिकारी को व्हाट्सएप करें।'
+                      : 'Chemical dosages are safely withheld due to low/medium confidence. Share this verified photo and field card directly with your village Agriculture Officer.'}
+                  </p>
+                </div>
+              </div>
+
+              <button
+                type="button"
+                onClick={handleShareToOfficer}
+                disabled={isSharingCard}
+                className="w-full min-h-[48px] px-4 py-2.5 bg-emerald-700 hover:bg-emerald-800 active:bg-emerald-900 disabled:opacity-60 text-white font-black text-sm rounded-xl flex items-center justify-center gap-2 shadow-sm transition-colors cursor-pointer"
+              >
+                <Share2 className="w-4 h-4 shrink-0" />
+                <span>
+                  {isSharingCard
+                    ? locale === 'te'
+                      ? 'కార్డు రూపొందిస్తోంది...'
+                      : 'Generating Card...'
+                    : locale === 'te'
+                    ? '1-ట్యాప్ వాట్సాప్ షేర్ (వ్యవసాయ అధికారి కార్డు)'
+                    : locale === 'hi'
+                    ? '1-टैप व्हाट्सएप शेयर (कृषि अधिकारी कार्ड)'
+                    : '1-Tap WhatsApp Share (Officer Card)'}
+                </span>
+              </button>
+            </div>
+          )}
+
           {/* 2. STAGE 1: Organic & Preventive Steps Card */}
           {result.treatment?.stage1_organic && result.treatment.stage1_organic.length > 0 && (
             <div className="bg-emerald-50 border-2 border-emerald-700 rounded-2xl p-4 shadow-sm space-y-3">
@@ -971,16 +1109,41 @@ export default function DoctorPage() {
                       {/* Chemical Items */}
                       {result.treatment.stage2_chemical.map((chem, chemIdx) => {
                         const tox = getToxicityDetails(chem.toxicity_class);
+                        const rotationAlert = checkMoARotationRisk(chem as any, sprayRecords);
                         return (
                           <div
                             key={chemIdx}
                             className="p-4 border-2 border-slate-300 rounded-2xl bg-slate-50/60 space-y-4 shadow-sm"
                           >
-                            {/* Chemical Name */}
-                            <div className="border-b border-slate-200 pb-2">
+                            {/* Feature 2: Anti-Resistance MoA Rotation Guard Alert */}
+                            {rotationAlert.hasRisk && (
+                              <div className="p-3.5 bg-amber-100 border-2 border-amber-600 rounded-xl text-amber-950 space-y-1">
+                                <div className="font-black text-sm flex items-start gap-2">
+                                  <AlertTriangle className="w-5 h-5 text-amber-800 shrink-0 mt-0.5" />
+                                  <span>
+                                    {rotationAlert.warningBadge?.[locale as 'en' | 'te' | 'hi'] ||
+                                      rotationAlert.warningBadge?.en}
+                                  </span>
+                                </div>
+                                {rotationAlert.recommendation && (
+                                  <p className="text-xs font-bold text-amber-900 pl-7">
+                                    {rotationAlert.recommendation[locale as 'en' | 'te' | 'hi'] ||
+                                      rotationAlert.recommendation.en}
+                                  </p>
+                                )}
+                              </div>
+                            )}
+
+                            {/* Chemical Name & MoA Tag */}
+                            <div className="border-b border-slate-200 pb-2 flex flex-wrap items-center justify-between gap-2">
                               <h3 className="text-xl font-black text-slate-950">
                                 {chem.chemical_name}
                               </h3>
+                              {chem.irac_frac_group && (
+                                <span className="px-2.5 py-1 bg-slate-200 text-slate-800 rounded-md font-mono text-xs font-bold border border-slate-300">
+                                  {chem.irac_frac_group}
+                                </span>
+                              )}
                             </div>
 
                             {/* Dose & Pre-Harvest Interval */}
@@ -1006,8 +1169,12 @@ export default function DoctorPage() {
                               </div>
                             </div>
 
-                            {/* Mix Calculator (F10 - Only shown when dose can be parsed) */}
-                            <ChemicalMixCalculator dosePerLitre={chem.dose_per_litre} />
+                            {/* Mix Calculator with 3-Second Bottle Authenticity Checklist (F10) */}
+                            <ChemicalMixCalculator
+                              dosePerLitre={chem.dose_per_litre}
+                              cibrcRegNo={chem.cibrc_reg_no}
+                              chemicalName={chem.chemical_name}
+                            />
 
                             {/* SAFETY CARD (F3 & Safety Rule 6) */}
                             <div className="p-4 bg-white rounded-xl border-2 border-slate-400 space-y-3">

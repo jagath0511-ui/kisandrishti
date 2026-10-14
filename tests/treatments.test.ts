@@ -67,16 +67,14 @@ describe('Treatments Data Layer & Safety Rules', () => {
   });
 
   it('proves unverified chemical data never leaves the function (Safety Rule 2 & 3)', () => {
-    // In treatments.json, all disease chemical entries currently have verified: false and TODO_VERIFY
-    const diseases = ['paddy_blast', 'chilli_anthracnose', 'tomato_early_blight'];
+    // Unverified diseases must always have empty stage2_chemical even with high confidence
+    const unverifiedDiseases = ['tomato_early_blight', 'paddy_brown_spot', 'chilli_powdery_mildew'];
 
-    for (const key of diseases) {
-      // Even with high confidence, unverified entries must be filtered out
+    for (const key of unverifiedDiseases) {
       const result = getTreatment(key, 'high');
       expect(result).not.toBeNull();
       expect(result!.stage2_chemical).toEqual([]);
 
-      // Test with numeric high confidence score (0.9)
       const numResult = getTreatment(key, 0.9);
       expect(numResult).not.toBeNull();
       expect(numResult!.stage2_chemical).toEqual([]);
@@ -84,6 +82,25 @@ describe('Treatments Data Layer & Safety Rules', () => {
       // Verify no unverified strings leak
       const serialized = JSON.stringify(result);
       expect(serialized).not.toContain('TODO_VERIFY');
+    }
+  });
+
+  it('exposes verified CIBRC chemicals with FRAC/IRAC groups on high confidence', () => {
+    const verifiedDiseases = ['paddy_blast', 'chilli_anthracnose'];
+
+    for (const key of verifiedDiseases) {
+      const result = getTreatment(key, 'high');
+      expect(result).not.toBeNull();
+      expect(result!.stage2_chemical.length).toBe(2);
+
+      for (const chem of result!.stage2_chemical) {
+        expect(chem.verified).toBe(true);
+        expect(chem.source_url.startsWith('https://')).toBe(true);
+        expect(chem.irac_frac_group).toBeDefined();
+        expect(chem.formulation).toBeDefined();
+        expect(chem.cibrc_reg_no).toBeDefined();
+        expect(chem.chemical_name).not.toBe('TODO_VERIFY');
+      }
     }
   });
 

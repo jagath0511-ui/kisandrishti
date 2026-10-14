@@ -6,6 +6,7 @@ export interface SprayRecord {
   intervalDays: number;
   safeHarvestDate: string; // YYYY-MM-DD
   timestamp: number;
+  irac_frac_group?: string;
 }
 
 const STORAGE_KEY = 'kisandrishti_spray_diary';
